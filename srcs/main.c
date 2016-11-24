@@ -6,7 +6,7 @@
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/15 19:22:28 by jlasne            #+#    #+#             */
-/*   Updated: 2016/11/21 14:13:34 by jlasne           ###   ########.fr       */
+/*   Updated: 2016/11/24 14:45:11 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 int		main(int argc, char **argv)
 {
 	(void)argc;
-	ft_printf("%s%f%g%f%s%E%D%G%s", argv[1], argv[2], argv[3]);
+	(void)argv;
+	ft_printf("Tu as tel %s: %d ans et %d mois\t %c %s %c", "age", 15, 3, 'A', "42's the best", 'Z');
 	return (0);
 }

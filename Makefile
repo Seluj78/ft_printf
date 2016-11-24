@@ -6,7 +6,7 @@
 #    By: jlasne <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/03 12:34:13 by jlasne            #+#    #+#              #
-#    Updated: 2016/11/21 15:14:17 by jlasne           ###   ########.fr        #
+#    Updated: 2016/11/24 13:41:09 by jlasne           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 NAME = ft_printf
@@ -29,7 +29,9 @@ LIBFT =	libft/libft.a
 
 CC = gcc
 
-FLAGS = -Wall -Wextra -Werror
+DEBUG = -fsanitize=address
+
+FLAGS = -Wall -Wextra -Werror #$(DEBUG)
 
 all: $(NAME)
 
