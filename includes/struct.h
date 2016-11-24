@@ -6,7 +6,7 @@
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/15 19:24:20 by jlasne            #+#    #+#             */
-/*   Updated: 2016/11/24 14:24:21 by jlasne           ###   ########.fr       */
+/*   Updated: 2016/11/24 14:48:39 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ typedef struct	s_data
 ** nb_percent -> numbers of percent
 ** format -> contains the XXX in  ft_printf("XXX", foo, bar);
 ** type -> sSpdDioOuUxXcC
+** DONE : sdc
 ** current_percent -> current percent being processed
 **
 **
