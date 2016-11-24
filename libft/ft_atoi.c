@@ -6,21 +6,21 @@
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/11 10:27:25 by jlasne            #+#    #+#             */
-/*   Updated: 2016/11/03 14:23:12 by jlasne           ###   ########.fr       */
+/*   Updated: 2016/11/21 10:54:15 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-static int		ft_returnfunc(int neg, int nbr)
+static int		ft_returnfunc(int neg, int nb)
 {
 	if (neg == 1)
 	{
-		return (-nbr);
+		return (-nb);
 	}
 	else
 	{
-		return (nbr);
+		return (nb);
 	}
-	return (nbr);
+	return (nb);
 }
 
 static int		ft_whilefunc(const char *str, int i)
@@ -36,10 +36,10 @@ static int		ft_whilefunc(const char *str, int i)
 int				ft_atoi(const char *str)
 {
 	int i;
-	int nbr;
+	int nb;
 	int neg;
 
-	nbr = 0;
+	nb = 0;
 	neg = 0;
 	i = 0;
 	i = ft_whilefunc(str, i);
@@ -53,9 +53,9 @@ int				ft_atoi(const char *str)
 	}
 	while ((str[i] != 0) && (str[i] >= '0') && (str[i] <= '9'))
 	{
-		nbr *= 10;
-		nbr += (int)str[i] - '0';
+		nb *= 10;
+		nb += (int)str[i] - '0';
 		i++;
 	}
-	return (ft_returnfunc(neg, nbr));
+	return (ft_returnfunc(neg, nb));
 }

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_parse.c                                       :+:      :+:    :+:   */
+/*   parser_main.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/18 10:28:30 by jlasne            #+#    #+#             */
-/*   Updated: 2016/11/18 15:13:09 by jlasne           ###   ########.fr       */
+/*   Created: 2016/11/21 10:28:34 by jlasne            #+#    #+#             */
+/*   Updated: 2016/11/21 15:17:16 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,14 @@ void	find_percent(t_data *data)
 		i++;
 	}
 	data->nb_percent = nb;
-	if (!(data->percent_location = (int*)malloc(sizeof(int) * nb)))
+	if (!(data->percent_loc = (int*)malloc(sizeof(int) * nb)))
 		return;
 	i = 0;
 	while (data->format[i] != '\0')
 	{
 		if (data->format[i] == '%')
 		{
-			data->percent_location[j] = i;
+			data->percent_loc[j] = i;
 			j++;
 		}
 		i++;
@@ -44,8 +44,7 @@ void	find_percent(t_data *data)
 
 void	get_type(t_data *data)
 {
-	if (data->format[data->percent_location[data->current_percent]] == 's')
-		data->type = 's';
+	data->type = data->format[data->percent_loc[data->current_percent] + 1];
 }
 
 void	parse_format(const char *format, t_data *data)
@@ -53,11 +52,14 @@ void	parse_format(const char *format, t_data *data)
 	data->l_format = ft_strlen(format);
 	transfer_to_struct(data, format);
 	find_percent(data);
+
 	get_type(data);
 	ft_putendl(&data->type);
+
 	next_percent(data);
 	get_type(data);
 	ft_putendl(&data->type);
+
 	next_percent(data);
 	get_type(data);
 	ft_putendl(&data->type);

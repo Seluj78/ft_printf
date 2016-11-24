@@ -6,11 +6,57 @@
 #    By: jlasne <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/03 12:34:13 by jlasne            #+#    #+#              #
-#    Updated: 2016/11/05 14:05:53 by jlasne           ###   ########.fr        #
+#    Updated: 2016/11/21 11:04:23 by jlasne           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+#================================COLORS========================================#
+
+# Reset
+
+reset=\033[0m       # Text Reset
+
+
+# Regular Colors
+
+Black=\033[0;30m        # Black
+Red=\033[0;31m          # Red
+Green=\033[0;32m        # Green
+Yellow=\033[0;33m       # Yellow
+Blue=\033[0;34m         # Blue
+Purple=\033[0;35m       # Purple
+Cyan=\033[0;36m         # Cyan
+White=\033[0;37m        # White
+
+
+# Bold
+
+BBlack=\033[1;30m       # Black
+BRed=\033[1;31m         # Red
+BGreen=\033[1;32m       # Green
+BYellow=\033[1;33m      # Yellow
+BBlue=\033[1;34m        # Blue
+BPurple=\033[1;35m      # Purple
+BCyan=\033[1;36m        # Cyan
+BWhite=\033[1;37m       # White
+
+
+# Underline
+
+UBlack=\033[4;30m       # Black
+URed=\033[4;31m         # Red
+UGreen=\033[4;32m       # Green
+UYellow=\033[4;33m      # Yellow
+UBlue=\033[4;34m        # Blue
+UPurple=\033[4;35m      # Purple
+UCyan=\033[4;36m        # Cyan
+UWhite=\033[4;37m       # White
+
+#=================================MAKEFILE=====================================#
+
 NAME = libft.a
+
+FLAGS = -Wall -Wextra -Werror
 
 SRC = ft_bzero.c\
 	  ft_memset.c\
@@ -70,20 +116,24 @@ SRC = ft_bzero.c\
 
 OBJ = $(SRC:.c=.o)
 
+INC = ./includes
+
 all: $(NAME)
 
-$(NAME):
-	gcc -c -Wall -Werror -Wextra $(SRC)
-	ar rc $(NAME) $(OBJ)
-	ranlib $(NAME)
+
+### TODO : Pretty makefile
+
+$(NAME): $(OBJ)
+	@ar rc $(NAME) $(OBJ)
+	@ranlib $(NAME)
 
 %.o:%.c
-	@gcc -c $< -o $@
+	@gcc -c $(FLAGS) -I $(INC) $< -o $@
 
 clean:
-	/bin/rm -f $(OBJ)
+	@/bin/rm -f $(OBJ)
 
 fclean: clean
-	/bin/rm -f $(NAME)
+	@/bin/rm -f $(NAME)
 
 re: fclean all

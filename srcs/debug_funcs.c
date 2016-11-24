@@ -6,7 +6,7 @@
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/18 13:35:07 by jlasne            #+#    #+#             */
-/*   Updated: 2016/11/18 14:07:25 by jlasne           ###   ########.fr       */
+/*   Updated: 2016/11/21 11:22:03 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	print_percent_loc(t_data *data)
 	i = 0;
 	while (i < data->nb_percent)
 	{
-		ft_putnbr(data->percent_location[i]);
+		ft_putnbr(data->percent_loc[i]);
 		ft_putchar('\n');
 		i++;
 	}
