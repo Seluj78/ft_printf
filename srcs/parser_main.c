@@ -49,9 +49,6 @@ void	get_type(t_data *data)
 
 void	parse_format(t_data *data)
 {
-	int i;
-
-	i = 0;
 	//find_percent(data);
 	//next_percent(data);
 	get_type(data);
