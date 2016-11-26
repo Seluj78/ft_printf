@@ -33,3 +33,6 @@
 *.su
 *.xml
 *.iml
+
+workspace.xml
+.idea/workspace.xml
