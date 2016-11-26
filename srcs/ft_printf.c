@@ -42,14 +42,6 @@ int				ft_printf(const char *format, ...)
 			break ;
 		data.index++;
 	}
-	//print_percent_loc(&data);
-	//ft_putendl(data.current_var);
-	//char *toto = va_arg(ap, char*);
-	//char *tata = va_arg(ap, char*);
-	//char *titi = va_arg(ap, char*);
-	//ft_putendl("toto");
-	//ft_putendl(tata);
-	//ft_putendl(titi);
 	va_end(ap);
 	return (data.ret);
 }
