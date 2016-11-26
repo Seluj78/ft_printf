@@ -30,6 +30,4 @@ void	convert_c(t_data *data);
 **DEBUG PROTO
 */
 
-void	print_percent_loc(t_data *data);
-
 #endif
