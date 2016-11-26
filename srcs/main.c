@@ -16,6 +16,6 @@ int		main(int argc, char **argv)
 {
 	(void)argc;
 	(void)argv;
-	ft_printf("Tu as tel %s: %d ans et %d mois\t %c %s %c", "age", 15, 3, 'A', "42's the best", 'Z');
+	ft_putnbr(ft_printf("%d", 123456789));
 	return (0);
 }

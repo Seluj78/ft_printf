@@ -26,6 +26,7 @@ void	converter(t_data *data);
 void	convert_s(t_data *data);
 void	convert_d(t_data *data);
 void	convert_c(t_data *data);
+int     how_many_printed(int nb);
 /*
 **DEBUG PROTO
 */

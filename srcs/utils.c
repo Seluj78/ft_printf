@@ -12,6 +12,19 @@
 
 #include "../includes/includes.h"
 
+int		how_many_printed(int nb)
+{
+	int i;
+
+	i = 0;
+	while (nb != 0)
+	{
+		nb /= 10;
+		i++;
+	}
+	return (i);
+}
+
 void	transfer_to_struct(t_data *data, const char *format)
 {
 	int i;

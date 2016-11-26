@@ -55,6 +55,7 @@ void	convert_d(t_data *data)
 {
 	int	nb;
 	nb = va_arg(*data->ap, int);
+	data->ret += how_many_printed(nb);
 	ft_putnbr(nb);
 	//TODO : Add number of things printed
 }
