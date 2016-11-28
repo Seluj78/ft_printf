@@ -5,57 +5,70 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/07/11 10:27:25 by jlasne            #+#    #+#             */
-/*   Updated: 2016/11/21 10:54:15 by jlasne           ###   ########.fr       */
+/*   Created: 2016/11/28 11:07:23 by jlasne            #+#    #+#             */
+/*   Updated: 2016/11/28 11:07:25 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-static int		ft_returnfunc(int neg, int nb)
-{
-	if (neg == 1)
-	{
-		return (-nb);
-	}
-	else
-	{
-		return (nb);
-	}
-	return (nb);
-}
+#include "libft.h"
 
-static int		ft_whilefunc(const char *str, int i)
+static int		ft_strlen_nb(char *str)
 {
-	while ((str[i] == '\n') || (str[i] == '\t') || (str[i] == '\v') ||
-			(str[i] == ' ') || (str[i] == '\f') || (str[i] == '\r'))
-	{
-		i++;
-	}
+	int		i;
+
+	i = -1;
+	while (ft_isdigit(str[++i]))
+		;
 	return (i);
 }
 
 int				ft_atoi(const char *str)
 {
-	int i;
-	int nb;
-	int neg;
+	int	neg;
+	int	cpt;
+	int	n;
 
-	nb = 0;
+	n = 0;
 	neg = 0;
-	i = 0;
-	i = ft_whilefunc(str, i);
-	if (str[i] == '-')
-	{
+	cpt = 0;
+	while (str[cpt] == ' ' || str[cpt] == '\t' || str[cpt] == '\r' ||
+		str[cpt] == '\n' || str[cpt] == '\v' || str[cpt] == '\f')
+		cpt++;
+	if (str[cpt] == '-')
 		neg = 1;
-	}
-	if (str[i] == '+' || str[i] == '-')
+	if (str[cpt] == '+' || str[cpt] == '-')
+		cpt++;
+	while (str[cpt] >= '0' && str[cpt] <= '9')
 	{
-		i++;
+		n = n * 10;
+		n = n + (str[cpt] - 48);
+		cpt++;
 	}
-	while ((str[i] != 0) && (str[i] >= '0') && (str[i] <= '9'))
+	return (neg == 0 ? n : -n);
+}
+
+double			ft_atoid(char *str)
+{
+	double	result;
+	int		i;
+	char	*a;
+
+	i = -1;
+	a = NULL;
+	result = 0;
+	while (str[++i] != '.')
 	{
-		nb *= 10;
-		nb += (int)str[i] - '0';
-		i++;
+		if (str[i] == '\0')
+			return (ft_atoi(str));
 	}
-	return (ft_returnfunc(neg, nb));
+	a = &str[i + 1];
+	i = -1;
+	if (!ft_strisdigit(&a[++i]))
+		ft_atoi(str);
+	result = ft_atoi(str);
+	if (result < 0)
+		result -= (double)ft_atoi(a) / (double)ft_power(10, ft_strlen_nb(a));
+	else
+		result += (double)ft_atoi(a) / (double)ft_power(10, ft_strlen_nb(a));
+	return (result);
 }

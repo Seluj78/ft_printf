@@ -6,7 +6,7 @@
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/15 19:23:47 by jlasne            #+#    #+#             */
-/*   Updated: 2016/11/24 14:43:51 by jlasne           ###   ########.fr       */
+/*   Updated: 2016/11/28 13:15:42 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,10 @@ void	converter(t_data *data);
 void	convert_s(t_data *data);
 void	convert_d(t_data *data);
 void	convert_c(t_data *data);
-int     how_many_printed(int nb);
+void	convert_p(t_data *data);
+//void	convert_o(t_data *data);
+void	convert_x(t_data *data);
+char	*ft_strcapitalize(char *str);
 /*
 **DEBUG PROTO
 */
