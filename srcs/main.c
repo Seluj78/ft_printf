@@ -6,7 +6,7 @@
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/15 19:22:28 by jlasne            #+#    #+#             */
-/*   Updated: 2016/11/24 14:45:11 by jlasne           ###   ########.fr       */
+/*   Updated: 2016/11/28 13:19:56 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int		main(int argc, char **argv)
 {
 	(void)argc;
 	(void)argv;
-	ft_printf("%s", "Bonjour ! \n");
+	ft_printf("%X%s", 42, "\n\n");
+	printf("%X%s", 42, "\n\n");
 	return (0);
 }

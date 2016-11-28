@@ -6,7 +6,7 @@
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/03 12:36:05 by jlasne            #+#    #+#             */
-/*   Updated: 2016/11/05 14:38:55 by jlasne           ###   ########.fr       */
+/*   Updated: 2016/11/28 12:04:16 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,9 +80,19 @@ char			*ft_strsub(char const *s, unsigned int start, size_t len);
 char			*ft_strtrim(char const *s);
 char			**ft_strsplit(char const *s, char c);
 char			*ft_itoa(int n);
-
 char			**ft_split_whitespaces(char *str);
 int				ft_power(int nb, int pow);
 int				ft_cat(int argc, char **argv);
-
+int				ft_strisdigit(char *str);
+unsigned int	ft_atoi_base(const char *str, int base);
+unsigned int	ft_atoi_nbase(const char *str, int base, int len);
+char			*ft_itoa_base(unsigned int n, int base);
+char			*ft_itoa_base_l(unsigned long int n, int base);
+char			*ft_itoa_base_ll(unsigned long long int n, int base);
+int				ft_nblen(int n);
+int				ft_nblen_l(long n);
+int				ft_nblen_ll(long long n);
+void			ft_putnbr_l(long n);
+void			ft_putnbr_ll(long long n);
+int				ft_strisdigit(char *str);
 #endif

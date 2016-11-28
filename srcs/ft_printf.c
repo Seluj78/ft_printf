@@ -6,7 +6,7 @@
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/15 19:27:58 by jlasne            #+#    #+#             */
-/*   Updated: 2016/11/24 14:48:37 by jlasne           ###   ########.fr       */
+/*   Updated: 2016/11/28 13:08:04 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ void	init(t_data *data, const char *format, va_list *ap)
 	data->ap = ap;
 	data->l_format = ft_strlen(format);
 	transfer_to_struct(data, format);
-	data->current_percent = -1;
 	data->ret = 0;
 	data->index = 0;
 }

@@ -1,41 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_itoa_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/28 11:08:01 by jlasne            #+#    #+#             */
-/*   Updated: 2016/11/28 11:08:03 by jlasne           ###   ########.fr       */
+/*   Created: 2016/11/28 11:08:13 by jlasne            #+#    #+#             */
+/*   Updated: 2016/11/28 12:51:20 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-char	*ft_itoa(int n)
+static int	ft_nblen_base(unsigned int n, int base)
 {
 	int		len;
-	char	*str;
-	long	nbr;
 
-	nbr = n;
-	len = ft_nblen_l(nbr);
-	if (!(str = ft_strnew(len)))
-		return (NULL);
-	if (n < 0)
-		nbr = -nbr;
-	while (len)
+	len = 1;
+	while (n >= (unsigned int)base)
 	{
-		str[--len] = 48 + (nbr % 10);
-		nbr = nbr / 10;
+		n /= base;
+		len++;
 	}
-	if (str[len] == '0' && str[1] != '\0')
-		str[len] = '-';
-	return (str);
+	return (len);
 }
 
-/*
-** len-- is in the while because it cause a bug if he is in the parenthese
-** he becomes -1 after it
-*/
+char		*ft_itoa_base(unsigned int n, int base)
+{
+	int				len;
+	char			*str;
+	static char		tab[16] = {'0', '1', '2', '3', '4', '5', '6', '7', '8',
+	'9', 'a', 'b', 'c', 'd', 'e', 'f'};
+
+	if (base > 16 || base <= 1)
+		return (NULL);
+	len = ft_nblen_base(n, base);
+	if (!(str = ft_strnew(len)))
+		return (NULL);
+	while (len)
+	{
+		str[--len] = tab[n % base];
+		n = n / base;
+	}
+	return (str);
+}

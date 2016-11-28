@@ -6,7 +6,7 @@
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/03 15:47:53 by jlasne            #+#    #+#             */
-/*   Updated: 2016/11/03 15:54:47 by jlasne           ###   ########.fr       */
+/*   Updated: 2016/11/28 11:22:23 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void	*ft_memalloc(size_t size)
 {
-	void	*ret;
+	void	*r;
 
-	ret = (void *)malloc(size);
-	if (!ret)
+	r = (void *)malloc(size);
+	if (!r)
 		return (NULL);
-	ft_bzero(ret, size);
-	return (ret);
+	ft_bzero(r, size);
+	return (r);
 }
