@@ -16,6 +16,7 @@ int		main(int argc, char **argv)
 {
 	(void)argc;
 	(void)argv;
-	ft_printf("%s", "Bonjour ! \n");
+	ft_printf("%d", 42);
+	printf("%d", 42);
 	return (0);
 }
