@@ -6,7 +6,7 @@
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/21 10:28:34 by jlasne            #+#    #+#             */
-/*   Updated: 2016/11/28 13:27:52 by jlasne           ###   ########.fr       */
+/*   Updated: 2016/11/28 14:38:53 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,10 +80,11 @@ void	convert_x(t_data *data)
 
 	nb = va_arg(*data->ap, int);
 	if (data->type == 'x')
+	{
 	ft_putstr(ft_itoa_base(nb, 16));
+	}
 	else
 		ft_putstr(ft_strcapitalize(ft_itoa_base(nb, 16)));
-	ft_putstr(ft_strcapitalize("toto va au toilettes"));
 }
 
 //TODO : Octal

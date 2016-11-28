@@ -6,7 +6,7 @@
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/18 13:03:27 by jlasne            #+#    #+#             */
-/*   Updated: 2016/11/28 13:26:01 by jlasne           ###   ########.fr       */
+/*   Updated: 2016/11/28 14:42:08 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ char	*ft_strcapitalize(char *str)
 	int i;
 
 	i = 0;
-	while (str[i])
+	while (str[i] != '\0')
 	{
-		if ((str[i] >= 'a' && str[i] <= 'z') && (i == 0 || str[i - 1] == ' '))
+		if ((str[i] >= 'a' && str[i] <= 'z'))
 		{
 			str[i] -= 32;
 			i++;
