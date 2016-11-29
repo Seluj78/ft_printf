@@ -12,7 +12,7 @@
 
 #include "../includes/includes.h"
 
-void		init(t_data *data, const char *format, va_list *ap)
+static void		init(t_data *data, const char *format, va_list *ap)
 {
 	data->ap = ap;
 	data->l_format = ft_strlen(format);

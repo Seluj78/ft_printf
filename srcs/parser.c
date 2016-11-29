@@ -51,6 +51,11 @@ void	converter(t_data *data)
 		convert_x(data);
 	else if (data->type == 'u')
 		convert_u(data);
+	else if (data->type == 'o')
+		convert_o(data);
+	else if (data->type == 'O')
+		convert_lo(data);
+
 	else
 		return;
 }
@@ -107,7 +112,19 @@ void	convert_u(t_data *data)
 {
 	unsigned int nb;
 
-	nb = va_arg(	*data->ap, unsigned int);
+	nb = va_arg(*data->ap, unsigned int);
 	ft_putstr(ft_itoa_base(nb, 10));
 }
 
+void	convert_o(t_data *data)
+{
+	unsigned int nb;
+	nb = va_arg(*data->ap, unsigned int);
+	ft_putstr(ft_itoa_base(nb, 8));
+}
+void	convert_lo(t_data *data)
+{
+	long unsigned int nb;
+	nb = va_arg(*data->ap, long unsigned int);
+	ft_putstr(ft_itoa_base_l(nb, 8));
+}

@@ -46,11 +46,8 @@ typedef struct	s_data
 /*
 ** va_list *ap -> Args list used by ft_printf
 ** l_format -> format length
-** percent_location -> contains the location of % in format
-** nb_percent -> numbers of percent
 ** format -> contains the XXX in  ft_printf("XXX", foo, bar);
-** type -> sSpdDioOuUxXcC
-** TODO -> SDoOUC
+** TODO -> SDUC %% #+-0' 'taille min champ, precision, hh h l ll j z
 ** current_percent -> current percent being processed
 **
 **
