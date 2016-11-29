@@ -15,11 +15,23 @@ void	get_type(t_data *data)
 {
 	int i;
 	i = data->index;
-	while((data->format[i] > 'z' || data->format[i] < 'a') && (data->format[i] > 'Z' || data->format[i] < 'A'))
+	while (data->format[i] != 's' && data->format[i] != 'S'
+			&& data->format[i] != 'p' && data->format[i] != 'd'
+			&& data->format[i] != 'D' && data->format[i] != 'i'
+			&& data->format[i] != 'o' && data->format[i] != 'O'
+			&& data->format[i] != 'u' && data->format[i] != 'U'
+			&& data->format[i] != 'x' && data->format[i] != 'X'
+			&& data->format[i] != 'c' && data->format[i] != 'C')
 	{
-		i++:
+		i++;
 	}
-	//data->type = data->format[data->index + 1];
+	data->cur_end_conv = i;
+	data->conv_format = ft_strsub(data->format, data->index + 1, data->cur_end_conv);
+	data->index += i;
+	data->type = data->conv_format[4];
+	//ft_putendl(data->conv_format);
+	//ft_putstr("\n");
+	
 }
 
 void	parse_format(t_data *data)
@@ -90,7 +102,7 @@ void	convert_x(t_data *data)
 	nb = va_arg(*data->ap, int);
 	if (data->type == 'x')
 	{
-	ft_putstr(ft_itoa_base(nb, 16));
+		ft_putstr(ft_itoa_base(nb, 16));
 	}
 	else
 		ft_putstr(ft_strcapitalize(ft_itoa_base(nb, 16)));
@@ -104,8 +116,8 @@ void	convert_u(t_data *data)
 	ft_putstr(ft_itoa_base(nb, 10));
 }
 /*
-void convert_o(t_data *data)
-{
+   void convert_o(t_data *data)
+   {
 
-}
-*/
+   }
+   */

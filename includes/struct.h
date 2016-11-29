@@ -41,6 +41,8 @@ typedef struct	s_data
 	char		*current_var;
 	int			ret;
 	int			index;
+	int			cur_end_conv;
+	char		*conv_format;
 }				t_data;
 
 /*
