@@ -13,7 +13,13 @@
 #include "../includes/includes.h"
 void	get_type(t_data *data)
 {
-	data->type = data->format[data->index + 1];
+	int i;
+	i = data->index;
+	while((data->format[i] > 'z' || data->format[i] < 'a') && (data->format[i] > 'Z' || data->format[i] < 'A'))
+	{
+		i++:
+	}
+	//data->type = data->format[data->index + 1];
 }
 
 void	parse_format(t_data *data)

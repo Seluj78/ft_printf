@@ -19,7 +19,7 @@
  ** Typedefs :
  */
 
-typedef int		t_bool;
+typedef char		t_bool;
 
 /*
  **Defines relative to typedefs
