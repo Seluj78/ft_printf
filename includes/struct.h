@@ -47,7 +47,7 @@ typedef struct	s_data
 ** va_list *ap -> Args list used by ft_printf
 ** l_format -> format length
 ** format -> contains the XXX in  ft_printf("XXX", foo, bar);
-** TODO -> SDUC %% #+-0' 'taille min champ, precision, hh h l ll j z
+** TODO -> SDU %% #+-0' 'taille min champ, precision, hh h l ll j z
 ** current_percent -> current percent being processed
 **
 **

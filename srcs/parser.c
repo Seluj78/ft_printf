@@ -55,7 +55,8 @@ void	converter(t_data *data)
 		convert_o(data);
 	else if (data->type == 'O')
 		convert_lo(data);
-
+	else if (data->type == 'C')
+		convert_lc(data);
 	else
 		return;
 }
@@ -127,4 +128,11 @@ void	convert_lo(t_data *data)
 	long unsigned int nb;
 	nb = va_arg(*data->ap, long unsigned int);
 	ft_putstr(ft_itoa_base_l(nb, 8));
+}
+
+void	convert_lc(t_data *data)
+{
+	wint_t c;
+	c = va_arg(*data->ap, wint_t);
+	data->ret += write(1, &c, 1);
 }
