@@ -61,6 +61,8 @@ void	converter(t_data *data)
 		convert_ls(data);
 	else if (data->type == 'D')
 		convert_ld(data);
+	else if (data->type == 'U')
+		convert_lu(data);
 	else
 		return;
 }
@@ -157,4 +159,11 @@ void	convert_ld(t_data *data)
 	//TODO : Add number of things printed
 }
 
+void	convert_lu(t_data *data)
+{
+	unsigned long int nb;
+
+	nb = va_arg(*data->ap, unsigned long int);
+	ft_putstr(ft_itoa_base_l(nb, 10));
+}
 

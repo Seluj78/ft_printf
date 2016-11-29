@@ -29,8 +29,14 @@ int		main(int argc, char **argv)
 	ft_printf("widechar: %C\n", C);
 	ft_printf("widechar: %S\n", Cs);
 	ft_printf("long int: %D\n", 123456789123);
+	ft_printf("Long unsigned: %U\n", -123456789123);
+
+
 	ft_putstr("\n\n");
 	ft_putstr("\n\n");
+	
+	
+	
 	printf("String: %s\nDecimal: %d\n", "This is a String", 42);
 	printf("Char: %c\nPointer adress: %p\n", 'c', "String adress");
 	printf("downcase hex: %x\nUPCASE HEX: %X\n", 123456789, 123456789);
@@ -40,5 +46,6 @@ int		main(int argc, char **argv)
 	printf("widechar: %C\n", C);
 	printf("widechar: %S\n", Cs);
 	printf("long int: %ld\n", 123456789123);
+	printf("Long unsigned: %lu\n", -123456789123);
 	return (0);
 }
