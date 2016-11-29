@@ -59,6 +59,8 @@ void	converter(t_data *data)
 		convert_lc(data);
 	else if (data->type == 'S')
 		convert_ls(data);
+	else if (data->type == 'D')
+		convert_ld(data);
 	else
 		return;
 }
@@ -79,6 +81,7 @@ void	convert_d(t_data *data)
 	ft_putnbr(nb);
 	//TODO : Add number of things printed
 }
+
 void	convert_c(t_data *data)
 {
 	unsigned char c;
@@ -146,4 +149,12 @@ void convert_ls(t_data *data)
 	//data->ret += ft_strlen(str);
 	ft_putwstr(str);
 }
+void	convert_ld(t_data *data)
+{
+	long int nb;
+	nb = va_arg(*data->ap, long int);
+	ft_putnbr_l(nb);
+	//TODO : Add number of things printed
+}
+
 

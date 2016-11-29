@@ -28,6 +28,7 @@ int		main(int argc, char **argv)
 	ft_printf("Octal convertion: %O\n", 123456789123);
 	ft_printf("widechar: %C\n", C);
 	ft_printf("widechar: %S\n", Cs);
+	ft_printf("long int: %D\n", 123456789123);
 	ft_putstr("\n\n");
 	ft_putstr("\n\n");
 	printf("String: %s\nDecimal: %d\n", "This is a String", 42);
@@ -38,5 +39,6 @@ int		main(int argc, char **argv)
 	printf("Octal convertion: %lo\n", 123456789123);
 	printf("widechar: %C\n", C);
 	printf("widechar: %S\n", Cs);
+	printf("long int: %ld\n", 123456789123);
 	return (0);
 }
