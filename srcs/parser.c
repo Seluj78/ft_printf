@@ -15,14 +15,15 @@
 void	get_type(t_data *data)
 {
 	int i;
-	i = data->index;
+	i = data->index + 1;
 	while (data->format[i] != 's' && data->format[i] != 'S'
 			&& data->format[i] != 'p' && data->format[i] != 'd'
 			&& data->format[i] != 'D' && data->format[i] != 'i'
 			&& data->format[i] != 'o' && data->format[i] != 'O'
 			&& data->format[i] != 'u' && data->format[i] != 'U'
 			&& data->format[i] != 'x' && data->format[i] != 'X'
-			&& data->format[i] != 'c' && data->format[i] != 'C')
+			&& data->format[i] != 'c' && data->format[i] != 'C'
+			&& data->format[i] != '%')
 	{
 		i++;
 	}
@@ -63,6 +64,8 @@ void	converter(t_data *data)
 		convert_ld(data);
 	else if (data->type == 'U')
 		convert_lu(data);
+	else if (data->type == 37)
+		ft_putchar(37);
 	else
 		return;
 }
