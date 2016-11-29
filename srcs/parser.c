@@ -57,6 +57,8 @@ void	converter(t_data *data)
 		convert_lo(data);
 	else if (data->type == 'C')
 		convert_lc(data);
+	else if (data->type == 'S')
+		convert_ls(data);
 	else
 		return;
 }
@@ -136,3 +138,12 @@ void	convert_lc(t_data *data)
 	c = va_arg(*data->ap, wint_t);
 	data->ret += write(1, &c, 1);
 }
+
+void convert_ls(t_data *data)
+{
+	wchar_t *str;
+	str = va_arg(*data->ap, wchar_t *);
+	//data->ret += ft_strlen(str);
+	ft_putwstr(str);
+}
+

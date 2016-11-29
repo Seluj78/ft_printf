@@ -29,6 +29,8 @@ void	convert_x(t_data *data);
 void	convert_o(t_data *data);
 void	convert_lo(t_data *data);
 void	convert_lc(t_data *data);
+void	convert_ls(t_data *data);
+void	ft_putwstr(wchar_t *str);
 char	*ft_strcapitalize(char *str);
 /*
 **DEBUG PROTO
