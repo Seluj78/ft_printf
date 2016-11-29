@@ -30,6 +30,6 @@ int		main(int argc, char **argv)
 	printf("downcase hex: %x\nUPCASE HEX: %X\n", 123456789, 123456789);
 	printf("Unsigned decimal: %u ; %u\n", 42, -42);
 	ft_printf("Octal convertion: %o\n", 424242424242);*/
-	ft_printf("%-5.2d", 424242);
+	ft_printf("%-5.2d", 42);
 	return (0);
 }

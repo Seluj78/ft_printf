@@ -28,9 +28,8 @@ void	get_type(t_data *data)
 	data->cur_end_conv = i;
 	data->conv_format = ft_strsub(data->format, data->index + 1, data->cur_end_conv);
 	data->index += i;
-	data->type = data->conv_format[4];
-	//ft_putendl(data->conv_format);
-	//ft_putstr("\n");
+	data->type = data->conv_format[ft_strlen(data->conv_format) - 1];
+	//data->type = 'd';
 	
 }
 
@@ -38,7 +37,6 @@ void	parse_format(t_data *data)
 {
 	get_type(data);
 	converter(data);
-	data->index++;
 }
 
 void	converter(t_data *data)
