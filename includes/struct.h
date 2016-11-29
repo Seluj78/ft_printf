@@ -19,7 +19,7 @@
  ** Typedefs :
  */
 
-typedef int		t_bool;
+typedef char		t_bool;
 
 /*
  **Defines relative to typedefs
@@ -35,22 +35,19 @@ typedef int		t_bool;
 typedef struct	s_data
 {
 	va_list		*ap;
-	int			l_format;
 	char		*format;
+	int			l_format;
 	char		type;
-	char		*current_var;
 	int			ret;
 	int			index;
+	char		*conv;
 }				t_data;
 
 /*
 ** va_list *ap -> Args list used by ft_printf
 ** l_format -> format length
-** percent_location -> contains the location of % in format
-** nb_percent -> numbers of percent
 ** format -> contains the XXX in  ft_printf("XXX", foo, bar);
-** type -> sSpdDioOuUxXcC
-** TODO -> SDoOuUC
+** TODO ->#+-0' 'taille min champ, precision, hh h l ll j z
 ** current_percent -> current percent being processed
 **
 **

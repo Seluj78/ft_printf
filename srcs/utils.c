@@ -32,7 +32,7 @@ char	*ft_strcapitalize(char *str)
 	int i;
 
 	i = 0;
-	while (str[i] != '\0')
+	while (str	[i] != '\0')
 	{
 		if ((str[i] >= 'a' && str[i] <= 'z'))
 		{
@@ -43,4 +43,15 @@ char	*ft_strcapitalize(char *str)
 			i++;
 	}
 	return (str);
+}
+
+void	ft_putwstr(wchar_t *str)
+{
+	int i;
+	i = 0;
+	while (str[i] != '\0')
+	{
+		write(1, &str[i], 1);
+		i++;
+	}
 }

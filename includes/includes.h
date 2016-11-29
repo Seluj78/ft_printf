@@ -18,5 +18,6 @@
 # include "struct.h"
 # include <stdarg.h>
 # include <stdio.h>
+# include <wchar.h>
 
 #endif

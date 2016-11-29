@@ -13,8 +13,8 @@ NAME = ft_printf
 
 SRC = main.c\
 	  ft_printf.c\
-	  parser_main.c\
-	  utils.c
+	  utils.c\
+	  parser.c
 
 OBJ = $(SRC:.c=.o)
 
