@@ -109,6 +109,13 @@ void	convert_ld(t_data *data)
 	//TODO : Add number of things printed
 }
 
+void	convert_lld(t_data *data)
+{
+	long long int nb;
+	nb = va_arg(*data->ap, long long int);
+	ft_putnbr_ll(nb);
+	//TODO : Add number of things printed
+}
 
 
 
@@ -147,6 +154,13 @@ void	convert_lu(t_data *data)
 	ft_putstr(ft_itoa_base_l(nb, 10));
 }
 
+void	convert_llu(t_data *data)
+{
+	unsigned long long int nb;
+
+	nb = va_arg(*data->ap, unsigned long long int);
+	ft_putstr(ft_itoa_base_ll(nb, 10));
+}
 
 
 
@@ -179,7 +193,31 @@ void	convert_x(t_data *data)
 		ft_putstr(ft_strcapitalize(ft_itoa_base(nb, 16)));
 }
 
+void	convert_lx(t_data *data)
+{
+	long int nb;
 
+	nb = va_arg(*data->ap, long int);
+	if (data->type == 'x')
+	{
+		ft_putstr(ft_itoa_base_l(nb, 16));
+	}
+	else
+		ft_putstr(ft_strcapitalize(ft_itoa_base_l(nb, 16)));
+}
+
+void	convert_llx(t_data *data)
+{
+	long long int nb;
+
+	nb = va_arg(*data->ap, long long int);
+	if (data->type == 'x')
+	{
+		ft_putstr(ft_itoa_base_ll(nb, 16));
+	}
+	else
+		ft_putstr(ft_strcapitalize(ft_itoa_base_ll(nb, 16)));
+}
 
 
 
@@ -190,9 +228,22 @@ void	convert_o(t_data *data)
 	nb = va_arg(*data->ap, unsigned int);
 	ft_putstr(ft_itoa_base(nb, 8));
 }
+
 void	convert_lo(t_data *data)
 {
 	long unsigned int nb;
 	nb = va_arg(*data->ap, long unsigned int);
 	ft_putstr(ft_itoa_base_l(nb, 8));
 }
+
+void	convert_llo(t_data *data)
+{
+	long long unsigned int nb;
+	nb = va_arg(*data->ap, long long unsigned int);
+	ft_putstr(ft_itoa_base_ll(nb, 8));
+}
+
+
+//TODO : Return value
+// TODO: add the l for x, or X in converter
+// TODO: ll for d, i, o, u, x, or X converter
