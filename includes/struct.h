@@ -50,7 +50,7 @@ typedef struct	s_data
 ** nb_percent -> numbers of percent
 ** format -> contains the XXX in  ft_printf("XXX", foo, bar);
 ** type -> sSpdDioOuUxXcC
-** TODO -> SDoOuUC
+** TODO -> SDoOUC
 ** current_percent -> current percent being processed
 **
 **

@@ -35,7 +35,10 @@ void	converter(t_data *data)
 		convert_p(data);
 	else if (data->type == 'x' || data->type == 'X')
 		convert_x(data);
-	return;
+	else if (data->type == 'u')
+		convert_u(data);
+	else
+		return;
 }
 void	convert_s(t_data *data)
 {
@@ -89,10 +92,10 @@ void	convert_x(t_data *data)
 
 void	convert_u(t_data *data)
 {
-	int nb;
+	unsigned int nb;
 
-	nb = va_arg(*data->ap, int);
-	ft_putnbr((unsigned int)nb);
+	nb = va_arg(*data->ap, unsigned int);
+	ft_putstr(ft_itoa_base(nb, 10));
 }
 /*
 void convert_o(t_data *data)
