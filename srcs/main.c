@@ -16,7 +16,6 @@ int		main(int argc, char **argv)
 {
 	(void)argc;
 	(void)argv;
-	/*
 	ft_printf("String: %s\nDecimal: %d\n", "This is a String", 42);
 	ft_printf("Char: %c\nPointer adress: %p\n", 'c', "String adress");
 	ft_printf("downcase hex: %x\nUPCASE HEX: %X\n", 123456789, 123456789);
@@ -29,7 +28,6 @@ int		main(int argc, char **argv)
 	printf("Char: %c\nPointer adress: %p\n", 'c', "String adress");
 	printf("downcase hex: %x\nUPCASE HEX: %X\n", 123456789, 123456789);
 	printf("Unsigned decimal: %u ; %u\n", 42, -42);
-	ft_printf("Octal convertion: %o\n", 424242424242);*/
-	ft_printf("%-5.2d", 42);
+	ft_printf("Octal convertion: %o\n", 424242424242);
 	return (0);
 }
