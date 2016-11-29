@@ -70,6 +70,12 @@ void	converter(t_data *data)
 		return;
 }
 
+
+
+
+
+
+
 void convert_s(t_data *data)
 {
 	char *str;
@@ -92,6 +98,19 @@ void convert_ls(t_data *data)
 
 
 
+
+
+
+
+
+
+void	convert_hd(t_data *data)
+{
+	short int nb;
+	nb = (short int)va_arg(*data->ap, int);
+	ft_putnbr(nb);
+	//TODO : Add number of things printed
+}
 
 void	convert_d(t_data *data)
 {
@@ -120,6 +139,11 @@ void	convert_lld(t_data *data)
 
 
 
+
+
+
+
+
 void	convert_c(t_data *data)
 {
 	unsigned char c;
@@ -137,6 +161,21 @@ void	convert_lc(t_data *data)
 
 
 
+
+
+
+
+
+
+
+
+void	convert_hu(t_data *data)
+{
+	short unsigned int nb;
+
+	nb = (short unsigned int)va_arg(*data->ap, unsigned int);
+	ft_putstr(ft_itoa_base(nb, 10));
+}
 
 void	convert_u(t_data *data)
 {
@@ -165,6 +204,12 @@ void	convert_llu(t_data *data)
 
 
 
+
+
+
+
+
+
 void	convert_p(t_data *data)
 {
 	char *str;
@@ -179,6 +224,22 @@ void	convert_p(t_data *data)
 
 
 
+
+
+
+
+void	convert_hx(t_data *data)
+{
+	short int nb;
+
+	nb = (short)va_arg(*data->ap, int);
+	if (data->type == 'x')
+	{
+		ft_putstr(ft_itoa_base(nb, 16));
+	}
+	else
+		ft_putstr(ft_strcapitalize(ft_itoa_base(nb, 16)));
+}
 
 void	convert_x(t_data *data)
 {
@@ -222,6 +283,20 @@ void	convert_llx(t_data *data)
 
 
 
+
+
+
+
+
+
+
+void	convert_ho(t_data *data)
+{
+	short unsigned int nb;
+	nb = (short unsigned int)va_arg(*data->ap, unsigned int);
+	ft_putstr(ft_itoa_base(nb, 8));
+}
+
 void	convert_o(t_data *data)
 {
 	unsigned int nb;
@@ -245,5 +320,6 @@ void	convert_llo(t_data *data)
 
 
 //TODO : Return value
-// TODO: add the l for x, or X in converter
+// TODO: l for x, or X in converter
 // TODO: ll for d, i, o, u, x, or X converter
+// TODO: h for d, i, o, u, x, or X converter
