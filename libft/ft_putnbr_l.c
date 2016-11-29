@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   includes.h                                         :+:      :+:    :+:   */
+/*   ft_putnbr_l.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/04 11:21:38 by jlasne            #+#    #+#             */
-/*   Updated: 2016/11/24 11:36:05 by jlasne           ###   ########.fr       */
+/*   Created: 2016/11/28 11:09:09 by jlasne            #+#    #+#             */
+/*   Updated: 2016/11/28 11:10:06 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef INCLUDES_H
-# define INCLUDES_H
+#include "libft.h"
+#include <unistd.h>
 
-# include "../libft/includes/libft.h"
-# include "proto.h"
-# include "struct.h"
-# include <stdarg.h>
-# include <stdio.h>
-# include <wchar.h>
-
-#endif
+void	ft_putnbr_l(long n)
+{
+	if (n < 0)
+	{
+		write(1, "-", 1);
+		n = -n;
+	}
+	if (n >= 10)
+	{
+		ft_putnbr_l(n / 10);
+		ft_putnbr_l(n % 10);
+	}
+	else
+		ft_putchar(n + 48);
+}

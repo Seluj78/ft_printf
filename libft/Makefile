@@ -6,7 +6,7 @@
 #    By: jlasne <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/03 12:34:13 by jlasne            #+#    #+#              #
-#    Updated: 2016/11/21 11:04:23 by jlasne           ###   ########.fr        #
+#    Updated: 2016/11/28 11:16:04 by jlasne           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -112,8 +112,18 @@ SRC = ft_bzero.c\
 	  ft_strsub.c\
 	  ft_power.c\
 	  ft_split_whitespaces.c\
-	  ft_cat.c
-
+	  ft_cat.c\
+	  ft_atoi_base.c\
+	  ft_atoi_nbase.c\
+	  ft_itoa_base.c\
+	  ft_itoa_base_l.c\
+	  ft_itoa_base_ll.c\
+	  ft_nblen.c\
+	  ft_nblen_l.c\
+	  ft_nblen_ll.c\
+	  ft_putnbr_l.c\
+	  ft_putnbr_ll.c\
+	  ft_strisdigit.c
 OBJ = $(SRC:.c=.o)
 
 INC = ./includes
@@ -124,16 +134,16 @@ all: $(NAME)
 ### TODO : Pretty makefile
 
 $(NAME): $(OBJ)
-	@ar rc $(NAME) $(OBJ)
-	@ranlib $(NAME)
+	ar rc $(NAME) $(OBJ)
+	ranlib $(NAME)
 
 %.o:%.c
-	@gcc -c $(FLAGS) -I $(INC) $< -o $@
+	gcc -c $(FLAGS) -I $(INC) $< -o $@
 
 clean:
-	@/bin/rm -f $(OBJ)
+	/bin/rm -f $(OBJ)
 
 fclean: clean
-	@/bin/rm -f $(NAME)
+	/bin/rm -f $(NAME)
 
 re: fclean all

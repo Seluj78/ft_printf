@@ -31,3 +31,8 @@
 # Debug files
 *.dSYM/
 *.su
+*.xml
+*.iml
+*.swp
+workspace.xml
+.idea/workspace.xml

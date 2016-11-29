@@ -6,7 +6,7 @@
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/18 13:03:27 by jlasne            #+#    #+#             */
-/*   Updated: 2016/11/24 14:01:21 by jlasne           ###   ########.fr       */
+/*   Updated: 2016/11/28 14:42:08 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,33 @@ void	transfer_to_struct(t_data *data, const char *format)
 		i++;
 	}
 	data->format[i] = '\0';
+}
+
+char	*ft_strcapitalize(char *str)
+{
+	int i;
+
+	i = 0;
+	while (str	[i] != '\0')
+	{
+		if ((str[i] >= 'a' && str[i] <= 'z'))
+		{
+			str[i] -= 32;
+			i++;
+		}
+		else
+			i++;
+	}
+	return (str);
+}
+
+void	ft_putwstr(wchar_t *str)
+{
+	int i;
+	i = 0;
+	while (str[i] != '\0')
+	{
+		write(1, &str[i], 1);
+		i++;
+	}
 }

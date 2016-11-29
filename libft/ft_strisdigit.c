@@ -1,26 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   debug_funcs.c                                      :+:      :+:    :+:   */
+/*   ft_strisdigit.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/18 13:35:07 by jlasne            #+#    #+#             */
-/*   Updated: 2016/11/21 11:22:03 by jlasne           ###   ########.fr       */
+/*   Created: 2016/11/28 11:09:21 by jlasne            #+#    #+#             */
+/*   Updated: 2016/11/28 11:09:24 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/includes.h"
+#include "libft.h"
 
-void	print_percent_loc(t_data *data)
+int		ft_strisdigit(char *str)
 {
-	int i;
+	int		i;
+	int		end;
 
-	i = 0;
-	while (i < data->nb_percent)
-	{
-		ft_putnbr(data->percent_loc[i]);
-		ft_putchar('\n');
+	i = -1;
+	end = 0;
+	while (str[++i] == ' ')
+		;
+	if (str[i] == '-' || str[i] == '+')
 		i++;
+	while (str[i])
+	{
+		if ((str[i] >= 48 && str[i] <= 57) && end == 0)
+			i++;
+		else if (str[i] == ' ' && end == 0)
+			end = 1;
+		else
+			return (0);
 	}
+	return (1);
 }

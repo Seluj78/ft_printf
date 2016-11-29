@@ -13,9 +13,8 @@ NAME = ft_printf
 
 SRC = main.c\
 	  ft_printf.c\
-	  parser_main.c\
 	  utils.c\
-	  debug_funcs.c
+	  parser.c
 
 OBJ = $(SRC:.c=.o)
 
@@ -27,11 +26,9 @@ INC = -I includes
 
 LIBFT =	libft/libft.a
 
-CC = gcc
+CC = gcct
 
-DEBUG = -fsanitize=address
-
-FLAGS = -Wall -Wextra -Werror #$(DEBUG)
+FLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
@@ -45,11 +42,11 @@ $(LIBFT):
 	make -C ./libft/
 
 clean:
-	rm -f $(OBJ)
+	rm -rf $(OBJ)
 	make clean -C ./libft/
 
 fclean: clean
-	rm -f $(NAME)
+	rm -rf $(NAME)
 	make fclean -C ./libft/
 
 re: fclean all

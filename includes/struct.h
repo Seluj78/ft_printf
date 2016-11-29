@@ -6,7 +6,7 @@
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/15 19:24:20 by jlasne            #+#    #+#             */
-/*   Updated: 2016/11/24 14:48:39 by jlasne           ###   ########.fr       */
+/*   Updated: 2016/11/28 15:09:40 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
  ** Typedefs :
  */
 
-typedef int		t_bool;
+typedef char		t_bool;
 
 /*
  **Defines relative to typedefs
@@ -35,25 +35,19 @@ typedef int		t_bool;
 typedef struct	s_data
 {
 	va_list		*ap;
-	int			l_format;
-	int			nb_percent;
-	int			*percent_loc;
 	char		*format;
+	int			l_format;
 	char		type;
-	int			current_percent;
-	char		*current_var;
 	int			ret;
 	int			index;
+	char		*conv;
 }				t_data;
 
 /*
 ** va_list *ap -> Args list used by ft_printf
 ** l_format -> format length
-** percent_location -> contains the location of % in format
-** nb_percent -> numbers of percent
 ** format -> contains the XXX in  ft_printf("XXX", foo, bar);
-** type -> sSpdDioOuUxXcC
-** DONE : sdc
+** TODO ->#+-0' 'taille min champ, precision, hh h l ll j z
 ** current_percent -> current percent being processed
 **
 **

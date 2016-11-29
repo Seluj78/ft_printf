@@ -1,23 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   includes.h                                         :+:      :+:    :+:   */
+/*   ft_nblen.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/04 11:21:38 by jlasne            #+#    #+#             */
-/*   Updated: 2016/11/24 11:36:05 by jlasne           ###   ########.fr       */
+/*   Created: 2016/11/28 11:08:39 by jlasne            #+#    #+#             */
+/*   Updated: 2016/11/28 11:09:57 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef INCLUDES_H
-# define INCLUDES_H
+#include "libft.h"
 
-# include "../libft/includes/libft.h"
-# include "proto.h"
-# include "struct.h"
-# include <stdarg.h>
-# include <stdio.h>
-# include <wchar.h>
+int		ft_nblen(int n)
+{
+	int len;
 
-#endif
+	len = 0;
+	if (n < 0)
+	{
+		n = -n;
+		len = ft_nblen(n);
+		len++;
+	}
+	else if (n >= 10)
+	{
+		len = ft_nblen(n / 10);
+		len++;
+	}
+	else
+		len++;
+	return (len);
+}
