@@ -102,7 +102,13 @@ void convert_ls(t_data *data)
 
 
 
-
+void	convert_hhd(t_data *data)
+{
+	signed char c;
+	c = va_arg(*data->ap, signed char);
+	ft_putchar(c);
+	//TODO : Add number of things printed
+}
 
 void	convert_hd(t_data *data)
 {
@@ -167,7 +173,13 @@ void	convert_lc(t_data *data)
 
 
 
+void	convert_hhu(t_data *data)
+{
+	unsigned char c;
 
+	c = va_arg(*data->ap, unsigned char);
+	ft_putstr(ft_itoa_base(c, 10));
+}
 
 void	convert_hu(t_data *data)
 {
@@ -226,7 +238,18 @@ void	convert_p(t_data *data)
 
 
 
+void	convert_hhx(t_data *data)
+{
+	signed char c;
 
+	nb = va_arg(*data->ap, signed char);
+	if (data->type == 'x')
+	{
+		ft_putstr(ft_itoa_base(nb, 16));
+	}
+	else
+		ft_putstr(ft_strcapitalize(ft_itoa_base(nb, 16)));
+}
 
 void	convert_hx(t_data *data)
 {
@@ -288,6 +311,12 @@ void	convert_llx(t_data *data)
 
 
 
+void	convert_hho(t_data *data)
+{
+	unsigned char nb;
+	nb = va_arg(*data->ap, unsigned char);
+	ft_putstr(ft_itoa_base(nb, 8));
+}
 
 
 void	convert_ho(t_data *data)
