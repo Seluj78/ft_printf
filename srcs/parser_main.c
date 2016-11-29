@@ -6,7 +6,7 @@
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/21 10:28:34 by jlasne            #+#    #+#             */
-/*   Updated: 2016/11/28 14:38:53 by jlasne           ###   ########.fr       */
+/*   Updated: 2016/11/29 12:16:18 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,14 @@ void	convert_x(t_data *data)
 	}
 	else
 		ft_putstr(ft_strcapitalize(ft_itoa_base(nb, 16)));
+}
+
+void	convert_u(t_data *data)
+{
+	int nb;
+
+	nb = va_arg(*data->ap, int);
+	ft_putnbr((unsigned int)nb);
 }
 
 //TODO : Octal
