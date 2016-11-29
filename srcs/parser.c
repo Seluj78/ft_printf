@@ -69,6 +69,7 @@ void	converter(t_data *data)
 	else
 		return;
 }
+
 void convert_s(t_data *data)
 {
 	char *str;
@@ -79,6 +80,19 @@ void convert_s(t_data *data)
 	ft_putstr(str);
 }
 
+void convert_ls(t_data *data)
+{
+	wchar_t *str;
+	str = va_arg(*data->ap, wchar_t *);
+	//data->ret += ft_strlen(str);
+	ft_putwstr(str);
+}
+
+
+
+
+
+
 void	convert_d(t_data *data)
 {
 	int nb;
@@ -87,6 +101,18 @@ void	convert_d(t_data *data)
 	//TODO : Add number of things printed
 }
 
+void	convert_ld(t_data *data)
+{
+	long int nb;
+	nb = va_arg(*data->ap, long int);
+	ft_putnbr_l(nb);
+	//TODO : Add number of things printed
+}
+
+
+
+
+
 void	convert_c(t_data *data)
 {
 	unsigned char c;
@@ -94,6 +120,36 @@ void	convert_c(t_data *data)
 	c = (unsigned char)va_arg(*data->ap, int);
 	data->ret += write(1, &c, 1);
 }
+
+void	convert_lc(t_data *data)
+{
+	wint_t c;
+	c = va_arg(*data->ap, wint_t);
+	data->ret += write(1, &c, 1);
+}
+
+
+
+
+void	convert_u(t_data *data)
+{
+	unsigned int nb;
+
+	nb = va_arg(*data->ap, unsigned int);
+	ft_putstr(ft_itoa_base(nb, 10));
+}
+
+void	convert_lu(t_data *data)
+{
+	unsigned long int nb;
+
+	nb = va_arg(*data->ap, unsigned long int);
+	ft_putstr(ft_itoa_base_l(nb, 10));
+}
+
+
+
+
 
 void	convert_p(t_data *data)
 {
@@ -105,6 +161,10 @@ void	convert_p(t_data *data)
 	ft_putstr("0x10");
 	ft_putstr(ft_itoa_base((int)str, 16));
 }
+
+
+
+
 
 void	convert_x(t_data *data)
 {
@@ -119,13 +179,10 @@ void	convert_x(t_data *data)
 		ft_putstr(ft_strcapitalize(ft_itoa_base(nb, 16)));
 }
 
-void	convert_u(t_data *data)
-{
-	unsigned int nb;
 
-	nb = va_arg(*data->ap, unsigned int);
-	ft_putstr(ft_itoa_base(nb, 10));
-}
+
+
+
 
 void	convert_o(t_data *data)
 {
@@ -139,34 +196,3 @@ void	convert_lo(t_data *data)
 	nb = va_arg(*data->ap, long unsigned int);
 	ft_putstr(ft_itoa_base_l(nb, 8));
 }
-
-void	convert_lc(t_data *data)
-{
-	wint_t c;
-	c = va_arg(*data->ap, wint_t);
-	data->ret += write(1, &c, 1);
-}
-
-void convert_ls(t_data *data)
-{
-	wchar_t *str;
-	str = va_arg(*data->ap, wchar_t *);
-	//data->ret += ft_strlen(str);
-	ft_putwstr(str);
-}
-void	convert_ld(t_data *data)
-{
-	long int nb;
-	nb = va_arg(*data->ap, long int);
-	ft_putnbr_l(nb);
-	//TODO : Add number of things printed
-}
-
-void	convert_lu(t_data *data)
-{
-	unsigned long int nb;
-
-	nb = va_arg(*data->ap, unsigned long int);
-	ft_putstr(ft_itoa_base_l(nb, 10));
-}
-
