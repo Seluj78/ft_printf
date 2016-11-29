@@ -40,7 +40,7 @@ void	parse_format(t_data *data)
 
 void	converter(t_data *data)
 {
-	if (data->type == 's')	
+	if (data->type == 's')
 		convert_s(data);
 	else if (data->type == 'd' || data->type == 'i')
 		convert_d(data);
