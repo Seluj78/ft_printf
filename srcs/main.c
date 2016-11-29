@@ -6,7 +6,7 @@
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/15 19:22:28 by jlasne            #+#    #+#             */
-/*   Updated: 2016/11/29 12:18:43 by jlasne           ###   ########.fr       */
+/*   Updated: 2016/11/29 13:18:25 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,5 @@ int		main(int argc, char **argv)
 	printf("Char: %c\nPointer adress: %p\n", 'c', "String adress");
 	printf("downcase hex: %x\nUPCASE HEX: %X\n", 123456789, 123456789);
 	printf("Unsigned decimal: %u ; %u\n", 42, -42);
-	//test for github`:
 	return (0);
 }
