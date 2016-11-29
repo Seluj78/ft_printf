@@ -14,9 +14,8 @@
 
 int		main(int argc, char **argv)
 {
-	
-	//wint_t C = 131;
-	//wchar_t Cs[50] = {L'S', L'a', L'l', L'u', L't', L' ', L'G', 130, L'r', L'a', L'r', L'd', L' ', L'!', L'\0'};
+	wint_t C = 131;
+	wchar_t Cs[50] = {L'S', L'a', L'l', L'u', L't', L' ', L'G', 130, L'r', L'a', L'r', L'd', L' ', L'!', L'\0'};
 
 	(void)argc;
 	(void)argv;
@@ -31,12 +30,12 @@ int		main(int argc, char **argv)
 	ft_printf("long int: %D\n", 123456789123);
 	ft_printf("Long unsigned: %U\n", -123456789123);
 	ft_printf("abc %%\n");
-	
+
 	ft_putstr("\n\n");
 	ft_putstr("\n\n");
-	
-	
-	
+
+
+
 	printf("String: %s\nDecimal: %d\n", "This is a String", 42);
 	printf("Char: %c\nPointer adress: %p\n", 'c', "String adress");
 	printf("downcase hex: %x\nUPCASE HEX: %X\n", 123456789, 123456789);

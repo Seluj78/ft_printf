@@ -26,7 +26,7 @@ INC = -I includes
 
 LIBFT =	libft/libft.a
 
-CC = gcct
+CC = clang
 
 FLAGS = -Wall -Wextra -Werror
 
