@@ -26,11 +26,9 @@ INC = -I includes
 
 LIBFT =	libft/libft.a
 
-CC = gcc
+CC = gcct
 
-DEBUG = -fsanitize=address
-
-FLAGS = -Wall -Wextra -Werror #$(DEBUG)
+FLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
