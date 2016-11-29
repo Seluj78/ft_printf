@@ -26,3 +26,22 @@ void	transfer_to_struct(t_data *data, const char *format)
 	}
 	data->format[i] = '\0';
 }
+
+char	*ft_strcapitalize(char *str)
+{
+	int i;
+
+	i = 0;
+	while (str	[i] != '\0')
+	{
+		if ((str[i] >= 'a' && str[i] <= 'z'))
+		{
+			str[i] -= 32;
+			i++;
+		}
+		else
+			i++;
+	}
+	return (str);
+}
+

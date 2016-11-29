@@ -40,6 +40,7 @@ typedef struct	s_data
 	char		type;
 	int			ret;
 	int			index;
+	char		*conv;
 }				t_data;
 
 /*

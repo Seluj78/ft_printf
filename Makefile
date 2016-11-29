@@ -11,7 +11,10 @@
 # **************************************************************************** #
 NAME = ft_printf
 
-SRC = main.c
+SRC = main.c\
+	  ft_printf.c\
+	  utils.c\
+	  parser.c
 
 OBJ = $(SRC:.c=.o)
 

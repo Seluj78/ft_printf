@@ -16,6 +16,7 @@ int		main(int argc, char **argv)
 {
 	(void)argc;
 	(void)argv;
+	ft_printf("%d", 424242);
 //	ft_printf("String: %s\nDecimal: %d\n", "This is a String", 42);
 	/*ft_printf("Char: %c\nPointer adress: %p\n", 'c', "String adress");
 	ft_printf("downcase hex: %x\nUPCASE HEX: %X\n", 123456789, 123456789);
@@ -24,8 +25,8 @@ int		main(int argc, char **argv)
 	ft_putstr("\n\n");
 
 */
-	ft_putstr("\n\n");
-	printf("String: %s\nDecimal: %d\n", "This is a String", 42);
+	//ft_putstr("\n\n");
+	//printf("String: %s\nDecimal: %d\n", "This is a String", 42);
 	/*printf("Char: %c\nPointer adress: %p\n", 'c', "String adress");
 	printf("downcase hex: %x\nUPCASE HEX: %X\n", 123456789, 123456789);
 	printf("Unsigned decimal: %u ; %u\n", 42, -42);
