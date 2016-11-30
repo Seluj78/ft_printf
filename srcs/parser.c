@@ -32,7 +32,9 @@ void	get_type(t_data *data)
 void	parse_type(t_data *data)
 {
 	int end;
+	int i;
 
+	i = 0;
 	end = ft_strlen(data->conv) - 1;
 	data->type = data->conv[end];
 	if (data->conv[end - 1] == 'h' || data->conv[end - 1] == 'l')
@@ -56,6 +58,11 @@ void	parse_type(t_data *data)
 		data->is_j = TRUE;
 	else if (data->conv[end - 1] == 'z')
 		data->is_z = TRUE;
+	while (data->conv[i] != '\0')
+	{
+		if (data->conv[i] == '#')
+			data->has_hashtag = TRUE;
+	}
 }
 
 void	reset_var(t_data *data)
@@ -66,6 +73,7 @@ void	reset_var(t_data *data)
 	data->is_hh = FALSE;
 	data->is_j = FALSE;
 	data->is_z = FALSE;
+	data->has_hashtag = FALSE;
 }
 
 void	parse_format(t_data *data)
