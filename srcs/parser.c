@@ -62,6 +62,7 @@ void	parse_type(t_data *data)
 	{
 		if (data->conv[i] == '#')
 			data->has_hashtag = TRUE;
+		i++;
 	}
 }
 
