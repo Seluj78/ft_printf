@@ -24,25 +24,121 @@ void	get_type(t_data *data)
 			&& data->format[i] != 'x' && data->format[i] != 'X'
 			&& data->format[i] != 'c' && data->format[i] != 'C'
 			&& data->format[i] != '%')
-	{
 		i++;
-	}
 	data->conv = ft_strsub(data->format, data->index, (i - data->index + 1));
 	data->index = i;
 }
 
 void	parse_type(t_data *data)
 {
-	data->type = data->conv[ft_strlen(data->conv) - 1];
+	int end;
+
+	end = ft_strlen(data->conv) - 1;
+	data->type = data->conv[end];
+	if (data->conv[end - 1] == 'h' || data->conv[end - 1] == 'l')
+	{
+		if (data->conv[end - 2] == 'h' || data->conv[end - 2] == 'l')
+		{
+			if (data->conv[end - 2] == 'l')
+				data->is_ll = TRUE;
+			if (data->conv[end - 2] == 'h')
+				data->is_hh = TRUE;
+		}
+		else
+		{
+			if (data->conv[end - 1] == 'l')
+				data->is_l = TRUE;
+			if (data->conv[end - 1] == 'h')
+				data->is_h = TRUE;
+		}
+	}
+
+}
+
+void	reset_var(t_data *data)
+{
+	data->is_l = FALSE;
+	data->is_ll = FALSE;
+	data->is_h = FALSE;
+	data->is_hh = FALSE;
 }
 
 void	parse_format(t_data *data)
 {
 	get_type(data);
 	parse_type(data);
-	converter(data);
+	if (data->is_l == TRUE)
+		converter_l(data);
+	else if (data->is_ll == TRUE)
+		converter_ll(data);
+	else if (data->is_h == TRUE)
+		converter_h(data);
+	else if (data->is_hh == TRUE)
+		converter_hh(data);
+
+
+	else
+		converter(data);
+	reset_var(data);
 }
 
+void	converter_h(t_data *data)
+{
+	if ((data->type == 'd' || data->type == 'i') && data->is_h == TRUE)
+		convert_hd(data);
+	else if ((data->type == 'x' || data->type == 'X') && data->is_h == TRUE)
+		convert_hx(data);
+	else if (data->type == 'u' && data->is_h == TRUE)
+		convert_hu(data);
+	else if (data->type == 'o' && data->is_h == TRUE)
+		convert_ho(data);
+}
+void	converter_hh(t_data *data)
+{
+	if ((data->type == 'd' || data->type == 'i') && data->is_hh == TRUE)
+		convert_hhd(data);
+	else if ((data->type == 'x' || data->type == 'X') && data->is_hh == TRUE)
+		convert_hhx(data);
+	else if (data->type == 'u' && data->is_hh == TRUE)
+		convert_hhu(data);
+	else if (data->type == 'o' && data->is_hh == TRUE)
+		convert_hho(data);
+}
+
+void	converter_ll(t_data *data)
+{
+	if ((data->type == 'd' || data->type == 'i') && data->is_ll == TRUE)
+		convert_lld(data);
+	else if ((data->type == 'x' || data->type == 'X') && data->is_ll == TRUE)
+		convert_llx(data);
+	else if (data->type == 'u' && data->is_ll == TRUE)
+		convert_llu(data);
+	else if (data->type == 'o' && data->is_ll == TRUE)
+		convert_llo(data);
+}
+
+void	converter_l(t_data *data)
+{
+	if (data->type == 's' && data->is_l == TRUE)
+		convert_ls(data);
+	else if ((data->type == 'd' || data->type == 'i') && data->is_l == TRUE)
+		convert_ld(data);
+	else if (data->type == 'c' && data->is_l == TRUE)
+		convert_lc(data);
+	else if ((data->type == 'x' || data->type == 'X') && data->is_l == TRUE)
+		convert_lx(data);
+	else if (data->type == 'u' && data->is_l == TRUE)
+		convert_lu(data);
+	else if (data->type == 'o' && data->is_l == TRUE)
+		convert_lo(data);
+	else if (data->type == 'O' && data->is_l == TRUE)
+		convert_llo(data);
+	else if (data->type == 'D' && data->is_l == TRUE)
+		convert_lld(data);
+	else if (data->type == 'U' && data->is_l == TRUE)
+		convert_llu(data);
+
+}
 void	converter(t_data *data)
 {
 	if (data->type == 's')
@@ -357,3 +453,5 @@ void	convert_llo(t_data *data)
 // TODO: l for x, or X in converter
 // TODO: ll for d, i, o, u, x, or X converter
 // TODO: h for d, i, o, u, x, or X converter
+// TODO: hh for d, i, o, u, x, or X converter
+// TODO : Unicode

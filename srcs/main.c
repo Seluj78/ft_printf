@@ -11,16 +11,18 @@
 /* ************************************************************************** */
 
 #include "../includes/includes.h"
+#include <locale.h>
 
 int		main(int argc, char **argv)
 {
-	wint_t C = 131;
-	wchar_t Cs[50] = {L'S', L'a', L'l', L'u', L't', L' ', L'G', 130, L'r', L'a', L'r', L'd', L' ', L'!', L'\0'};
+	setlocale(LC_ALL, "");
+//	wint_t C = 131;
+//	wchar_t Cs[50] = {L'S', L'a', L'l', L'u', L't', L' ', L'G', 130, L'r', L'a', L'r', L'd', L' ', L'!', L'\0'};
 //My ft_printf	:
 //Libc printf		:
 	(void)argc;
 	(void)argv;
-	ft_printf("My ft_printf	:String: %s\n", "This is a String");
+	/*ft_printf("My ft_printf	:String: %s\n", "This is a String");
 	printf("Libc printf	:String: %s\n", "This is a String");
 	ft_printf("My ft_printf	:widechars: %S\n", Cs);
 	printf("Libc printf	:widechars: %S\n", Cs);
@@ -51,6 +53,8 @@ int		main(int argc, char **argv)
 	ft_printf("My ft_printf	:long Octal convertion: %O\n", 123456789123);
 	printf("Libc printf	:long Octal convertion: %lo\n", 123456789123);
 	ft_printf("My ft_printf	:abc %%\n");
-	printf("Libc printf	:abc %%\n");
+	printf("Libc printf	:abc %%\n");*/
+	ft_printf("%ld\n", 9223372036854775807);
+	printf("%ld", 9223372036854775807);
 	return (0);
 }

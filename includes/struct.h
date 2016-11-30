@@ -41,6 +41,10 @@ typedef struct	s_data
 	int			ret;
 	int			index;
 	char		*conv;
+	t_bool		is_l;
+	t_bool		is_ll;
+	t_bool		is_h;
+	t_bool		is_hh;
 }				t_data;
 
 /*
