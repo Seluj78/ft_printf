@@ -6,7 +6,7 @@
 #    By: jlasne <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/03 12:34:13 by jlasne            #+#    #+#              #
-#    Updated: 2016/11/30 14:16:11 by estephan         ###   ########.fr        #
+#    Updated: 2016/11/30 18:11:08 by estephan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 NAME = ft_printf
@@ -14,7 +14,15 @@ NAME = ft_printf
 SRC = main.c\
 	  ft_printf.c\
 	  utils.c\
-	  parser.c
+	  parser.c\
+	  convert_jzlh.c\
+	  convert_d.c\
+	  convert_s.c\
+	  convert_c.c\
+	  convert_u.c\
+	  convert_p.c\
+	  convert_x.c\
+	  convert_o.c
 
 OBJ = $(SRC:.c=.o)
 
