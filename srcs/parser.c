@@ -6,7 +6,7 @@
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/21 10:28:34 by jlasne            #+#    #+#             */
-/*   Updated: 2016/11/30 14:18:38 by estephan         ###   ########.fr       */
+/*   Updated: 2016/11/30 14:27:42 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ void	parse_type(t_data *data)
 	{
 		if (data->conv[i] == '#')
 			data->has_hashtag = TRUE;
+		i++;
 	}
 }
 
