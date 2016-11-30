@@ -16,8 +16,6 @@
 int		main(int argc, char **argv)
 {
 	setlocale(LC_ALL, "");
-wint_t C = 131;
-wchar_t Cs[50] = {L'S', L'a', L'l', L'u', L't', L' ', L'G', 130, L'r', L'a', L'r', L'd', L' ', L'!', L'\0'};
 //My ft_printf	:
 //Libc printf		:
 	(void)argc;
@@ -28,17 +26,8 @@ wchar_t Cs[50] = {L'S', L'a', L'l', L'u', L't', L' ', L'G', 130, L'r', L'a', L'r
 	printf("Libc printf	:widechars: %ls\n", L"صباح الخير");
 	ft_printf("My ft_printf	:Char: %c\n", 'c');
 	printf("Libc printf	:Char: %c\n", 'c');
-	ft_printf("My ft_printf	:widechar: %C\n", L"ښ");
-	printf("Libc printf	:widechar: %lc\n", 233);
-	ft_printf("My ft_printf	:Decimal: %d\n", 42);
-	ft_printf("My ft_printf	:String: %s\n", "This is a String");
-	printf("Libc printf	:String: %s\n", "This is a String");
-	ft_printf("My ft_printf	:widechars: %S\n", Cs);
-	printf("Libc printf	:widechars: %S\n", Cs);
-	ft_printf("My ft_printf	:Char: %c\n", 'c');
-	printf("Libc printf	:Char: %c\n", 'c');
-	ft_printf("My ft_printf	:widechar: %C\n", C);
-	printf("Libc printf	:widechar: %C\n", C);
+	ft_printf("My ft_printf	:widechar: %C\n", 1690);
+	printf("Libc printf	:widechar: %lc\n", 1690);
 	ft_printf("My ft_printf	:Decimal: %d\n", 42);
 	printf("Libc printf	:Decimal: %d\n", 42);
 	ft_printf("My ft_printf	:long int: %D\n", 123456789123);
@@ -63,7 +52,5 @@ wchar_t Cs[50] = {L'S', L'a', L'l', L'u', L't', L' ', L'G', 130, L'r', L'a', L'r
 	printf("Libc printf	:long Octal convertion: %lo\n", 123456789123);
 	ft_printf("My ft_printf	:abc %%\n");
 	printf("Libc printf	:abc %%\n");
-	ft_printf("%ld\n", 9223372036854775807);
-	printf("%ld", 9223372036854775807);
 	return (0);
 }
