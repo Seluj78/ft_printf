@@ -6,7 +6,7 @@
 #    By: jlasne <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/03 12:34:13 by jlasne            #+#    #+#              #
-#    Updated: 2016/11/28 11:16:04 by jlasne           ###   ########.fr        #
+#    Updated: 2016/11/30 14:14:33 by estephan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,6 +66,7 @@ SRC = ft_bzero.c\
 	  ft_memchr.c\
 	  ft_memcmp.c\
 	  ft_strlen.c\
+	  ft_strwlen.c\
 	  ft_strdup.c\
 	  ft_strcpy.c\
 	  ft_strncpy.c\
@@ -123,7 +124,12 @@ SRC = ft_bzero.c\
 	  ft_nblen_ll.c\
 	  ft_putnbr_l.c\
 	  ft_putnbr_ll.c\
-	  ft_strisdigit.c
+	  ft_strisdigit.c\
+	  ft_binlen.c\
+	  ft_charwlen.c\
+	  ft_putnwstr.c\
+	  ft_putnwchar.c\
+	  ft_putwchar.c
 OBJ = $(SRC:.c=.o)
 
 INC = ./includes

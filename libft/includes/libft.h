@@ -6,7 +6,7 @@
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/03 12:36:05 by jlasne            #+#    #+#             */
-/*   Updated: 2016/11/28 12:04:16 by jlasne           ###   ########.fr       */
+/*   Updated: 2016/11/30 14:14:09 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ void			*ft_memmove(void *dst, const void *src, size_t len);
 void			*ft_memchr(const void *s, int c, size_t n);
 int				ft_memcmp(const void *s1, const void *s2, size_t n);
 int				ft_strlen(const char *str);
+int				ft_strwlen(int *str);
 char			*ft_strdup(const char *s);
 char			*ft_strcpy(char *dst, const char *src);
 char			*ft_strncpy(char *dst, const char *src, size_t n);
@@ -95,4 +96,9 @@ int				ft_nblen_ll(long long n);
 void			ft_putnbr_l(long n);
 void			ft_putnbr_ll(long long n);
 int				ft_strisdigit(char *str);
+int     		ft_charwlen(int c);
+int     		ft_binlen(unsigned int n);
+int     		ft_putnwstr(int *str, int len);
+int             ft_putnwchar(int c, int size);
+int             ft_putwchar(int c);
 #endif

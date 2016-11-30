@@ -6,7 +6,7 @@
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/15 19:23:47 by jlasne            #+#    #+#             */
-/*   Updated: 2016/11/28 13:15:42 by jlasne           ###   ########.fr       */
+/*   Updated: 2016/11/30 14:03:02 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,8 @@ void	convert_llu(t_data *data);
 void	convert_lu(t_data *data);
 void	ft_putwstr(wchar_t *str);
 char	*ft_strcapitalize(char *str);
+int		ft_putwchar(int c);
+int		ft_putnwchar(int c, int size);
 /*
 **DEBUG PROTO
 */
