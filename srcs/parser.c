@@ -29,12 +29,17 @@ void	get_type(t_data *data)
 	}
 	data->conv = ft_strsub(data->format, data->index, (i - data->index + 1));
 	data->index = i;
+}
+
+void	parse_type(t_data *data)
+{
 	data->type = data->conv[ft_strlen(data->conv) - 1];
 }
 
 void	parse_format(t_data *data)
 {
 	get_type(data);
+	parse_type(data);
 	converter(data);
 }
 

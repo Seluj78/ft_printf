@@ -1,30 +1,28 @@
-String: This is a String
-Decimal: 42
-Char: c
-Pointer adress: 0x10401ffe
-downcase hex: 75bcd15
-UPCASE HEX: 75BCD15
-Unsigned decimal: 42 ; 4294967254
-Octal convertion: 10222
-Octal convertion: 1627646215203
-widechar: ƒ
-widechars: Salut G‚rard !
-long int: 123456789123
-Long unsigned: 18446743950252762493
-abc %
-
-
-
-
-String: This is a String
-Decimal: 42
-Char: c
-Pointer adress: 0x401ffe
-downcase hex: 75bcd15
-UPCASE HEX: 75BCD15
-Unsigned decimal: 42 ; 4294967254
-Octal convertion: 10222
-Octal convertion: 1627646215203
-widechar: widechars: long int: 123456789123
-Long unsigned: 18446743950252762493
-abc %
+My ft_printf	:String: This is a String
+My ft_printf	:widechars: Salut G‚rard !
+My ft_printf	:Char: c
+My ft_printf	:widechar: ƒ
+My ft_printf	:Decimal: 42
+My ft_printf	:long int: 123456789123
+My ft_printf	:Pointer adress: 0x103fa5d8a
+My ft_printf	:downcase hex: 75bcd15
+My ft_printf	:UPCASE HEX: 75BCD15
+My ft_printf	:Unsigned decimal: 42 ; 4294967254
+My ft_printf	:Long unsigned: 18446743950252762493
+My ft_printf	:Octal convertion: 10222
+My ft_printf	:long Octal convertion: 1627646215203
+My ft_printf	:abc %
+Libc printf	:String: This is a String
+Libc printf	:widechars: Salut G‚rard !
+Libc printf	:Char: c
+Libc printf	:widechar: ƒ
+Libc printf	:Decimal: 42
+Libc printf	:long int: 123456789123
+Libc printf	:Pointer adress: 0x103fa5d8a
+Libc printf	:downcase hex: 75bcd15
+Libc printf	:UPCASE HEX: 75BCD15
+Libc printf	:Unsigned decimal: 42 ; 4294967254
+Libc printf	:Long unsigned: 18446743950252762493
+Libc printf	:Octal convertion: 10222
+Libc printf	:long Octal convertion: 1627646215203
+Libc printf	:abc %
