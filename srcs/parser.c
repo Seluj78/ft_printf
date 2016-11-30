@@ -6,7 +6,7 @@
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/21 10:28:34 by jlasne            #+#    #+#             */
-/*   Updated: 2016/11/29 13:26:32 by jlasne           ###   ########.fr       */
+/*   Updated: 2016/11/30 13:48:02 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -189,10 +189,12 @@ void convert_s(t_data *data)
 
 void convert_ls(t_data *data)
 {
-	wchar_t *str;
-	str = va_arg(*data->ap, wchar_t *);
-	//data->ret += ft_strlen(str);
-	ft_putwstr(str);
+	int *str;
+	str = va_arg(*data->ap, int *);
+	if (!str)
+		str = L"(NULL)";
+	data->nb_len = ft_strwlen(str);
+	ft_putnwstr(str, data->nb_len);
 }
 
 
@@ -261,9 +263,10 @@ void	convert_c(t_data *data)
 
 void	convert_lc(t_data *data)
 {
-	wint_t c;
-	c = va_arg(*data->ap, wint_t);
-	data->ret += write(1, &c, 1);
+	unsigned int c;
+	c = va_arg(*data->ap, unsigned int);
+	data->nb_len = ft_charwlen(c);
+	ft_putwchar(c);
 }
 
 

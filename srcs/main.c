@@ -6,7 +6,7 @@
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/15 19:22:28 by jlasne            #+#    #+#             */
-/*   Updated: 2016/11/29 13:18:25 by jlasne           ###   ########.fr       */
+/*   Updated: 2016/11/30 13:46:02 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,14 @@ int		main(int argc, char **argv)
 	(void)argc;
 	(void)argv;
 	/*ft_printf("My ft_printf	:String: %s\n", "This is a String");
-	printf("Libc printf	:String: %s\n", "This is a String");
-	ft_printf("My ft_printf	:widechars: %S\n", Cs);
-	printf("Libc printf	:widechars: %S\n", Cs);
-	ft_printf("My ft_printf	:Char: %c\n", 'c');
-	printf("Libc printf	:Char: %c\n", 'c');
-	ft_printf("My ft_printf	:widechar: %C\n", C);
-	printf("Libc printf	:widechar: %C\n", C);
-	ft_printf("My ft_printf	:Decimal: %d\n", 42);
+	printf("Libc printf	:String: %s\n", "This is a String");*/
+	ft_printf("My ft_printf	:widechars: %S\n", L"صباح الخير");
+	printf("Libc printf	:widechars: %ls\n", L"صباح الخير");
+	/*ft_printf("My ft_printf	:Char: %c\n", 'c');
+	printf("Libc printf	:Char: %c\n", 'c'); */
+	ft_printf("My ft_printf	:widechar: %C\n", L"ښ");
+	printf("Libc printf	:widechar: %lc\n", 233);
+	/* ft_printf("My ft_printf	:Decimal: %d\n", 42);
 	printf("Libc printf	:Decimal: %d\n", 42);
 	ft_printf("My ft_printf	:long int: %D\n", 123456789123);
 	printf("Libc printf	:long int: %ld\n", 123456789123);
@@ -40,10 +40,10 @@ int		main(int argc, char **argv)
 	printf("Libc printf	:downcase hex: %x\n", 123456789);
 	ft_printf("My ft_printf	:UPCASE HEX: %X\n", 123456789);
 	printf("Libc printf	:UPCASE HEX: %X\n", 123456789);
-	//ft_printf("My ft_printf	:long downcase hex: %lx\n", 1234567891234);
-	//printf("Libc printf	:long downcase hex: %lx\n", 1234567891234);
-	//ft_printf("My ft_printf	:LONG UPCASE HEX: %lX\n", 1234567891234);
-	//printf("Libc printf	:LONG UPCASE HEX: %lX\n", 1234567891234);
+	ft_printf("My ft_printf	:long downcase hex: %lx\n", 1234567891234);
+	printf("Libc printf	:long downcase hex: %lx\n", 1234567891234);
+	ft_printf("My ft_printf	:LONG UPCASE HEX: %lX\n", 1234567891234);
+	printf("Libc printf	:LONG UPCASE HEX: %lX\n", 1234567891234);
 	ft_printf("My ft_printf	:Unsigned decimal: %u ; %u\n", 42, -42);
 	printf("Libc printf	:Unsigned decimal: %u ; %u\n", 42, -42);
 	ft_printf("My ft_printf	:Long unsigned: %U\n", -123456789123);
@@ -53,8 +53,8 @@ int		main(int argc, char **argv)
 	ft_printf("My ft_printf	:long Octal convertion: %O\n", 123456789123);
 	printf("Libc printf	:long Octal convertion: %lo\n", 123456789123);
 	ft_printf("My ft_printf	:abc %%\n");
-	printf("Libc printf	:abc %%\n");*/
+	printf("Libc printf	:abc %%\n");
 	ft_printf("%ld\n", 9223372036854775807);
-	printf("%ld", 9223372036854775807);
+	printf("%ld", 9223372036854775807); */
 	return (0);
 }

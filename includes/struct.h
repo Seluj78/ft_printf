@@ -6,7 +6,7 @@
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/15 19:24:20 by jlasne            #+#    #+#             */
-/*   Updated: 2016/11/28 15:09:40 by jlasne           ###   ########.fr       */
+/*   Updated: 2016/11/30 12:58:51 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ typedef struct	s_data
 	char		type;
 	int			ret;
 	int			index;
+	int			nb_len;
 	char		*conv;
 	t_bool		is_l;
 	t_bool		is_ll;
