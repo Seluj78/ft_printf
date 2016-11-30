@@ -52,7 +52,10 @@ void	parse_type(t_data *data)
 				data->is_h = TRUE;
 		}
 	}
-
+	else if (data->conv[end - 1] == 'j')
+		data->is_j = TRUE;
+	else if (data->conv[end - 1] == 'z')
+		data->is_z = TRUE;
 }
 
 void	reset_var(t_data *data)
@@ -61,6 +64,8 @@ void	reset_var(t_data *data)
 	data->is_ll = FALSE;
 	data->is_h = FALSE;
 	data->is_hh = FALSE;
+	data->is_j = FALSE;
+	data->is_z = FALSE;
 }
 
 void	parse_format(t_data *data)
@@ -75,11 +80,37 @@ void	parse_format(t_data *data)
 		converter_h(data);
 	else if (data->is_hh == TRUE)
 		converter_hh(data);
-
-
+	else if (data->is_j == TRUE)
+		converter_j(data);
+	else if (data->is_z == TRUE)
+		converter_z(data);
 	else
 		converter(data);
 	reset_var(data);
+}
+
+void	converter_j(t_data *data)
+{
+	if ((data->type == 'd' || data->type == 'i') && data->is_j == TRUE)
+		convert_jd(data);
+	else if ((data->type == 'x' || data->type == 'X') && data->is_j == TRUE)
+		convert_jx(data);
+	else if (data->type == 'u' && data->is_j == TRUE)
+		convert_ju(data);
+	else if (data->type == 'o' && data->is_j == TRUE)
+		convert_jo(data);
+}
+
+void	converter_z(t_data *data)
+{
+	if ((data->type == 'd' || data->type == 'i') && data->is_z == TRUE)
+		convert_zd(data);
+	else if ((data->type == 'x' || data->type == 'X') && data->is_z == TRUE)
+		convert_zx(data);
+	else if (data->type == 'u' && data->is_z == TRUE)
+		convert_zu(data);
+	else if (data->type == 'o' && data->is_z == TRUE)
+		convert_zo(data);
 }
 
 void	converter_h(t_data *data)
@@ -243,8 +274,21 @@ void	convert_lld(t_data *data)
 	//TODO : Add number of things printed
 }
 
+void	convert_zd(t_data *data)
+{
+	ssize_t nb;
+	nb = va_arg(*data->ap, ssize_t);
+	ft_putnbr_ll(nb);
+	//TODO : Add number of things printed
+}
 
-
+void	convert_jd(t_data *data)
+{
+	intmax_t nb;
+	nb = va_arg(*data->ap, intmax_t);
+	ft_putnbr_ll(nb);
+	//TODO : Add number of things printed
+}
 
 
 
@@ -312,6 +356,22 @@ void	convert_llu(t_data *data)
 
 	nb = va_arg(*data->ap, unsigned long long int);
 	ft_putstr(ft_itoa_base_ll(nb, 10));
+}
+
+void	convert_zu(t_data *data)
+{
+	size_t nb;
+
+	nb = va_arg(*data->ap, unsigned int);
+	ft_putstr(ft_itoa_base(nb, 10));
+}
+
+void	convert_ju(t_data *data)
+{
+	uintmax_t nb;
+
+	nb = va_arg(*data->ap, uintmax_t);
+	ft_putstr(ft_itoa_base(nb, 10));
 }
 
 
@@ -404,8 +464,31 @@ void	convert_llx(t_data *data)
 		ft_putstr(ft_strcapitalize(ft_itoa_base_ll(nb, 16)));
 }
 
+void	convert_zx(t_data *data)
+{
+	ssize_t nb;
 
+	nb = va_arg(*data->ap, ssize_t);
+	if (data->type == 'x')
+	{
+		ft_putstr(ft_itoa_base_ll(nb, 16));
+	}
+	else
+		ft_putstr(ft_strcapitalize(ft_itoa_base_ll(nb, 16)));
+}
 
+void	convert_jx(t_data *data)
+{
+	intmax_t nb;
+
+	nb = va_arg(*data->ap, intmax_t);
+	if (data->type == 'x')
+	{
+		ft_putstr(ft_itoa_base_ll(nb, 16));
+	}
+	else
+		ft_putstr(ft_strcapitalize(ft_itoa_base_ll(nb, 16)));
+}
 
 
 
@@ -445,6 +528,20 @@ void	convert_llo(t_data *data)
 {
 	long long unsigned int nb;
 	nb = va_arg(*data->ap, long long unsigned int);
+	ft_putstr(ft_itoa_base_ll(nb, 8));
+}
+
+void	convert_zo(t_data *data)
+{
+	ssize_t nb;
+	nb = va_arg(*data->ap, ssize_t);
+	ft_putstr(ft_itoa_base_ll(nb, 8));
+}
+
+void	convert_jo(t_data *data)
+{
+	uintmax_t nb;
+	nb = va_arg(*data->ap, uintmax_t);
 	ft_putstr(ft_itoa_base_ll(nb, 8));
 }
 

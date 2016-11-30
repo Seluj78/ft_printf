@@ -54,7 +54,5 @@ int		main(int argc, char **argv)
 	printf("Libc printf	:long Octal convertion: %lo\n", 123456789123);
 	ft_printf("My ft_printf	:abc %%\n");
 	printf("Libc printf	:abc %%\n");*/
-	ft_printf("%ld\n", 9223372036854775807);
-	printf("%ld", 9223372036854775807);
 	return (0);
 }

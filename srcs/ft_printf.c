@@ -19,6 +19,7 @@ static void		init(t_data *data, const char *format, va_list *ap)
 	transfer_to_struct(data, format);
 	data->ret = 0;
 	data->index = 0;
+	reset_var(data);
 }
 
 int			ft_printf(const char *format, ...)

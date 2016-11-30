@@ -45,6 +45,8 @@ typedef struct	s_data
 	t_bool		is_ll;
 	t_bool		is_h;
 	t_bool		is_hh;
+	t_bool		is_j;
+	t_bool		is_z;
 }				t_data;
 
 /*
