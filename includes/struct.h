@@ -46,13 +46,16 @@ typedef struct	s_data
 	t_bool		is_ll;
 	t_bool		is_h;
 	t_bool		is_hh;
+	t_bool		is_j;
+	t_bool		is_z;
+	t_bool		has_hashtag;
 }				t_data;
 
 /*
 ** va_list *ap -> Args list used by ft_printf
 ** l_format -> format length
 ** format -> contains the XXX in  ft_printf("XXX", foo, bar);
-** TODO ->#+-0' 'taille min champ, precision, hh h l ll j z
+** TODO ->#+-0' 'taille min champ, precision,
 ** current_percent -> current percent being processed
 **
 **
