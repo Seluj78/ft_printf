@@ -18,11 +18,9 @@ void    convert_hhx(t_data *data)
 
 	nb = (signed char)va_arg(*data->ap, int);
 	if (data->type == 'x')
-	{
-		ft_putstr(ft_strlower(ft_itoa_base(nb, 16)));
-	}
+		data->ret += ft_putstr(ft_strlower(ft_itoa_base(nb, 16)));
 	else
-		ft_putstr(ft_strcapitalize(ft_itoa_base(nb, 16)));
+		data->ret += ft_putstr(ft_strcapitalize(ft_itoa_base(nb, 16)));
 }
 
 void    convert_hx(t_data *data)
@@ -31,11 +29,9 @@ void    convert_hx(t_data *data)
 
 	nb = (short)va_arg(*data->ap, int);
 	if (data->type == 'x')
-	{
-		ft_putstr(ft_strlower(ft_itoa_base(nb, 16)));
-	}
+		data->ret += ft_putstr(ft_strlower(ft_itoa_base(nb, 16)));
 	else
-		ft_putstr(ft_strcapitalize(ft_itoa_base(nb, 16)));
+		data->ret += ft_putstr(ft_strcapitalize(ft_itoa_base(nb, 16)));
 }
 
 void    convert_x(t_data *data)
@@ -44,9 +40,9 @@ void    convert_x(t_data *data)
 
 	nb = va_arg(*data->ap, int);
 	if (data->type == 'x')
-		ft_putstr(ft_strlower(ft_itoa_base(nb, 16)));
+		data->ret += ft_putstr(ft_strlower(ft_itoa_base(nb, 16)));
 	else
-		ft_putstr(ft_strcapitalize(ft_itoa_base(nb, 16)));
+		data->ret += ft_putstr(ft_strcapitalize(ft_itoa_base(nb, 16)));
 }
 
 void    convert_lx(t_data *data)
@@ -55,11 +51,9 @@ void    convert_lx(t_data *data)
 
 	nb = va_arg(*data->ap, long int);
 	if (data->type == 'x')
-	{
-		ft_putstr(ft_strlower(ft_itoa_base_l(nb, 16)));
-	}
+		data->ret += ft_putstr(ft_strlower(ft_itoa_base_l(nb, 16)));
 	else
-		ft_putstr(ft_strcapitalize(ft_itoa_base_l(nb, 16)));
+		data->ret += ft_putstr(ft_strcapitalize(ft_itoa_base_l(nb, 16)));
 }
 
 void    convert_llx(t_data *data)
@@ -68,11 +62,9 @@ void    convert_llx(t_data *data)
 
 	nb = va_arg(*data->ap, long long int);
 	if (data->type == 'x')
-	{
-		ft_putstr(ft_strlower(ft_itoa_base_ll(nb, 16)));
-	}
+		data->ret += ft_putstr(ft_strlower(ft_itoa_base_ll(nb, 16)));
 	else
-		ft_putstr(ft_strcapitalize(ft_itoa_base_ll(nb, 16)));
+		data->ret += ft_putstr(ft_strcapitalize(ft_itoa_base_ll(nb, 16)));
 }
 
 void    convert_zx(t_data *data)
@@ -81,11 +73,9 @@ void    convert_zx(t_data *data)
 
 	nb = va_arg(*data->ap, ssize_t);
 	if (data->type == 'x')
-	{
-		ft_putstr(ft_strlower(ft_itoa_base_ll(nb, 16)));
-	}
+		data->ret += ft_putstr(ft_strlower(ft_itoa_base_ll(nb, 16)));
 	else
-		ft_putstr(ft_strcapitalize(ft_itoa_base_ll(nb, 16)));
+		data->ret += ft_putstr(ft_strcapitalize(ft_itoa_base_ll(nb, 16)));
 }
 
 void    convert_jx(t_data *data)
@@ -94,9 +84,7 @@ void    convert_jx(t_data *data)
 
 	nb = va_arg(*data->ap, intmax_t);
 	if (data->type == 'x')
-	{
-		ft_putstr(ft_strlower(ft_itoa_base_ll(nb, 16)));
-	}
+		data->ret += ft_putstr(ft_strlower(ft_itoa_base_ll(nb, 16)));
 	else
-		ft_putstr(ft_strcapitalize(ft_itoa_base_ll(nb, 16)));
+		data->ret += ft_putstr(ft_strcapitalize(ft_itoa_base_ll(nb, 16)));
 }

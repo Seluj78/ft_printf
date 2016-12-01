@@ -18,8 +18,7 @@ void convert_s(t_data *data)
 	str = va_arg(*data->ap, char *);
 	if (!str)
 		str = "(null)";
-	data->ret += ft_strlen(str);
-	ft_putstr(str);
+	data->ret += ft_putstr(str);
 }
 
 void convert_ls(t_data *data)
