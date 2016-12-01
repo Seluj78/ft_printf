@@ -16,7 +16,10 @@
 void	ft_putnbr_ll(long long n)
 {
 	if (n == -9223372036854775807 - 1)
-		return (ft_putstr("-9223372036854775808"));
+	{
+		ft_putstr("-9223372036854775808");
+		return ;
+	}
 	if (n < 0)
 	{
 		write(1, "-", 1);
