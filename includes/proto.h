@@ -6,7 +6,7 @@
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/15 19:23:47 by jlasne            #+#    #+#             */
-/*   Updated: 2016/11/30 14:03:02 by estephan         ###   ########.fr       */
+/*   Updated: 2016/11/30 17:28:25 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ void	convert_s(t_data *data);
 void	convert_d(t_data *data);
 void	convert_zd(t_data *data);
 void	convert_jd(t_data *data);
-void	convert_hd(t_data *data);
 void	convert_hhd(t_data *data);
 void	convert_c(t_data *data);
 void	convert_p(t_data *data);
@@ -57,11 +56,11 @@ void	convert_llo(t_data *data);
 void	convert_lc(t_data *data);
 void	convert_ls(t_data *data);
 void	convert_lld(t_data *data);
-void	convert_ld(t_data *data);
 void	convert_llu(t_data *data);
 void	convert_lu(t_data *data);
 void	ft_putwstr(wchar_t *str);
 char	*ft_strcapitalize(char *str);
+char	*ft_strlower(char *str);
 int		ft_putwchar(int c);
 int		ft_putnwchar(int c, int size);
 /*
