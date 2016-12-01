@@ -6,7 +6,7 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/30 17:05:04 by estephan          #+#    #+#             */
-/*   Updated: 2016/11/30 17:15:46 by estephan         ###   ########.fr       */
+/*   Updated: 2016/12/01 13:15:08 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,36 +22,38 @@ void    convert_d(t_data *data)
 
 void    convert_hhd(t_data *data)
 {
+	signed char	c;
+	short int	nb;
+
 	if (data->is_hh == TRUE)
 	{
-		signed char c;
 		c = (signed char)va_arg(*data->ap, int);
 		ft_putchar(c);
 	}
 	else
 	{
-		short int nb;
 		nb = (short int)va_arg(*data->ap, int);
 		ft_putnbr(nb);
 	}
-	//TODO : Add number of things printed
 }
 
 void    convert_lld(t_data *data)
 {
+	long long int	nb;
+	long int		nb1;
+
+
 	if (data->is_ll == TRUE)
 	{
-		long long int nb;
 		nb = va_arg(*data->ap, long long int);
 		ft_putnbr_ll(nb);
 		data->ret += ft_nblen_ll(nb);
 	}
 	else
 	{
-		long int nb;
-		nb = va_arg(*data->ap, long int);
-		ft_putnbr_l(nb);
-		data->ret += ft_nblen_l(nb);
+		nb1 = va_arg(*data->ap, long int);
+		ft_putnbr_l(nb1);
+		data->ret += ft_nblen_l(nb1);
 	}
 }
 

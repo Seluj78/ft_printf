@@ -6,7 +6,7 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/30 18:10:05 by estephan          #+#    #+#             */
-/*   Updated: 2016/11/30 18:10:50 by estephan         ###   ########.fr       */
+/*   Updated: 2016/12/01 12:54:52 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,18 @@
 void    convert_hho(t_data *data)
 {
 	unsigned char nb;
-	nb = (unsigned char)va_arg(*data->ap, int);
-	data->ret += ft_putstr(ft_itoa_base(nb, 8));
-}
+	short unsigned int nb1;
 
-
-void    convert_ho(t_data *data)
-{
-	short unsigned int nb;
-	nb = (short unsigned int)va_arg(*data->ap, unsigned int);
-	data->ret += ft_putstr(ft_itoa_base(nb, 8));
+	if (data->is_hh == TRUE)
+	{
+		nb = (unsigned char)va_arg(*data->ap, int);
+		data->ret += ft_putstr(ft_itoa_base(nb, 8));
+	}
+	else
+	{
+		nb1 = (short unsigned int)va_arg(*data->ap, unsigned int);
+		data->ret += ft_putstr(ft_itoa_base(nb1, 8));
+	}
 }
 
 void    convert_o(t_data *data)
@@ -34,18 +36,21 @@ void    convert_o(t_data *data)
 	data->ret += ft_putstr(ft_itoa_base(nb, 8));
 }
 
-void    convert_lo(t_data *data)
-{
-	long unsigned int nb;
-	nb = va_arg(*data->ap, long unsigned int);
-	data->ret += ft_putstr(ft_itoa_base_l(nb, 8));
-}
-
 void    convert_llo(t_data *data)
 {
-	long long unsigned int nb;
-	nb = va_arg(*data->ap, long long unsigned int);
-	data->ret += ft_putstr(ft_itoa_base_ll(nb, 8));
+	long long unsigned int	nb;
+	long unsigned int		nb1;
+
+	if (data->is_ll == TRUE)
+	{
+		nb = va_arg(*data->ap, long long unsigned int);
+		data->ret += ft_putstr(ft_itoa_base_ll(nb, 8));
+	}
+	else
+	{
+		nb1 = va_arg(*data->ap, long unsigned int);
+		data->ret += ft_putstr(ft_itoa_base_l(nb1, 8));
+	}
 }
 
 void    convert_zo(t_data *data)

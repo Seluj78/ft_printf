@@ -6,7 +6,7 @@
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/15 19:22:28 by jlasne            #+#    #+#             */
-/*   Updated: 2016/11/30 17:57:12 by estephan         ###   ########.fr       */
+/*   Updated: 2016/12/01 11:36:09 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@ int		main(int argc, char **argv)
 	ft_printf("My ft_printf	:long Octal convertion: %O\n", 123456789123);
 	printf("Libc printf	:long Octal convertion: %lo\n", 123456789123);
 	ft_printf("My ft_printf	:abc %%\n");
-	printf("Libc printf	:abc %%\n"); 
+	printf("Libc printf	:abc %%\n");
+   	ft_printf("lo = %lo; llo = %llo; hd = %hd; hhd = %hhd;\n", 123456789, 1234567891123456, 123456789, 12345678912345679);	
+	ft_printf("ho = %ho; hho = %hho;\n", 123456789, 123456789);
 	return (0);
 }

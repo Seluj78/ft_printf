@@ -6,7 +6,7 @@
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/21 10:28:34 by jlasne            #+#    #+#             */
-/*   Updated: 2016/11/30 18:11:46 by estephan         ###   ########.fr       */
+/*   Updated: 2016/12/01 12:45:21 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ void	parse_format(t_data *data)
 {
 	get_type(data);
 	parse_type(data);
-	if (data->is_l == TRUE || data->is_ll == TRUE)
+	if (data->is_l == TRUE)
 		converter_l(data);
 	else if (data->is_ll == TRUE)
 		converter_ll(data);
@@ -121,7 +121,7 @@ void	converter(t_data *data)
 	else if (data->type == 'o')
 		convert_o(data);
 	else if (data->type == 'O')
-		convert_lo(data);
+		convert_llo(data);
 	else if (data->type == 'C')
 		convert_lc(data);
 	else if (data->type == 'S')
@@ -129,7 +129,7 @@ void	converter(t_data *data)
 	else if (data->type == 'D')
 		convert_lld(data);
 	else if (data->type == 'U')
-		convert_lu(data);
+		convert_llu(data);
 	else if (data->type == 37)
 		ft_putchar(37);
 	else

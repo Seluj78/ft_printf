@@ -6,7 +6,7 @@
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/15 19:23:47 by jlasne            #+#    #+#             */
-/*   Updated: 2016/11/30 17:28:25 by estephan         ###   ########.fr       */
+/*   Updated: 2016/12/01 11:25:56 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ void	convert_zo(t_data *data);
 void	convert_jo(t_data *data);
 void	convert_ho(t_data *data);
 void	convert_hho(t_data *data);
-void	convert_lo(t_data *data);
 void	convert_llo(t_data *data);
 void	convert_lc(t_data *data);
 void	convert_ls(t_data *data);

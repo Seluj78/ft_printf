@@ -6,7 +6,7 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/30 16:28:39 by estephan          #+#    #+#             */
-/*   Updated: 2016/11/30 17:14:44 by estephan         ###   ########.fr       */
+/*   Updated: 2016/12/01 13:14:22 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,11 @@ void    converter_h(t_data *data)
 		if ((data->type == 'd' || data->type == 'i') && data->is_h == TRUE)
 			convert_hhd(data);
 		else if ((data->type == 'x' || data->type == 'X') && data->is_h == TRUE)
-			convert_hx(data);
+			convert_hhx(data);
 		else if (data->type == 'u' && data->is_h == TRUE)
-			convert_hu(data);
+			convert_hhu(data);
 		else if (data->type == 'o' && data->is_h == TRUE)
-			convert_ho(data);
+			convert_hho(data);
 	}
 	else
 	{
@@ -83,15 +83,21 @@ void    converter_l(t_data *data)
 		else if (data->type == 'c' && data->is_l == TRUE)
 			convert_lc(data);
 		else if ((data->type == 'x' || data->type == 'X') && data->is_l == TRUE)
-			convert_lx(data);
+			convert_llx(data);
 		else if (data->type == 'u' && data->is_l == TRUE)
-			convert_lu(data);
+			convert_llu(data);
 		else if (data->type == 'o' && data->is_l == TRUE)
-			convert_lo(data);
-		else if (data->type == 'O' && data->is_l == TRUE)
 			convert_llo(data);
+		else if (data->type == 'O' && data->is_l == TRUE)
+		{
+			data->is_ll = TRUE;
+			convert_llo(data);
+		}
 		else if (data->type == 'D' && data->is_l == TRUE)
+		{
+			data->is_ll = TRUE;
 			convert_lld(data);
+		}
 		else if (data->type == 'U' && data->is_l == TRUE)
 			convert_llu(data);
 }
