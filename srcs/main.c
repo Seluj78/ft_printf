@@ -6,7 +6,7 @@
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/15 19:22:28 by jlasne            #+#    #+#             */
-/*   Updated: 2016/12/01 11:36:09 by estephan         ###   ########.fr       */
+/*   Updated: 2016/12/01 16:46:00 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,17 @@ int		main(int argc, char **argv)
 //My ft_printf	:
 //Libc printf		:
 	char c;
+	int i;
+	int *y;
+	char *b;
+	unsigned int r;
+	unsigned int *k;
+	r = 150;
 	c = 'A';
+	i = 20;
+	y = &i;
+	b = &c;
+	k = &r;
 	(void)argc;
 	(void)argv;
 	ft_printf("My ft_printf	:String: %s\n", "This is a String");
@@ -54,7 +64,9 @@ int		main(int argc, char **argv)
 	printf("Libc printf	:long Octal convertion: %lo\n", 123456789123);
 	ft_printf("My ft_printf	:abc %%\n");
 	printf("Libc printf	:abc %%\n");
-   	ft_printf("lo = %lo; llo = %llo; hd = %hd; hhd = %hhd;\n", 123456789, 1234567891123456, 123456789, 12345678912345679);	
-	ft_printf("ho = %ho; hho = %hho;\n", 123456789, 123456789);
+	/*printf("int = %p;\nchar = %p;\nunsigned int = %p;\n", y, b, k);
+	ft_printf("int = %p;\nchar = %p;\nunsigned int = %p;\n", y, b, k);*/
+	printf("Libc Printf	:Avec '+' = %+d ;Sans '+' = %d ;\n", i, i);
+	ft_printf("My ft_printf	:Avec '+' = %+d ;Sans '+' = %d:\n", i, i);
 	return (0);
 }
