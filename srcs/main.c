@@ -18,6 +18,8 @@ int		main(int argc, char **argv)
 	setlocale(LC_ALL, "");
 //My ft_printf	:
 //Libc printf		:
+	char c;
+	c = 'A';
 	(void)argc;
 	(void)argv;
 	ft_printf("My ft_printf	:String: %s\n", "This is a String");
@@ -32,8 +34,8 @@ int		main(int argc, char **argv)
 	printf("Libc printf	:Decimal: %d\n", 42);
 	ft_printf("My ft_printf	:long int: %D\n", 123456789123);
 	printf("Libc printf	:long int: %ld\n", 123456789123);
-	ft_printf("My ft_printf	:Pointer adress: %p\n", "String adress");
-	printf("Libc printf	:Pointer adress: %p\n", "String adress");
+	ft_printf("My ft_printf	:Pointer adress: %p\n", c);
+	printf("Libc printf	:Pointer adress: %p\n", c);
 	ft_printf("My ft_printf	:downcase hex: %x\n", 123456789);
 	printf("Libc printf	:downcase hex: %x\n", 123456789);
 	ft_printf("My ft_printf	:UPCASE HEX: %X\n", 123456789);

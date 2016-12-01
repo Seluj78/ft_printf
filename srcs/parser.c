@@ -410,7 +410,6 @@ void	convert_p(t_data *data)
 
 
 
-
 void	convert_hhx(t_data *data)
 {
 	signed char nb;
@@ -418,6 +417,8 @@ void	convert_hhx(t_data *data)
 	nb = (signed char)va_arg(*data->ap, int);
 	if (data->type == 'x')
 	{
+		if (data->has_hashtag == TRUE)
+			ft_putstr("0x");
 		ft_putstr(ft_itoa_base(nb, 16));
 	}
 	else
@@ -431,6 +432,8 @@ void	convert_hx(t_data *data)
 	nb = (short)va_arg(*data->ap, int);
 	if (data->type == 'x')
 	{
+		if (data->has_hashtag == TRUE)
+			ft_putstr("0x");
 		ft_putstr(ft_itoa_base(nb, 16));
 	}
 	else
