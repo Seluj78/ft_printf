@@ -1,9 +1,17 @@
-NAME = libftprintf.a
-MKEX = gcc -o
-COMP = gcc -c
-AR = ar -rc
-SRC = main.c\
-	  ft_printf.c\
+NAME =	libftprintf.a
+
+NAMEBASE =	libftprintf
+
+LIB = ./libft/libft.a
+
+FLAGS =	-Wall -Wextra -Werror
+
+INCFLAG =  -I./includes
+
+SRCDIR = srcs
+OBJDIR = objs
+
+SRC_NAME = ft_printf.c \
 	  utils.c\
 	  parser.c\
 	  convert_jzlh.c\
@@ -16,29 +24,46 @@ SRC = main.c\
 	  convert_o.c\
 	  check_flags.c
 
+OBJ_NAME = $(SRC_NAME:.c=.o)
 
-FLAGS = -Wall -Wextra -Werror
-OBJECT = $(SRC:.c=.o)
-SRC =$(addprefix srcs/, $(FILES))
+SRC = $(addprefix $(SRCDIR)/,$(SRC_NAME))
+OBJ = $(addprefix $(OBJDIR)/,$(OBJ_NAME))
 
-all : $(NAME)
+.SILENT:
 
-$(NAME) : $(OBJECT)
-	$(AR) $(NAME) $(OBJECT)
+all: $(NAME)
+	echo "\033[38;5;44m☑️  ALL    $(NAMEBASE) is done\033[0m\033[K"
+
+$(NAME): $(OBJ) $(LIB)
+	printf "\r\033[38;5;11m⌛  MAKE   $(NAMEBASE) please wait ...\033[0m\033[K"
+	cp $(LIB) $(NAME)
+	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
-	echo "\033[32m$(NAME) OK ! \033[0m"
+	echo -en "\r\033[38;5;22m☑️  MAKE   $(NAMEBASE)\033[0m\033[K"
+	echo "\r\033[38;5;184m👥  GROUP MEMBER(S):\033[0m\033[K"
+	echo "\r\033[38;5;15m`cat auteur | sed s/^/\ \ \ \ /g`\033[0m\033[K"
 
-$(OBJECT) :
-	$(COMP) $(SRC) $(FLAGS)
-	echo "\033[33mCompilation OK\033[0m"
+$(OBJ): $(OBJDIR)/%.o: $(SRCDIR)/%.c
+	mkdir -p $(OBJDIR)
+	gcc $(FLAGS) -o $@ -c $< $(INCFLAG)
 
-clean :
-	/bin/rm -f $(OBJECT)
-	echo "\033[33mObject deleted\033[0m"
+$(LIB):
+	make -C libft/ fclean
+	make -C libft/
 
+clean:
+	printf "\r\033[38;5;11m⌛  CLEAN  $(NAMEBASE) please wait ...\033[0m\033[K"
+	rm -f $(OBJ)
+	rm -f $(OBJDIR)/*.o
+	make -C libft/ clean
+	printf "\r\033[38;5;11m☑️  CLEAN  $(NAMEBASE) is done\033[0m\033[K"
 
-fclean : clean
-	/bin/rm -f $(NAME)
-	echo "\033[33mExec deleted\033[0m"
+fclean: clean
+	printf "\r\033[38;5;11m⌛  FCLEAN $(NAMEBASE) please wait ...\033[0m\033[K"
+	rm -f $(NAME)
+	make -C libft/ fclean
+	printf "\r\033[38;5;11m☑️  FCLEAN  $(NAMEBASE) is done\033[0m\033[K"
 
-re : fclean all
+re: fclean all
+
+.PHONY: fclean clean re
