@@ -6,7 +6,7 @@
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/15 19:22:28 by jlasne            #+#    #+#             */
-/*   Updated: 2016/12/02 14:45:45 by estephan         ###   ########.fr       */
+/*   Updated: 2016/12/02 14:47:12 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int		main(int argc, char **argv)
 	k = &r;
 	(void)argc;
 	(void)argv;
-	ft_printf("My ft_printf	:String: %s\n", "This is a String");
+	/*ft_printf("My ft_printf	:String: %s\n", "This is a String");
 	printf("Libc printf	:String: %s\n", "This is a String");
 	ft_printf("My ft_printf	:widechars: %S\n", L"صباح الخير");
 	printf("Libc printf	:widechars: %ls\n", L"صباح الخير");
@@ -66,7 +66,7 @@ int		main(int argc, char **argv)
 	printf("int = %p;\nchar = %p;\nunsigned int = %p;\n", y, b, k);
 	ft_printf("int = %p;\nchar = %p;\nunsigned int = %p;\n", y, b, k);
 	printf("Libc Printf	:Avec '+' = %+d ;Sans '+' = %d;\n", i, i);
-	ft_printf("My ft_printf	:Avec '+' = %+d ;Sans '+' = %d;\n", i, i);
+	ft_printf("My ft_printf	:Avec '+' = %+d ;Sans '+' = %d;\n", i, i);*/
 	printf("Libc Printf	:precision pour 'd': %.5d;\n", 123);
 	ft_printf("My printf :precision pour 'd': %.5d;\n", 123);
 	printf("Libc Printf	:precision pour 'hd': %.5hd;\n", (short int)123);

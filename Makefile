@@ -22,6 +22,7 @@ SRC_NAME = ft_printf.c \
 	  convert_p.c\
 	  convert_x.c\
 	  convert_o.c\
+	  convert_percent.c\
 	  check_flags.c
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
