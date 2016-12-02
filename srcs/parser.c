@@ -6,7 +6,7 @@
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/21 10:28:34 by jlasne            #+#    #+#             */
-/*   Updated: 2016/12/02 15:31:28 by estephan         ###   ########.fr       */
+/*   Updated: 2016/12/02 16:39:20 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,26 +32,10 @@ void		get_type(t_data *data)
 
 static void	parse_type2(t_data *data, int end)
 {
-	int i;
-
-	i = 0;
 	if (data->conv[end - 1] == 'j')
 		data->is_j = TRUE;
 	else if (data->conv[end - 1] == 'z')
 		data->is_z = TRUE;
-	while (data->conv[i] != '\0' && data->conv[i - 1] != '#')
-	{
-		if (data->conv[i] == '#')
-		{
-			if (data->type == 'o')
-				data->ret += write(1, "0", 1);
-			if (data->type == 'x')
-				data->ret += write(1, "0x", 2);
-			if (data->type == 'X')
-				data->ret += write(1, "0X", 2);
-		}
-		i++;
-	}
 }
 
 void		parse_type(t_data *data)
@@ -96,7 +80,6 @@ void		parse_format(t_data *data)
 {
 	get_type(data);
 	parse_type(data);
-	check_hashtag(data);
 	if (data->is_l == TRUE)
 		converter_l(data);
 	else if (data->is_ll == TRUE)

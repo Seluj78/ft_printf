@@ -6,7 +6,7 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/30 16:54:12 by estephan          #+#    #+#             */
-/*   Updated: 2016/11/30 17:04:28 by estephan         ###   ########.fr       */
+/*   Updated: 2016/12/02 17:09:49 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ void	convert_s(t_data *data)
 	char *str;
 
 	str = va_arg(*data->ap, char *);
+	check_precision_max(data,str);
 	if (!str)
 		str = "(null)";
 	data->ret += ft_putstr(str);
