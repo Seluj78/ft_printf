@@ -6,7 +6,7 @@
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/15 19:22:28 by jlasne            #+#    #+#             */
-/*   Updated: 2016/12/01 16:46:00 by estephan         ###   ########.fr       */
+/*   Updated: 2016/12/02 14:45:45 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,9 +63,49 @@ int		main(int argc, char **argv)
 	printf("Libc printf	:long Octal convertion: %lo\n", 123456789123);
 	ft_printf("My ft_printf	:abc %%\n");
 	printf("Libc printf	:abc %%\n");
-	/*printf("int = %p;\nchar = %p;\nunsigned int = %p;\n", y, b, k);
-	ft_printf("int = %p;\nchar = %p;\nunsigned int = %p;\n", y, b, k);*/
+	printf("int = %p;\nchar = %p;\nunsigned int = %p;\n", y, b, k);
+	ft_printf("int = %p;\nchar = %p;\nunsigned int = %p;\n", y, b, k);
 	printf("Libc Printf	:Avec '+' = %+d ;Sans '+' = %d;\n", i, i);
 	ft_printf("My ft_printf	:Avec '+' = %+d ;Sans '+' = %d;\n", i, i);
+	printf("Libc Printf	:precision pour 'd': %.5d;\n", 123);
+	ft_printf("My printf :precision pour 'd': %.5d;\n", 123);
+	printf("Libc Printf	:precision pour 'hd': %.5hd;\n", (short int)123);
+	ft_printf("My printf :precision pour 'hd': %.5hd;\n", 123);
+	printf("Libc Printf	:precision pour 'lld': %.5lld;\n", (long long int)123);
+	ft_printf("My printf :precision pour 'lld': %.5lld;\n", 123);
+	printf("Libc Printf	:precision pour 'ld': %.5ld;\n", (long int)123);
+	ft_printf("My printf :precision pour 'ld': %.5ld;\n", 123);
+	printf("Libc Printf	:precision pour 'zd': %.5zd;\n", 123);
+	ft_printf("My printf :precision pour 'zd': %.5zd;\n", 123);
+	printf("Libc Printf	:precision pour 'jd': %.5jd;\n", (intmax_t)123);
+	ft_printf("My printf :precision pour 'jd': %.5jd;\n\n", 123);
+
+	printf("Libc Printf :precision pour 'u': %.5u;\n", 123);
+	ft_printf("My printf :precision pour 'u': %.5u;\n", 123);
+	printf("Libc Printf :precision pour 'hu': %.5hu;\n", (short int)123);
+	ft_printf("My printf :precision pour 'hu': %.5hu;\n", 123);
+	printf("Libc Printf :precision pour 'llu': %.5llu;\n", (long long int)123);
+	ft_printf("My printf :precision pour 'llu': %.5llu;\n", 123);
+	printf("Libc Printf :precision pour 'lu': %.5lu;\n", (long int)123);
+	ft_printf("My printf :precision pour 'lu': %.5lu;\n", 123);
+	printf("Libc Printf :precision pour 'zu': %.5zu;\n", (size_t)123);
+	ft_printf("My printf :precision pour 'zu': %.5zu;\n", 123);
+	printf("Libc Printf :precision pour 'ju': %.5ju;\n", (intmax_t)123);
+	ft_printf("My printf :precision pour 'ju': %.5ju;\n\n", 123);
+
+	printf("Libc Printf :precision pour 'o': %.5o;\n", 123);
+	ft_printf("My printf :precision pour 'o': %.5o;\n", 123);
+	printf("Libc Printf :precision pour 'ho': %.5ho;\n", (short int)123);
+	ft_printf("My printf :precision pour 'ho': %.5ho;\n", 123);
+	printf("Libc Printf :precision pour 'hho': %.5hho;\n",(unsigned char)123);
+	ft_printf("My printf :precision pour 'hho': %.5hho;\n", 123);
+	printf("Libc Printf :precision pour 'llo': %.5llo;\n", (long long int)123);
+	ft_printf("My printf :precision pour 'llo': %.5llo;\n", 123);
+	printf("Libc Printf :precision pour 'lo': %.5lo;\n", (long int)123);
+	ft_printf("My printf :precision pour 'lo': %.5lo;\n", 123);
+	printf("Libc Printf :precision pour 'zo': %.5zo;\n", (size_t)123);
+	ft_printf("My printf :precision pour 'zo': %.5zo;\n", 123);
+	printf("Libc Printf :precision pour 'jo': %.5jo;\n", (intmax_t)123);
+	ft_printf("My printf :precision pour 'jo': %.5jo;\n", 123);
 	return (0);
 }
