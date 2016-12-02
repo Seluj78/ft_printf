@@ -1,16 +1,3 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: jlasne <marvin@42.fr>                      +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2016/11/03 12:34:13 by jlasne            #+#    #+#              #
-#    Updated: 2016/12/01 14:45:11 by estephan         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-NAME = ft_printf
-
 SRC = main.c\
 	  ft_printf.c\
 	  utils.c\
@@ -25,37 +12,37 @@ SRC = main.c\
 	  convert_o.c\
 	  check_flags.c
 
-OBJ = $(SRC:.c=.o)
+SRC =$(addprefix srcs/, $(FILES))
 
-SRC_PATH = srcs/
+OBJS =$(FILES:.c=.o)
 
-SRC_POS = $(addprefix $(SRC_PATH),$(SRC))
+CC = gcc
 
-INC = -I includes
+NAME =libftprintf.a
 
-LIBFT =	libft/libft.a
+LIBFT =libft/libft.a
 
-CC = clang
+FLAGS = -Wextra -Werror -Wall
 
-FLAGS = -Wall -Wextra -Werror
+RM = rm -f
 
 all: $(NAME)
 
-$(NAME): $(OBJ) $(LIBFT)
-	$(CC) $(FLAGS) $(OBJ) -o $(NAME) $(LIBFT)
+$(NAME): $(LIBFT) $(OBJS)
+	cp $(LIBFT) $(NAME)
+	ar rc $(NAME) $(OBJS)
+	ranlib $(NAME)
 
-%.o : $(SRC_PATH)/%.c
-	    $(CC) -o $@ -c $< $(FLAGS)
+$(OBJS):
+	$(CC) $(FLAGS) -c $(SRC)
 
 $(LIBFT):
-	make -C ./libft/
-
+	make -C libft/
 clean:
-	rm -rf $(OBJ)
-	make clean -C ./libft/
+	$(RM) $(OBJS)
+	make clean -C libft/
 
 fclean: clean
-	rm -rf $(NAME)
-	make fclean -C ./libft/
+	$(RM) $(NAME) $(LIBFT)
 
 re: fclean all
