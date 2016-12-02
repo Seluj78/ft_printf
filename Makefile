@@ -6,7 +6,7 @@
 #    By: jlasne <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/03 12:34:13 by jlasne            #+#    #+#              #
-#    Updated: 2016/11/30 18:11:08 by estephan         ###   ########.fr        #
+#    Updated: 2016/12/01 14:45:11 by estephan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 NAME = ft_printf
@@ -22,7 +22,8 @@ SRC = main.c\
 	  convert_u.c\
 	  convert_p.c\
 	  convert_x.c\
-	  convert_o.c
+	  convert_o.c\
+	  check_flags.c
 
 OBJ = $(SRC:.c=.o)
 

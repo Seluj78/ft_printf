@@ -6,7 +6,7 @@
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/21 10:28:34 by jlasne            #+#    #+#             */
-/*   Updated: 2016/12/01 12:45:21 by estephan         ###   ########.fr       */
+/*   Updated: 2016/12/01 14:49:48 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,7 @@ void	parse_format(t_data *data)
 {
 	get_type(data);
 	parse_type(data);
+	check_hashtag(data);
 	if (data->is_l == TRUE)
 		converter_l(data);
 	else if (data->is_ll == TRUE)

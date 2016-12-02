@@ -6,7 +6,7 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/30 17:05:04 by estephan          #+#    #+#             */
-/*   Updated: 2016/12/01 13:15:08 by estephan         ###   ########.fr       */
+/*   Updated: 2016/12/01 14:59:16 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void    convert_d(t_data *data)
 {
 	int nb;
 	nb = va_arg(*data->ap, int);
+	if (nb > 0)
+		check_plus_moins(data);
 	ft_putnbr(nb);
 	data->ret += ft_nblen(nb);
 }
@@ -33,6 +35,8 @@ void    convert_hhd(t_data *data)
 	else
 	{
 		nb = (short int)va_arg(*data->ap, int);
+		if (nb > 0)
+			check_plus_moins(data);
 		ft_putnbr(nb);
 	}
 }
@@ -46,12 +50,16 @@ void    convert_lld(t_data *data)
 	if (data->is_ll == TRUE)
 	{
 		nb = va_arg(*data->ap, long long int);
+		if (nb > 0)
+			check_plus_moins(data);
 		ft_putnbr_ll(nb);
 		data->ret += ft_nblen_ll(nb);
 	}
 	else
 	{
 		nb1 = va_arg(*data->ap, long int);
+		if (nb1 > 0)
+			check_plus_moins(data);
 		ft_putnbr_l(nb1);
 		data->ret += ft_nblen_l(nb1);
 	}
@@ -61,6 +69,8 @@ void    convert_zd(t_data *data)
 {
 	ssize_t nb;
 	nb = va_arg(*data->ap, ssize_t);
+	if (nb > 0)
+		check_plus_moins(data);
 	ft_putnbr_ll(nb);
 	data->ret += ft_nblen_ll(nb);
 }
@@ -69,6 +79,8 @@ void    convert_jd(t_data *data)
 {
 	intmax_t nb;
 	nb = va_arg(*data->ap, intmax_t);
+	if (nb > 0)
+		check_plus_moins(data);
 	ft_putnbr_ll(nb);
 	data->ret += ft_nblen_ll(nb);
 }

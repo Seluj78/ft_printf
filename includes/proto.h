@@ -6,7 +6,7 @@
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/15 19:23:47 by jlasne            #+#    #+#             */
-/*   Updated: 2016/12/01 11:25:56 by estephan         ###   ########.fr       */
+/*   Updated: 2016/12/01 14:48:30 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,8 @@ void	convert_lld(t_data *data);
 void	convert_llu(t_data *data);
 void	convert_lu(t_data *data);
 void	ft_putwstr(wchar_t *str);
+void	check_hashtag(t_data *data);
+void	check_plus_moins(t_data *data);
 char	*ft_strcapitalize(char *str);
 char	*ft_strlower(char *str);
 int		ft_putwchar(int c);
