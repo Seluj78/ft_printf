@@ -63,12 +63,12 @@ void	parse_type(t_data *data)
 	{
 		if (data->conv[i] == '#')
 		{
-			if(data->type == 'o')
-				write(1, "0", 1);
-			if(data->type == 'x')
-				write(1, "0x",2);
-			if(data->type == 'X')
-				write(1, "0X", 2);
+			if (data->type == 'o')
+				data->ret += write(1, "0", 1);
+			if (data->type == 'x')
+				data->ret += write(1, "0x", 2);
+			if (data->type == 'X')
+				data->ret += write(1, "0X", 2);
 		}
 		i++;
 	}
@@ -136,10 +136,8 @@ void	converter(t_data *data)
 		return;
 }
 //TODO : Return value
-// TODO: l for x, or X in converter
-// TODO: ll for d, i, o, u, x, or X converter
-// TODO: h for d, i, o, u, x, or X converter
-// TODO: hh for d, i, o, u, x, or X converter
-// TODO : Unicode
 // TODO : %p isn't good
 // TODO : static functions
+// TODO : taille min champ
+// TODO : Precision
+// - + ' ' 0

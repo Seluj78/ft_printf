@@ -34,7 +34,7 @@ int		main(int argc, char **argv)
 	printf("Libc printf	:Decimal: %d\n", 42);
 	ft_printf("My ft_printf	:long int: %D\n", 123456789123);
 	printf("Libc printf	:long int: %ld\n", 123456789123);
-	ft_printf("My ft_printf	:Pointer adress: %p\n", c);
+	ft_printf("My ft_printf	:Pointer adress: %p\n", &c);
 	printf("Libc printf	:Pointer adress: %p\n", &c);
 	ft_printf("My ft_printf	:downcase hex: %x\n", 123456789);
 	printf("Libc printf	:downcase hex: %x\n", 123456789);
@@ -54,7 +54,5 @@ int		main(int argc, char **argv)
 	printf("Libc printf	:long Octal convertion: %lo\n", 123456789123);
 	ft_printf("My ft_printf	:abc %%\n");
 	printf("Libc printf	:abc %%\n");
-   	ft_printf("lo = %lo; llo = %llo; hd = %hd; hhd = %hhd;\n", 123456789, 1234567891123456, 123456789, 12345678912345679);	
-	ft_printf("ho = %ho; hho = %hho;\n", 123456789, 123456789);
 	return (0);
 }
