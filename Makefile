@@ -1,3 +1,7 @@
+NAME = libftprintf.a
+MKEX = gcc -o
+COMP = gcc -c
+AR = ar -rc
 SRC = main.c\
 	  ft_printf.c\
 	  utils.c\
@@ -12,37 +16,29 @@ SRC = main.c\
 	  convert_o.c\
 	  check_flags.c
 
+
+FLAGS = -Wall -Wextra -Werror
+OBJECT = $(SRC:.c=.o)
 SRC =$(addprefix srcs/, $(FILES))
 
-OBJS =$(FILES:.c=.o)
+all : $(NAME)
 
-CC = gcc
-
-NAME =libftprintf.a
-
-LIBFT =libft/libft.a
-
-FLAGS = -Wextra -Werror -Wall
-
-RM = rm -f
-
-all: $(NAME)
-
-$(NAME): $(LIBFT) $(OBJS)
-	cp $(LIBFT) $(NAME)
-	ar rc $(NAME) $(OBJS)
+$(NAME) : $(OBJECT)
+	$(AR) $(NAME) $(OBJECT)
 	ranlib $(NAME)
+	echo "\033[32m$(NAME) OK ! \033[0m"
 
-$(OBJS):
-	$(CC) $(FLAGS) -c $(SRC)
+$(OBJECT) :
+	$(COMP) $(SRC) $(FLAGS)
+	echo "\033[33mCompilation OK\033[0m"
 
-$(LIBFT):
-	make -C libft/
-clean:
-	$(RM) $(OBJS)
-	make clean -C libft/
+clean :
+	/bin/rm -f $(OBJECT)
+	echo "\033[33mObject deleted\033[0m"
 
-fclean: clean
-	$(RM) $(NAME) $(LIBFT)
 
-re: fclean all
+fclean : clean
+	/bin/rm -f $(NAME)
+	echo "\033[33mExec deleted\033[0m"
+
+re : fclean all
