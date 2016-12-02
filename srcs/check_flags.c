@@ -21,11 +21,11 @@ void	check_hashtag(t_data *data)
 	{
 		if (data->conv[i] == '#')
 		{
-			if(data->type == 'o')
+			if (data->type == 'o')
 				data->ret += write(1, "0", 1);
-			if(data->type == 'x')
-				data->ret += write(1, "0x",2);
-			if(data->type == 'X')
+			if (data->type == 'x')
+				data->ret += write(1, "0x", 2);
+			if (data->type == 'X')
 				data->ret += write(1, "0X", 2);
 		}
 		i++;
@@ -40,7 +40,7 @@ void	check_plus_moins(t_data *data)
 	while (data->conv[i] != '\0' && data->conv[i - 1] != '+')
 	{
 		if (data->conv[i] == '+')
-			data->ret += write(1, "+",1);		
+			data->ret += write(1, "+", 1);
 		i++;
 	}
 }

@@ -12,15 +12,15 @@
 
 #include "../includes/includes.h"
 
-void    convert_hhu(t_data *data)
+void	convert_hhu(t_data *data)
 {
-	unsigned char c;
-	short unsigned int nb;
-	
+	unsigned char		c;
+	short unsigned int	nb;
+
 	if (data->is_hh == TRUE)
 	{
-	c = (unsigned  char)va_arg(*data->ap, int);
-	data->ret += ft_putstr(ft_itoa_base(c, 10));
+		c = (unsigned char)va_arg(*data->ap, int);
+		data->ret += ft_putstr(ft_itoa_base(c, 10));
 	}
 	else
 	{
@@ -29,7 +29,7 @@ void    convert_hhu(t_data *data)
 	}
 }
 
-void    convert_u(t_data *data)
+void	convert_u(t_data *data)
 {
 	unsigned int nb;
 
@@ -37,15 +37,15 @@ void    convert_u(t_data *data)
 	data->ret += ft_putstr(ft_itoa_base(nb, 10));
 }
 
-void    convert_llu(t_data *data)
+void	convert_llu(t_data *data)
 {
-	unsigned long long int nb;
-	unsigned long int nb1;
+	unsigned long long int	nb;
+	unsigned long int		nb1;
 
 	if (data->is_ll == TRUE)
 	{
-	nb = va_arg(*data->ap, unsigned long long int);
-	data->ret += ft_putstr(ft_itoa_base_ll(nb, 10));
+		nb = va_arg(*data->ap, unsigned long long int);
+		data->ret += ft_putstr(ft_itoa_base_ll(nb, 10));
 	}
 	else
 	{
@@ -54,7 +54,7 @@ void    convert_llu(t_data *data)
 	}
 }
 
-void    convert_zu(t_data *data)
+void	convert_zu(t_data *data)
 {
 	size_t nb;
 
@@ -62,7 +62,7 @@ void    convert_zu(t_data *data)
 	data->ret += ft_putstr(ft_itoa_base(nb, 10));
 }
 
-void    convert_ju(t_data *data)
+void	convert_ju(t_data *data)
 {
 	uintmax_t nb;
 

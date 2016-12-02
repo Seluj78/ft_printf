@@ -12,7 +12,7 @@
 
 #include "../includes/includes.h"
 
-void    convert_p(t_data *data)
+void	convert_p(t_data *data)
 {
 	char *str;
 

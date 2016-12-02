@@ -12,9 +12,10 @@
 
 #include "../includes/includes.h"
 
-void    convert_d(t_data *data)
+void	convert_d(t_data *data)
 {
 	int nb;
+
 	nb = va_arg(*data->ap, int);
 	if (nb > 0)
 		check_plus_moins(data);
@@ -22,7 +23,7 @@ void    convert_d(t_data *data)
 	data->ret += ft_nblen(nb);
 }
 
-void    convert_hhd(t_data *data)
+void	convert_hhd(t_data *data)
 {
 	signed char	c;
 	short int	nb;
@@ -41,11 +42,10 @@ void    convert_hhd(t_data *data)
 	}
 }
 
-void    convert_lld(t_data *data)
+void	convert_lld(t_data *data)
 {
 	long long int	nb;
 	long int		nb1;
-
 
 	if (data->is_ll == TRUE)
 	{
@@ -65,9 +65,10 @@ void    convert_lld(t_data *data)
 	}
 }
 
-void    convert_zd(t_data *data)
+void	convert_zd(t_data *data)
 {
 	ssize_t nb;
+
 	nb = va_arg(*data->ap, ssize_t);
 	if (nb > 0)
 		check_plus_moins(data);
@@ -75,9 +76,10 @@ void    convert_zd(t_data *data)
 	data->ret += ft_nblen_ll(nb);
 }
 
-void    convert_jd(t_data *data)
+void	convert_jd(t_data *data)
 {
 	intmax_t nb;
+
 	nb = va_arg(*data->ap, intmax_t);
 	if (nb > 0)
 		check_plus_moins(data);

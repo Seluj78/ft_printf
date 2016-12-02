@@ -18,7 +18,7 @@ void	transfer_to_struct(t_data *data, const char *format)
 
 	i = 0;
 	if (!(data->format = (char *)malloc(sizeof(char) * (data->l_format + 1))))
-		return;
+		return ;
 	while (format[i] != '\0')
 	{
 		data->format[i] = format[i];
@@ -50,7 +50,7 @@ char	*ft_strlower(char *str)
 	int i;
 
 	i = 0;
-	while (str  [i] != '\0')
+	while (str[i] != '\0')
 	{
 		if ((str[i] >= 'A' && str[i] <= 'Z'))
 		{
@@ -66,6 +66,7 @@ char	*ft_strlower(char *str)
 void	ft_putwstr(wchar_t *str)
 {
 	int i;
+
 	i = 0;
 	while (str[i] != '\0')
 	{

@@ -15,15 +15,14 @@
 
 int		main(int argc, char **argv)
 {
+	char			c;
+	int				i;
+	int				*y;
+	char			*b;
+	unsigned int	r;
+	unsigned int	*k;
+
 	setlocale(LC_ALL, "");
-//My ft_printf	:
-//Libc printf		:
-	char c;
-	int i;
-	int *y;
-	char *b;
-	unsigned int r;
-	unsigned int *k;
 	r = 150;
 	c = 'A';
 	i = 20;
@@ -66,7 +65,7 @@ int		main(int argc, char **argv)
 	printf("Libc printf	:abc %%\n");
 	/*printf("int = %p;\nchar = %p;\nunsigned int = %p;\n", y, b, k);
 	ft_printf("int = %p;\nchar = %p;\nunsigned int = %p;\n", y, b, k);*/
-	printf("Libc Printf	:Avec '+' = %+d ;Sans '+' = %d ;\n", i, i);
-	ft_printf("My ft_printf	:Avec '+' = %+d ;Sans '+' = %d:\n", i, i);
+	printf("Libc Printf	:Avec '+' = %+d ;Sans '+' = %d;\n", i, i);
+	ft_printf("My ft_printf	:Avec '+' = %+d ;Sans '+' = %d;\n", i, i);
 	return (0);
 }

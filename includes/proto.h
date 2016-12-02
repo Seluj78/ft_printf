@@ -10,10 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #ifndef PROTO_H
 # define PROTO_H
-
 # include "struct.h"
 
 int		ft_printf(const char *format, ...);
@@ -64,8 +62,4 @@ char	*ft_strcapitalize(char *str);
 char	*ft_strlower(char *str);
 int		ft_putwchar(int c);
 int		ft_putnwchar(int c, int size);
-/*
-**DEBUG PROTO
-*/
-
 #endif

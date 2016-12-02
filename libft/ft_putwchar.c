@@ -12,10 +12,10 @@
 
 #include "libft.h"
 
-static int      ft_write_mask(char *mask, int bytes)
+static int		ft_write_mask(char *mask, int bytes)
 {
-	int     i;
-	int     w;
+	int	i;
+	int	w;
 
 	i = -1;
 	while (++i < bytes)
@@ -26,9 +26,9 @@ static int      ft_write_mask(char *mask, int bytes)
 	return (bytes);
 }
 
-static int      ft_wchar_help(int c, char *mask, int bytes)
+static int		ft_wchar_help(int c, char *mask, int bytes)
 {
-	int     i;
+	int	i;
 
 	i = (8 * bytes) - 1;
 	while (i && c)
@@ -50,12 +50,12 @@ static int      ft_wchar_help(int c, char *mask, int bytes)
 	return (ft_write_mask(mask, bytes));
 }
 
-int             ft_putwchar(int c)
+int				ft_putwchar(int c)
 {
-	int     len;
-	char    mask2[16];
-	char    mask3[24];
-	char    mask4[32];
+	int		len;
+	char	mask2[16];
+	char	mask3[24];
+	char	mask4[32];
 
 	len = ft_binlen(c);
 	if (len <= 7)

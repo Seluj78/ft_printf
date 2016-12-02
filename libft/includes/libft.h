@@ -96,9 +96,9 @@ int				ft_nblen_ll(long long n);
 void			ft_putnbr_l(long n);
 void			ft_putnbr_ll(long long n);
 int				ft_strisdigit(char *str);
-int     		ft_charwlen(int c);
-int     		ft_binlen(unsigned int n);
-int     		ft_putnwstr(int *str, int len);
-int             ft_putnwchar(int c, int size);
-int             ft_putwchar(int c);
+int				ft_charwlen(int c);
+int				ft_binlen(unsigned int n);
+int				ft_putnwstr(int *str, int len);
+int				ft_putnwchar(int c, int size);
+int				ft_putwchar(int c);
 #endif

@@ -12,9 +12,9 @@
 
 #include "libft.h"
 
-int     ft_binlen(unsigned int n)
+int			ft_binlen(unsigned int n)
 {
-	int     len;
+	int		len;
 
 	len = 1;
 	while (n >= 2)

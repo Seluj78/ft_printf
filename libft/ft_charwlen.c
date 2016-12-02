@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int     ft_charwlen(int c)
+int		ft_charwlen(int c)
 {
 	if (c <= 0x7F)
 		return (1);

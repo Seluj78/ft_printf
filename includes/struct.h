@@ -16,21 +16,21 @@
 # include <stdarg.h>
 
 /*
- ** Typedefs :
- */
+** Typedefs :
+*/
 
 typedef char		t_bool;
 
 /*
- **Defines relative to typedefs
- */
+**Defines relative to typedefs
+*/
 
 # define TRUE 1
 # define FALSE 0
 
 /*
- **Structs :
- */
+**Structs :
+*/
 
 typedef struct	s_data
 {
@@ -57,8 +57,5 @@ typedef struct	s_data
 ** format -> contains the XXX in  ft_printf("XXX", foo, bar);
 ** TODO ->#+-0' 'taille min champ, precision,
 ** current_percent -> current percent being processed
-**
-**
-**
 */
 #endif

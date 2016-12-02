@@ -12,18 +12,20 @@
 
 #include "../includes/includes.h"
 
-void convert_s(t_data *data)
+void	convert_s(t_data *data)
 {
 	char *str;
+
 	str = va_arg(*data->ap, char *);
 	if (!str)
 		str = "(null)";
 	data->ret += ft_putstr(str);
 }
 
-void convert_ls(t_data *data)
+void	convert_ls(t_data *data)
 {
 	int *str;
+
 	str = va_arg(*data->ap, int *);
 	if (!str)
 		str = L"(NULL)";

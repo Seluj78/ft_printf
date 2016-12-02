@@ -12,7 +12,7 @@
 
 #include "../includes/includes.h"
 
-void    convert_c(t_data *data)
+void	convert_c(t_data *data)
 {
 	unsigned char c;
 
@@ -20,9 +20,10 @@ void    convert_c(t_data *data)
 	data->ret += write(1, &c, 1);
 }
 
-void    convert_lc(t_data *data)
+void	convert_lc(t_data *data)
 {
 	unsigned int c;
+
 	c = va_arg(*data->ap, unsigned int);
 	data->nb_len = ft_charwlen(c);
 	ft_putwchar(c);

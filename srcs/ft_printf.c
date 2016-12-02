@@ -22,7 +22,7 @@ static void		init(t_data *data, const char *format, va_list *ap)
 	reset_var(data);
 }
 
-int			ft_printf(const char *format, ...)
+int				ft_printf(const char *format, ...)
 {
 	va_list	ap;
 	t_data	data;

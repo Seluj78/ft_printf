@@ -12,10 +12,10 @@
 
 #include "../includes/includes.h"
 
-void    convert_hho(t_data *data)
+void	convert_hho(t_data *data)
 {
-	unsigned char nb;
-	short unsigned int nb1;
+	unsigned char		nb;
+	short unsigned int	nb1;
 
 	if (data->is_hh == TRUE)
 	{
@@ -29,14 +29,15 @@ void    convert_hho(t_data *data)
 	}
 }
 
-void    convert_o(t_data *data)
+void	convert_o(t_data *data)
 {
 	unsigned int nb;
+
 	nb = va_arg(*data->ap, unsigned int);
 	data->ret += ft_putstr(ft_itoa_base(nb, 8));
 }
 
-void    convert_llo(t_data *data)
+void	convert_llo(t_data *data)
 {
 	long long unsigned int	nb;
 	long unsigned int		nb1;
@@ -53,16 +54,18 @@ void    convert_llo(t_data *data)
 	}
 }
 
-void    convert_zo(t_data *data)
+void	convert_zo(t_data *data)
 {
 	ssize_t nb;
+
 	nb = va_arg(*data->ap, ssize_t);
 	data->ret += ft_putstr(ft_itoa_base_ll(nb, 8));
 }
 
-void    convert_jo(t_data *data)
+void	convert_jo(t_data *data)
 {
 	uintmax_t nb;
+
 	nb = va_arg(*data->ap, uintmax_t);
 	data->ret += ft_putstr(ft_itoa_base_ll(nb, 8));
 }

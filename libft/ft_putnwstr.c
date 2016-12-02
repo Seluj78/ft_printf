@@ -12,10 +12,10 @@
 
 #include "libft.h"
 
-int     ft_putnwstr(int *str, int len)
+int			ft_putnwstr(int *str, int len)
 {
-	int     ret;
-	int     i;
+	int		ret;
+	int		i;
 
 	ret = 0;
 	i = -1;

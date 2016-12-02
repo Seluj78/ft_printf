@@ -12,9 +12,10 @@
 
 #include "../includes/includes.h"
 
-void	get_type(t_data *data)
+void		get_type(t_data *data)
 {
 	int i;
+
 	i = data->index + 1;
 	while (data->format[i] != 's' && data->format[i] != 'S'
 			&& data->format[i] != 'p' && data->format[i] != 'd'
@@ -27,15 +28,36 @@ void	get_type(t_data *data)
 		i++;
 	data->conv = ft_strsub(data->format, data->index, (i - data->index + 1));
 	data->index = i;
-
 }
 
-void	parse_type(t_data *data)
+static void	parse_type2(t_data *data, int end)
 {
-	int end;
 	int i;
 
 	i = 0;
+	if (data->conv[end - 1] == 'j')
+		data->is_j = TRUE;
+	else if (data->conv[end - 1] == 'z')
+		data->is_z = TRUE;
+	while (data->conv[i] != '\0' && data->conv[i - 1] != '#')
+	{
+		if (data->conv[i] == '#')
+		{
+			if (data->type == 'o')
+				data->ret += write(1, "0", 1);
+			if (data->type == 'x')
+				data->ret += write(1, "0x", 2);
+			if (data->type == 'X')
+				data->ret += write(1, "0X", 2);
+		}
+		i++;
+	}
+}
+
+void		parse_type(t_data *data)
+{
+	int end;
+
 	end = ft_strlen(data->conv) - 1;
 	data->type = data->conv[end];
 	if (data->conv[end - 1] == 'h' || data->conv[end - 1] == 'l')
@@ -55,26 +77,11 @@ void	parse_type(t_data *data)
 				data->is_h = TRUE;
 		}
 	}
-	else if (data->conv[end - 1] == 'j')
-		data->is_j = TRUE;
-	else if (data->conv[end - 1] == 'z')
-		data->is_z = TRUE;
-	while (data->conv[i] != '\0' && data->conv[i - 1] != '#')
-	{
-		if (data->conv[i] == '#')
-		{
-			if (data->type == 'o')
-				data->ret += write(1, "0", 1);
-			if (data->type == 'x')
-				data->ret += write(1, "0x", 2);
-			if (data->type == 'X')
-				data->ret += write(1, "0X", 2);
-		}
-		i++;
-	}
+	else
+		parse_type2(data, end);
 }
 
-void	reset_var(t_data *data)
+void		reset_var(t_data *data)
 {
 	data->is_l = FALSE;
 	data->is_ll = FALSE;
@@ -85,7 +92,7 @@ void	reset_var(t_data *data)
 	data->has_hashtag = FALSE;
 }
 
-void	parse_format(t_data *data)
+void		parse_format(t_data *data)
 {
 	get_type(data);
 	parse_type(data);
@@ -105,7 +112,25 @@ void	parse_format(t_data *data)
 	reset_var(data);
 }
 
-void	converter(t_data *data)
+static void	converter2(t_data *data)
+{
+	if (data->type == 'O')
+		convert_llo(data);
+	else if (data->type == 'C')
+		convert_lc(data);
+	else if (data->type == 'S')
+		convert_ls(data);
+	else if (data->type == 'D')
+		convert_lld(data);
+	else if (data->type == 'U')
+		convert_llu(data);
+	else if (data->type == 37)
+		ft_putchar(37);
+	else
+		return ;
+}
+
+void		converter(t_data *data)
 {
 	if (data->type == 's')
 		convert_s(data);
@@ -121,24 +146,14 @@ void	converter(t_data *data)
 		convert_u(data);
 	else if (data->type == 'o')
 		convert_o(data);
-	else if (data->type == 'O')
-		convert_llo(data);
-	else if (data->type == 'C')
-		convert_lc(data);
-	else if (data->type == 'S')
-		convert_ls(data);
-	else if (data->type == 'D')
-		convert_lld(data);
-	else if (data->type == 'U')
-		convert_llu(data);
-	else if (data->type == 37)
-		ft_putchar(37);
 	else
-		return;
+		converter2(data);
 }
-//TODO : Return value
-// TODO : %p isn't good
-// TODO : static functions
-// TODO : taille min champ
-// TODO : Precision
-// - + ' ' 0
+/*
+**TODO : Return value
+** TODO : %p isn't good
+** TODO : static functions
+** TODO : taille min champ
+** TODO : Precision
+** - + ' ' 0
+*/

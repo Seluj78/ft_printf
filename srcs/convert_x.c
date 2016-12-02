@@ -12,10 +12,10 @@
 
 #include "../includes/includes.h"
 
-void    convert_hhx(t_data *data)
+void	convert_hhx(t_data *data)
 {
-	signed char nb;
-	short int nb1;
+	signed char	nb;
+	short int	nb1;
 
 	if (data->is_hh == TRUE)
 	{
@@ -35,7 +35,7 @@ void    convert_hhx(t_data *data)
 	}
 }
 
-void    convert_x(t_data *data)
+void	convert_x(t_data *data)
 {
 	int nb;
 
@@ -46,7 +46,7 @@ void    convert_x(t_data *data)
 		data->ret += ft_putstr(ft_strcapitalize(ft_itoa_base(nb, 16)));
 }
 
-void    convert_llx(t_data *data)
+void	convert_llx(t_data *data)
 {
 	long long int	nb;
 	long int		nb1;
@@ -69,7 +69,7 @@ void    convert_llx(t_data *data)
 	}
 }
 
-void    convert_zx(t_data *data)
+void	convert_zx(t_data *data)
 {
 	ssize_t nb;
 
@@ -80,7 +80,7 @@ void    convert_zx(t_data *data)
 		data->ret += ft_putstr(ft_strcapitalize(ft_itoa_base_ll(nb, 16)));
 }
 
-void    convert_jx(t_data *data)
+void	convert_jx(t_data *data)
 {
 	intmax_t nb;
 
