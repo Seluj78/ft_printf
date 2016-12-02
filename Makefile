@@ -55,7 +55,7 @@ $(LIB):
 clean:
 	#printf "\r\033[38;5;11m⌛  CLEAN  $(NAMEBASE) please wait ...\033[0m\033[K"
 	rm -f $(OBJ)
-	rm -f $(OBJDIR)/*.o
+	rm -f $(OBJDIR)/$(OBJ_NAME)
 	make -C libft/ clean
 	#printf "\r\033[38;5;11m☑️  CLEAN  $(NAMEBASE) is done\033[0m\033[K"
 
