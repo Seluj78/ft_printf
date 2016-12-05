@@ -4,7 +4,7 @@ c
 Ā
 42
 123456789123
-0x7fff543d3a3f
+0x7fff5232aaaf
 75bcd15
 75BCD15
 11f71fb0922
@@ -14,9 +14,9 @@ c
 10222
 1627646215203
 abc %
-int = 0x7fff543d3a38;
-char = 0x7fff543d3a3f;
-unsigned int = 0x7fff543d3a24;
+int = 0x7fff5232aaa8;
+char = 0x7fff5232aaaf;
+unsigned int = 0x7fff5232aa94;
 Avec '+' = +20 ;Sans '+' = 20;
 precision pour 'd': 00123;
 precision pour 'hd': 00123;
@@ -39,3 +39,4 @@ precision pour 'llo': 00173;
 precision pour 'lo': 00173;
 precision pour 'zo': 00173;
 precision pour 'jo': 00173;
+Largeur de champs '5d,10' :    10;

@@ -56,5 +56,6 @@ int		main(int argc, char **argv)
      printf("precision pour 'lo': %.5lo;\n", (long int)123);
      printf("precision pour 'zo': %.5zo;\n", (size_t)123);
      printf("precision pour 'jo': %.5jo;\n", (intmax_t)123);
+	 printf("Largeur de champs '5d,10' : %5d;\n", 10);
     return (0);
 }

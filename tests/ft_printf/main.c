@@ -56,5 +56,6 @@ int		main(int argc, char **argv)
      ft_printf("precision pour 'lo': %.5lo;\n", 123);
      ft_printf("precision pour 'zo': %.5zo;\n", 123);
      ft_printf("precision pour 'jo': %.5jo;\n", 123);
+	 ft_printf("Largeur de champs '5d,10' : %5d;\n", 10);
     return (0);
 }

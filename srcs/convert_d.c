@@ -6,7 +6,7 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/30 17:05:04 by estephan          #+#    #+#             */
-/*   Updated: 2016/12/02 14:22:44 by estephan         ###   ########.fr       */
+/*   Updated: 2016/12/05 18:24:37 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	convert_d(t_data *data)
 	nb = va_arg(*data->ap, int);
 	if (nb > 0)
 		check_plus(data);
-	check_precision(data,nb);
+	nb = check_width_nb(data,nb);
 	ft_putnbr(nb);
 	data->ret += ft_nblen(nb);
 }

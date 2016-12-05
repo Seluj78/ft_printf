@@ -6,7 +6,7 @@
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/15 19:23:47 by jlasne            #+#    #+#             */
-/*   Updated: 2016/12/02 17:07:59 by estephan         ###   ########.fr       */
+/*   Updated: 2016/12/05 18:24:55 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,4 +65,5 @@ char	*ft_strcapitalize(char *str);
 char	*ft_strlower(char *str);
 int		ft_putwchar(int c);
 int		ft_putnwchar(int c, int size);
+int    check_width_nb(t_data *data, int nb);
 #endif

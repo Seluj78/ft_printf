@@ -6,7 +6,7 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/01 14:30:56 by estephan          #+#    #+#             */
-/*   Updated: 2016/12/05 11:18:51 by estephan         ###   ########.fr       */
+/*   Updated: 2016/12/05 19:12:37 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ void	check_moins(t_data *data)
 	{
 		if (data->conv[i] == '-')
 			data->moinsloc = TRUE;
+		i++;
 	}
 }
 
@@ -82,7 +83,7 @@ void	check_precision(t_data *data, int	nb)
 		}
 		i++;
 	}
-	if (s != -1)
+	if (s == -1)
 	{
 		str = ft_strnew(k);
 		i = 0;
@@ -164,4 +165,130 @@ void	check_precision_max(t_data *data, char *str2)
 	{
 		str2[ft_strlen(str2) - 1] = '\0';
 	}	
+}
+
+int		check_width_nb(t_data *data, int nb)
+{	
+	int		i;
+	size_t	k;
+	int		s;
+	char	*str;
+	char	*str2;
+	int 	s2;
+	int		m;
+	char	c;
+
+	i = 0;
+	k = 0;
+	c = ' ';
+	check_moins(data);
+	while (k == 0 && data->conv[i])
+	{	
+		if (data->conv[i] >= '0' && data->conv[i] <= '9')
+		{
+			if (data->conv[i] == '0')
+				c = '0';
+			k++;
+			while (data->conv[i + k] >= '0' && data->conv[i+ k] <= '9')
+			{
+				k++;
+			}
+		}
+		i++;
+	}
+	str = ft_strnew(k);
+	i = 0;
+	s = 0;
+	while (s == 0 && data->conv[i])
+	{
+		if (data->conv[i] >= '1' && data->conv[i] <= '9')
+		{
+			str[s] = data->conv[i];
+			i++;
+			s++;
+			while (data->conv[i] >= '0' && data->conv[i] <= '9')
+			{
+				str[s] = data->conv[i];
+				i++;
+				s++;
+			}
+		}
+		i++;
+	}
+	str[s] = '\0';
+	s = ft_atoi(str);
+	i = 0;
+	k = 0;
+	s2 = 0;
+	while (data->conv[i] != '\0' && k == 0)
+	{
+		if (data->conv[i] == '.')
+		{
+			i++;
+			m = 1;
+			while (data->conv[i] >= '0' && data->conv[i] <= '9')
+			{
+				i++;
+				k++;
+			}
+		}
+		i++;
+	}
+	if (m == 1)
+	{
+		str2 = ft_strnew(k);
+		i = 0;
+		k = 0;
+		s = 0;
+		while (data->conv[i] != '\0' && k == 0)
+		{
+			if (data->conv[i] == '.')
+			{
+				i++;
+				while (data->conv[i] >= '0' && data->conv[i] <= '9')
+				{
+					str[s2] = data->conv[i];
+					s2++;
+					i++;
+					k++;
+				}
+			}
+			i++;
+		}
+		str2[s2] = '\0';
+		s2 = ft_atoi(str);
+		s = (s -s2);
+		while (s > 0)
+		{
+			data->ret += write(1, &c, 1);
+			s--;
+		}
+	}
+	else
+	{
+		if (data->moinsloc == FALSE && c == '0')
+		{
+			if (nb < 0)
+			{
+				data->ret += write(1, "-", 1);
+				s--;
+				nb = -nb;
+			}
+			while (s > ft_nblen(nb))
+			{
+				data->ret += write(1, &c, 1);
+				s--;
+			}
+		}
+		else
+		{
+			check_precision(data,nb);
+			while (s > ft_nblen(nb))
+			{
+				data->ret += write(1, &c, 1);
+				s--;
+			}
+		}
+	}
+	return (nb);
 }

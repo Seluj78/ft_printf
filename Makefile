@@ -30,7 +30,7 @@ OBJ_NAME = $(SRC_NAME:.c=.o)
 SRC = $(addprefix $(SRCDIR)/,$(SRC_NAME))
 OBJ = $(addprefix $(OBJDIR)/,$(OBJ_NAME))
 
-.SILENT:
+#.SILENT:
 
 all: $(NAME)
 	#echo "\033[38;5;44m☑️  ALL    $(NAMEBASE) is done\033[0m\033[K"
