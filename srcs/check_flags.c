@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_#.c                                          :+:      :+:    :+:   */
+/*   check_flags.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -29,6 +29,18 @@ void	check_hashtag(t_data *data)
 				data->ret += write(1, "0X", 2);
 		}
 		i++;
+	}
+}
+
+void	check_moins(t_data *data)
+{
+	int i;
+
+	i = 0;
+	while (data->conv[i] != '\0')
+	{
+		if (data->conv[i] == '-')
+			data->moinsloc = TRUE;
 	}
 }
 

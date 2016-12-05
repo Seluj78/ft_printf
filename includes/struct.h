@@ -49,6 +49,7 @@ typedef struct	s_data
 	t_bool		is_j;
 	t_bool		is_z;
 	t_bool		has_hashtag;
+	t_bool		moinsloc;
 }				t_data;
 
 /*
