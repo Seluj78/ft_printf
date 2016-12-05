@@ -110,3 +110,4 @@ void	convert_jx(t_data *data)
 	else
 		data->ret += ft_putstr(ft_strcapitalize(ft_itoa_base_ll(nb, 16)));
 }
+ 

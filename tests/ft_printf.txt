@@ -1,0 +1,41 @@
+This is a String
+صباح الخير
+c
+Ā
+42
+123456789123
+0x7fff53d14a3f
+75bcd15
+75BCD15
+11f71fb0922
+11F71FB0922
+42 ; 4294967254
+18446743950252762493
+10222
+1627646215203
+abc %
+int = 0x7fff53d14a38;
+char = 0x7fff53d14a3f;
+unsigned int = 0x7fff53d14a24;
+Avec '+' = +20 ;Sans '+' = 20;
+precision pour 'd': 00123;
+precision pour 'hd': 00123;
+precision pour 'lld': 00123;
+precision pour 'ld': 00123;
+precision pour 'zd': 00123;
+precision pour 'jd': 00123;
+
+precision pour 'u': 00123;
+precision pour 'hu': 00123;
+precision pour 'llu': 00123;
+precision pour 'lu': 00123;
+precision pour 'zu': 00123;
+precision pour 'ju': 00123;
+
+precision pour 'o': 00173;
+precision pour 'ho': 00173;
+precision pour 'hho': 00173;
+precision pour 'llo': 00173;
+precision pour 'lo': 00173;
+precision pour 'zo': 00173;
+precision pour 'jo': 00173;
