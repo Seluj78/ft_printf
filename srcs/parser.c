@@ -74,6 +74,7 @@ void		reset_var(t_data *data)
 	data->is_j = FALSE;
 	data->is_z = FALSE;
 	data->has_hashtag = FALSE;
+	data->moinsloc = FALSE;
 }
 
 void		parse_format(t_data *data)
