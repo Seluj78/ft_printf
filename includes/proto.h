@@ -6,7 +6,7 @@
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/15 19:23:47 by jlasne            #+#    #+#             */
-/*   Updated: 2016/12/05 18:24:55 by estephan         ###   ########.fr       */
+/*   Updated: 2016/12/06 14:42:57 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,10 +60,10 @@ void    check_precision_max(t_data *data, char *str2);
 void	ft_putwstr(wchar_t *str);
 void	check_hashtag(t_data *data);
 void	check_plus(t_data *data);
-void	check_precision(t_data *data, int nb);
+int		check_precision(t_data *data, int nb);
 char	*ft_strcapitalize(char *str);
 char	*ft_strlower(char *str);
 int		ft_putwchar(int c);
 int		ft_putnwchar(int c, int size);
-int    check_width_nb(t_data *data, int nb);
+void    check_width_nb(t_data *data, int nb, int a);
 #endif

@@ -4,7 +4,7 @@ c
 Ā
 42
 123456789123
-0x7fff5232aaaf
+0x7fff5502baef
 75bcd15
 75BCD15
 11f71fb0922
@@ -14,29 +14,29 @@ c
 10222
 1627646215203
 abc %
-int = 0x7fff5232aaa8;
-char = 0x7fff5232aaaf;
-unsigned int = 0x7fff5232aa94;
-Avec '+' = +20 ;Sans '+' = 20;
-precision pour 'd': 00123;
-precision pour 'hd': 00123;
-precision pour 'lld': 00123;
-precision pour 'ld': 00123;
-precision pour 'zd': 00123;
-precision pour 'jd': 00123;
+int = 0x7fff5502bae8;
+char = 0x7fff5502baef;
+unsigned int = 0x7fff5502bad4;
+Avec '+' = +20 ;Sans '+' = +20;
+precision pour 'd': +00123;
+precision pour 'hd': 123;
+precision pour 'lld': 123;
+precision pour 'ld': 123;
+precision pour 'zd': 123;
+precision pour 'jd': 123;
 
-precision pour 'u': 00123;
-precision pour 'hu': 00123;
-precision pour 'llu': 00123;
-precision pour 'lu': 00123;
-precision pour 'zu': 00123;
-precision pour 'ju': 00123;
+precision pour 'u': 123;
+precision pour 'hu': 123;
+precision pour 'llu': 123;
+precision pour 'lu': 123;
+precision pour 'zu': 123;
+precision pour 'ju': 123;
 
-precision pour 'o': 00173;
-precision pour 'ho': 00173;
-precision pour 'hho': 00173;
-precision pour 'llo': 00173;
-precision pour 'lo': 00173;
-precision pour 'zo': 00173;
-precision pour 'jo': 00173;
-Largeur de champs '5d,10' :    10;
+precision pour 'o': 173;
+precision pour 'ho': 173;
+precision pour 'hho': 173;
+precision pour 'llo': 173;
+precision pour 'lo': 173;
+precision pour 'zo': 173;
+precision pour 'jo': 173;
+Largeur de champs '5d,10' :   +10;

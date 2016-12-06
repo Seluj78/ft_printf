@@ -4,7 +4,7 @@ c
 Ā
 42
 123456789123
-0x7fff51b42abf
+0x7fff5adf8aef
 75bcd15
 75BCD15
 11f71fb0922
@@ -14,9 +14,9 @@ c
 010222
 1627646215203
 abc %
-int = 0x7fff51b42ab8;
-char = 0x7fff51b42abf;
-unsigned int = 0x7fff51b42aa4;
+int = 0x7fff5adf8ae8;
+char = 0x7fff5adf8aef;
+unsigned int = 0x7fff5adf8ad4;
 Avec '+' = +20 ;Sans '+' = 20;
 precision pour 'd': 00123;
 precision pour 'hd': 00123;

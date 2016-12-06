@@ -6,7 +6,7 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/01 14:30:56 by estephan          #+#    #+#             */
-/*   Updated: 2016/12/05 19:12:37 by estephan         ###   ########.fr       */
+/*   Updated: 2016/12/06 14:46:07 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,21 +53,23 @@ void	check_plus(t_data *data)
 	while (data->conv[i] != '\0' && data->conv[i - 1] != '+')
 	{
 		if (data->conv[i] == '+')
-			data->ret += write(1, "+", 1);
+			data->plusloc = TRUE;
 		i++;
 	}
 }
 
-void	check_precision(t_data *data, int	nb)
+int		check_precision(t_data *data, int	nb)
 {
 	int		i;
 	int		s;
 	size_t 	k;
 	char	*str;
+	int		a;
 
 	i = 0;
 	k = 0;
 	s = -1;
+	a = 0;
 	while (data->conv[i] != '\0' && k == 0)
 	{
 		if (data->conv[i] == '.')
@@ -111,9 +113,10 @@ void	check_precision(t_data *data, int	nb)
 		nb = va_arg(*data->ap, int);
 	while (s > ft_nblen(nb))
 	{
-		data->ret += write(1, "0", 1);
 		s--;
+		a++;
 	}
+	return (a);
 }
 
 void	check_precision_max(t_data *data, char *str2)
@@ -167,36 +170,36 @@ void	check_precision_max(t_data *data, char *str2)
 	}	
 }
 
-int		check_width_nb(t_data *data, int nb)
-{	
-	int		i;
-	size_t	k;
-	int		s;
-	char	*str;
-	char	*str2;
-	int 	s2;
-	int		m;
-	char	c;
+void	check_width_nb(t_data *data, int nb, int a)
+{
+	int	i;
+	int s;
+	char c;
+	char *str;
 
 	i = 0;
-	k = 0;
+	s = 0;
 	c = ' ';
+	check_plus(data);
+	if (nb < 0)
+		data->plusloc = FALSE;
 	check_moins(data);
-	while (k == 0 && data->conv[i])
-	{	
+	while (s == 0 && data->conv[i])
+	{
 		if (data->conv[i] >= '0' && data->conv[i] <= '9')
 		{
-			if (data->conv[i] == '0')
+			if (data->conv[i] == '0' && data->moinsloc == FALSE)
 				c = '0';
-			k++;
-			while (data->conv[i + k] >= '0' && data->conv[i+ k] <= '9')
+			else
+				s++;
+			while (data->conv[i + s] >= '0' && data->conv[i+ s] <= '9')
 			{
-				k++;
+				s++;
 			}
 		}
 		i++;
 	}
-	str = ft_strnew(k);
+	str = ft_strnew(s);
 	i = 0;
 	s = 0;
 	while (s == 0 && data->conv[i])
@@ -218,77 +221,57 @@ int		check_width_nb(t_data *data, int nb)
 	str[s] = '\0';
 	s = ft_atoi(str);
 	i = 0;
-	k = 0;
-	s2 = 0;
-	while (data->conv[i] != '\0' && k == 0)
+	if (data->plusloc == TRUE)
+		s--;
+	s = ( s - a - ft_nblen(nb));
+	if (c == '0')
 	{
-		if (data->conv[i] == '.')
-		{
-			i++;
-			m = 1;
-			while (data->conv[i] >= '0' && data->conv[i] <= '9')
-			{
-				i++;
-				k++;
-			}
-		}
-		i++;
-	}
-	if (m == 1)
-	{
-		str2 = ft_strnew(k);
-		i = 0;
-		k = 0;
-		s = 0;
-		while (data->conv[i] != '\0' && k == 0)
-		{
-			if (data->conv[i] == '.')
-			{
-				i++;
-				while (data->conv[i] >= '0' && data->conv[i] <= '9')
-				{
-					str[s2] = data->conv[i];
-					s2++;
-					i++;
-					k++;
-				}
-			}
-			i++;
-		}
-		str2[s2] = '\0';
-		s2 = ft_atoi(str);
-		s = (s -s2);
+		if (data->plusloc == TRUE)
+			data->ret += write (1, "+", 1);
+		s = s + a;
 		while (s > 0)
 		{
-			data->ret += write(1, &c, 1);
+			data->ret += write (1, "0", 1);
 			s--;
 		}
+		ft_putnbr(nb);
+		data->ret += ft_nblen(nb);
 	}
 	else
 	{
-		if (data->moinsloc == FALSE && c == '0')
+		if (data->moinsloc == TRUE)
 		{
-			if (nb < 0)
+			if (data->plusloc == TRUE)
+				data->ret += write (1, "+", 1);
+			while (a > 0)
 			{
-				data->ret += write(1, "-", 1);
-				s--;
-				nb = -nb;
+				data->ret += write (1, "0", 1);
+				a--;
 			}
-			while (s > ft_nblen(nb))
+			ft_putnbr(nb);
+			data->ret += ft_nblen(nb);
+			while (s > 0)
 			{
-				data->ret += write(1, &c, 1);
+				data->ret += write (1," ", 1);
 				s--;
 			}
 		}
 		else
 		{
-			check_precision(data,nb);
-			while (s > ft_nblen(nb))
+			while (s > 0)
 			{
-				data->ret += write(1, &c, 1);
+				data->ret += write (1," ", 1);
 				s--;
 			}
+			if (data->plusloc == TRUE)
+				data->ret += write (1, "+", 1);
+			while (a > 0)
+			{
+				data->ret += write (1, "0", 1);
+				a--;
+			}
+			ft_putnbr(nb);
+			data->ret += ft_nblen(nb);
 		}
 	}
-	return (nb);
 }

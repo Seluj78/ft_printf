@@ -6,7 +6,7 @@
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/15 19:24:20 by jlasne            #+#    #+#             */
-/*   Updated: 2016/11/30 12:58:51 by estephan         ###   ########.fr       */
+/*   Updated: 2016/12/06 12:25:29 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ typedef struct	s_data
 	t_bool		is_z;
 	t_bool		has_hashtag;
 	t_bool		moinsloc;
+	t_bool		plusloc;
 }				t_data;
 
 /*
