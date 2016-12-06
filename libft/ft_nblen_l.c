@@ -6,13 +6,13 @@
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/28 11:08:49 by jlasne            #+#    #+#             */
-/*   Updated: 2016/11/28 11:09:59 by jlasne           ###   ########.fr       */
+/*   Updated: 2016/12/06 19:15:38 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_nblen_l(long n)
+int		ft_nblen_l(long int n)
 {
 	int		len;
 

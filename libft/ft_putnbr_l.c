@@ -6,14 +6,14 @@
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/28 11:09:09 by jlasne            #+#    #+#             */
-/*   Updated: 2016/11/28 11:10:06 by jlasne           ###   ########.fr       */
+/*   Updated: 2016/12/06 19:15:48 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <unistd.h>
 
-void	ft_putnbr_l(long n)
+void	ft_putnbr_l(long int n)
 {
 	if (n < 0)
 	{

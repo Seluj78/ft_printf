@@ -6,7 +6,7 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/01 14:30:56 by estephan          #+#    #+#             */
-/*   Updated: 2016/12/06 14:46:07 by estephan         ###   ########.fr       */
+/*   Updated: 2016/12/06 20:32:23 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ int		check_precision(t_data *data, int	nb)
 	{
 		if (data->conv[i] == '.')
 		{
+			data->is_prec = TRUE;
 			i++;
 			if (data->conv[i] == '*')
 				s = nb;
@@ -111,6 +112,8 @@ int		check_precision(t_data *data, int	nb)
 	}
 	else
 		nb = va_arg(*data->ap, int);
+	if (nb < 0)
+		s++;
 	while (s > ft_nblen(nb))
 	{
 		s--;
@@ -224,10 +227,17 @@ void	check_width_nb(t_data *data, int nb, int a)
 	if (data->plusloc == TRUE)
 		s--;
 	s = ( s - a - ft_nblen(nb));
+	if (data->is_prec == TRUE)
+		c = ' ';
 	if (c == '0')
 	{
 		if (data->plusloc == TRUE)
 			data->ret += write (1, "+", 1);
+		if (nb < 0)
+		{
+			data->ret += write (1, "-", 1);
+			nb = -nb;
+		}
 		s = s + a;
 		while (s > 0)
 		{
@@ -243,6 +253,11 @@ void	check_width_nb(t_data *data, int nb, int a)
 		{
 			if (data->plusloc == TRUE)
 				data->ret += write (1, "+", 1);
+			if (nb < 0)
+			{
+				data->ret += write (1, "-", 1);
+				nb = -nb;
+			}
 			while (a > 0)
 			{
 				data->ret += write (1, "0", 1);
@@ -265,6 +280,11 @@ void	check_width_nb(t_data *data, int nb, int a)
 			}
 			if (data->plusloc == TRUE)
 				data->ret += write (1, "+", 1);
+			if (nb < 0)
+			{
+				data->ret += write (1, "-", 1);
+				nb = -nb;
+			}
 			while (a > 0)
 			{
 				data->ret += write (1, "0", 1);

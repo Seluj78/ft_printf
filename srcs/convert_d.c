@@ -6,7 +6,7 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/30 17:05:04 by estephan          #+#    #+#             */
-/*   Updated: 2016/12/06 13:50:27 by estephan         ###   ########.fr       */
+/*   Updated: 2016/12/06 19:25:55 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ void	convert_hhd(t_data *data)
 	if (data->is_hh == TRUE)
 	{
 		c = (signed char)va_arg(*data->ap, int);
-		ft_putchar(c);
+		ft_putnbr((int)c);
+		data->ret += ft_nblen((int)c);
 	}
 	else
 	{
@@ -42,6 +43,7 @@ void	convert_hhd(t_data *data)
 			check_plus(data);
 		check_precision(data,nb);
 		ft_putnbr(nb);
+		data->ret += ft_nblen(nb);
 	}
 }
 
@@ -64,6 +66,8 @@ void	convert_lld(t_data *data)
 		nb1 = va_arg(*data->ap, long int);
 		if (nb1 > 0)
 			check_plus(data);
+		if (data->plusloc == TRUE)
+			data->ret += write(1, "+", 1);
 		check_precision(data,nb1);
 		ft_putnbr_l(nb1);
 		data->ret += ft_nblen_l(nb1);
