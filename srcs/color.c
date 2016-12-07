@@ -6,7 +6,7 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/01 14:30:56 by estephan          #+#    #+#             */
-/*   Updated: 2016/12/07 14:36:41 by jlasne           ###   ########.fr       */
+/*   Updated: 2016/12/07 16:25:59 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,17 @@ static int		put_color(char *start, int i)
 	if (!ft_strncmp(start, "black", i))
 		return (ft_putstr(BLACK));
 	else if (!ft_strncmp(start, "red", i))
-		return (ft_putstr(RED));
+	{
+		ft_putstr(RED);
+		return (6);
+	}
 	else if (!ft_strncmp(start, "green", i))
 		return (ft_putstr(GREEN));
 	else if (!ft_strncmp(start, "yellow", i))
-		return (ft_putstr(YELLOW));
+	{
+		ft_putstr(YELLOW);
+		return (9);
+	}
 	else if (!ft_strncmp(start, "blue", i))
 		return (ft_putstr(BLUE));
 	else if (!ft_strncmp(start, "purple", i))
@@ -82,21 +88,20 @@ static int		put_color_bold(char *start, int i)
 	return (0);
 }
 
-int				parse_color(const char *str, const char *max, int *len)
+void			parse_color(t_data *data)
 {
 	char		*start;
 	char		*end;
 	int			i;
+	char		*max;
 
-	if ((start = ft_strchr(str, '{')) && start < max
-			&& *(start + 1) == ':' && (end = ft_strchr(str, '}')))
+	max = data->format + ft_strlen(data->format);
+	if ((start = ft_strchr(data->format, '{')) && start < max
+			&& *(start + 1) == ':' && (end = ft_strchr(data->format, '}')))
 	{
-		i = start - str;
-		*len += ft_putnstr(str, i);
+		i = start - data->format;
 		start += 2;
 		i = end - start;
-		if (put_color(start, i))
-			return (end - str + 1);
+		data->index += put_color(start, i);
 	}
-	return (0);
 }

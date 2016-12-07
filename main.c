@@ -1,21 +1,7 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/05 13:13:10 by estephan          #+#    #+#             */
-/*   Updated: 2016/12/05 13:17:47 by estephan         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+#include "includes/includes.h"
 
-#include "./includes/includes.h"
-
-int	main(void)
+int		main(void)
 {
-	ft_printf("%10d\n", 42);
-	ft_printf("%5d\n", 42);
-	ft_printf("%d\n", 42);
+	ft_printf("{:yellow}Bonjour{:red}Maison");
 	return (0);
 }
