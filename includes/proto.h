@@ -6,7 +6,7 @@
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/15 19:23:47 by jlasne            #+#    #+#             */
-/*   Updated: 2016/12/07 14:49:35 by estephan         ###   ########.fr       */
+/*   Updated: 2016/12/07 16:21:29 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,6 @@ int    check_width_nb(t_data *data, intmax_t nb);
 void	get_type(t_data *data);
 void	check_moins(t_data *data);
 void	print_d(t_data *data, int s, int a, int nb);
-void	print_x(t_data *data, int s, int a, int nb);
-void    print_xx(t_data *data, int s, int a, int nb);
+void	print_x(t_data *data, int s, int a, intmax_t nb);
+void    print_xx(t_data *data, int s, int a, intmax_t nb);
 #endif

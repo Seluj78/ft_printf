@@ -6,7 +6,7 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/01 14:30:56 by estephan          #+#    #+#             */
-/*   Updated: 2016/12/07 14:43:09 by estephan         ###   ########.fr       */
+/*   Updated: 2016/12/07 17:04:21 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void			check_hashtag(t_data *data)
 	i = 0;
 	data->has_hashtag = FALSE;
 	while (data->conv[i] != '\0' && data->conv[i - 1] != '#')
-	{
+{
 		if (data->conv[i] == '#')
 		{
 			data->has_hashtag = TRUE;

@@ -6,7 +6,7 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/30 18:07:21 by estephan          #+#    #+#             */
-/*   Updated: 2016/12/07 14:28:24 by estephan         ###   ########.fr       */
+/*   Updated: 2016/12/07 16:38:44 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,36 +55,44 @@ void	convert_x(t_data *data)
 		//data->ret += ft_putstr(ft_strlower(ft_itoa_base(nb, 16)));
 		print_x(data, s, a, nb);
 	else
-		data->ret += ft_putstr(ft_strcapitalize(ft_itoa_base(nb, 16)));
-		//print_xx(data, s, a, nb);
+		//data->ret += ft_putstr(ft_strcapitalize(ft_itoa_base(nb, 16)));
+		print_xx(data, s, a, nb);
 }
 
 void	convert_llx(t_data *data)
 {
 	long long int	nb;
 	long int		nb1;
+	int				a;
+	int				s;
 
-	if (data->is_hh == TRUE)
+	if (data->is_ll == TRUE)
 	{
 		nb = va_arg(*data->ap, long long int);
 		if (nb != 0)
 			check_hashtag(data);
-		check_precision(data, nb);
+		a = check_precision(data, nb);
+		s = check_width_nb(data,nb);
 		if (data->type == 'x')
-			data->ret += ft_putstr(ft_strlower(ft_itoa_base_ll(nb, 16)));
+			//data->ret += ft_putstr(ft_strlower(ft_itoa_base_ll(nb, 16)));
+			print_x(data, s, a, nb);
 		else
-			data->ret += ft_putstr(ft_strcapitalize(ft_itoa_base_ll(nb, 16)));
+			//data->ret += ft_putstr(ft_strcapitalize(ft_itoa_base_ll(nb, 16)));
+			print_xx(data, s, a, nb);
 	}
 	else
 	{
 		nb1 = va_arg(*data->ap, long int);
 		if (nb1 != 0)
 			check_hashtag(data);
-		check_precision(data, nb1);
+		a = check_precision(data, nb1);
+		s = check_width_nb(data,nb1);
 		if (data->type == 'x')
-			data->ret += ft_putstr(ft_strlower(ft_itoa_base_l(nb1, 16)));
+			//data->ret += ft_putstr(ft_strlower(ft_itoa_base_l(nb1, 16)));
+			print_x(data, s, a, nb1);
 		else
-			data->ret += ft_putstr(ft_strcapitalize(ft_itoa_base_l(nb1, 16)));
+			//data->ret += ft_putstr(ft_strcapitalize(ft_itoa_base_l(nb1, 16)));
+			print_xx(data, s, a, nb1);
 	}
 }
 
