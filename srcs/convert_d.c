@@ -6,7 +6,7 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/30 17:05:04 by estephan          #+#    #+#             */
-/*   Updated: 2016/12/06 19:25:55 by estephan         ###   ########.fr       */
+/*   Updated: 2016/12/07 11:09:33 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ void	convert_d(t_data *data)
 	nb = va_arg(*data->ap, int);
 	if (nb > 0)
 		check_plus(data);
-	a = check_precision(data,nb);
-	check_width_nb(data,nb, a);
+	a = check_precision(data, nb);
+	check_width_nb(data, nb, a);
 }
 
 void	convert_hhd(t_data *data)
@@ -41,7 +41,7 @@ void	convert_hhd(t_data *data)
 		nb = (short int)va_arg(*data->ap, int);
 		if (nb > 0)
 			check_plus(data);
-		check_precision(data,nb);
+		check_precision(data, nb);
 		ft_putnbr(nb);
 		data->ret += ft_nblen(nb);
 	}
@@ -57,7 +57,7 @@ void	convert_lld(t_data *data)
 		nb = va_arg(*data->ap, long long int);
 		if (nb > 0)
 			check_plus(data);
-		check_precision(data,nb);
+		check_precision(data, nb);
 		ft_putnbr_ll(nb);
 		data->ret += ft_nblen_ll(nb);
 	}
@@ -68,7 +68,7 @@ void	convert_lld(t_data *data)
 			check_plus(data);
 		if (data->plusloc == TRUE)
 			data->ret += write(1, "+", 1);
-		check_precision(data,nb1);
+		check_precision(data, nb1);
 		ft_putnbr_l(nb1);
 		data->ret += ft_nblen_l(nb1);
 	}
@@ -81,7 +81,7 @@ void	convert_zd(t_data *data)
 	nb = va_arg(*data->ap, ssize_t);
 	if (nb > 0)
 		check_plus(data);
-	check_precision(data,nb);
+	check_precision(data, nb);
 	ft_putnbr_ll(nb);
 	data->ret += ft_nblen_ll(nb);
 }
@@ -93,7 +93,7 @@ void	convert_jd(t_data *data)
 	nb = va_arg(*data->ap, intmax_t);
 	if (nb > 0)
 		check_plus(data);
-	check_precision(data,nb);
+	check_precision(data, nb);
 	ft_putnbr_ll(nb);
 	data->ret += ft_nblen_ll(nb);
 }

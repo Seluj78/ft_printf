@@ -6,7 +6,7 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/30 18:07:21 by estephan          #+#    #+#             */
-/*   Updated: 2016/12/02 16:39:08 by estephan         ###   ########.fr       */
+/*   Updated: 2016/12/07 11:10:56 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	convert_hhx(t_data *data)
 	if (data->is_hh == TRUE)
 	{
 		nb = (signed char)va_arg(*data->ap, int);
-		if(nb != 0)
+		if (nb != 0)
 			check_hashtag(data);
 		if (data->type == 'x')
 			data->ret += ft_putstr(ft_strlower(ft_itoa_base(nb, 16)));
@@ -32,7 +32,7 @@ void	convert_hhx(t_data *data)
 		nb1 = va_arg(*data->ap, int);
 		if (nb1 != 0)
 			check_hashtag(data);
-		check_precision(data,nb1);
+		check_precision(data, nb1);
 		if (data->type == 'x')
 			data->ret += ft_putstr(ft_strlower(ft_itoa_base(nb1, 16)));
 		else
@@ -46,8 +46,8 @@ void	convert_x(t_data *data)
 
 	nb = va_arg(*data->ap, int);
 	if (nb != 0)
-	    check_hashtag(data);
-	check_precision(data,nb);
+		check_hashtag(data);
+	check_precision(data, nb);
 	if (data->type == 'x')
 		data->ret += ft_putstr(ft_strlower(ft_itoa_base(nb, 16)));
 	else
@@ -64,7 +64,7 @@ void	convert_llx(t_data *data)
 		nb = va_arg(*data->ap, long long int);
 		if (nb != 0)
 			check_hashtag(data);
-		check_precision(data,nb);
+		check_precision(data, nb);
 		if (data->type == 'x')
 			data->ret += ft_putstr(ft_strlower(ft_itoa_base_ll(nb, 16)));
 		else
@@ -75,7 +75,7 @@ void	convert_llx(t_data *data)
 		nb1 = va_arg(*data->ap, long int);
 		if (nb1 != 0)
 			check_hashtag(data);
-		check_precision(data,nb1);
+		check_precision(data, nb1);
 		if (data->type == 'x')
 			data->ret += ft_putstr(ft_strlower(ft_itoa_base_l(nb1, 16)));
 		else
@@ -90,7 +90,7 @@ void	convert_zx(t_data *data)
 	nb = va_arg(*data->ap, ssize_t);
 	if (nb != 0)
 		check_hashtag(data);
-	check_precision(data,nb);
+	check_precision(data, nb);
 	if (data->type == 'x')
 		data->ret += ft_putstr(ft_strlower(ft_itoa_base_ll(nb, 16)));
 	else
@@ -104,10 +104,9 @@ void	convert_jx(t_data *data)
 	nb = va_arg(*data->ap, intmax_t);
 	if (nb != 0)
 		check_hashtag(data);
-	check_precision(data,nb);
+	check_precision(data, nb);
 	if (data->type == 'x')
 		data->ret += ft_putstr(ft_strlower(ft_itoa_base_ll(nb, 16)));
 	else
 		data->ret += ft_putstr(ft_strcapitalize(ft_itoa_base_ll(nb, 16)));
 }
- 

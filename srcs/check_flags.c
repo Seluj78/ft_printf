@@ -6,7 +6,7 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/01 14:30:56 by estephan          #+#    #+#             */
-/*   Updated: 2016/12/06 20:32:23 by estephan         ###   ########.fr       */
+/*   Updated: 2016/12/07 11:11:47 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,11 +58,11 @@ void	check_plus(t_data *data)
 	}
 }
 
-int		check_precision(t_data *data, int	nb)
+int		check_precision(t_data *data, int nb)
 {
 	int		i;
 	int		s;
-	size_t 	k;
+	size_t	k;
 	char	*str;
 	int		a;
 
@@ -100,7 +100,7 @@ int		check_precision(t_data *data, int	nb)
 				while (data->conv[i] >= '0' && data->conv[i] <= '9')
 				{
 					str[s] = data->conv[i];
-					s++;	
+					s++;
 					i++;
 					k++;
 				}
@@ -124,10 +124,10 @@ int		check_precision(t_data *data, int	nb)
 
 void	check_precision_max(t_data *data, char *str2)
 {
-	int     i;
-	int     s;
-	size_t  k;
-	char    *str;
+	int		i;
+	int		s;
+	size_t	k;
+	char	*str;
 
 	i = 0;
 	k = 0;
@@ -170,15 +170,15 @@ void	check_precision_max(t_data *data, char *str2)
 	while (s < ft_strlen(str2))
 	{
 		str2[ft_strlen(str2) - 1] = '\0';
-	}	
+	}
 }
 
 void	check_width_nb(t_data *data, int nb, int a)
 {
-	int	i;
-	int s;
-	char c;
-	char *str;
+	int		i;
+	int		s;
+	char	c;
+	char	*str;
 
 	i = 0;
 	s = 0;
@@ -195,7 +195,7 @@ void	check_width_nb(t_data *data, int nb, int a)
 				c = '0';
 			else
 				s++;
-			while (data->conv[i + s] >= '0' && data->conv[i+ s] <= '9')
+			while (data->conv[i + s] >= '0' && data->conv[i + s] <= '9')
 			{
 				s++;
 			}
@@ -226,22 +226,22 @@ void	check_width_nb(t_data *data, int nb, int a)
 	i = 0;
 	if (data->plusloc == TRUE)
 		s--;
-	s = ( s - a - ft_nblen(nb));
+	s = (s - a - ft_nblen(nb));
 	if (data->is_prec == TRUE)
 		c = ' ';
 	if (c == '0')
 	{
 		if (data->plusloc == TRUE)
-			data->ret += write (1, "+", 1);
+			data->ret += write(1, "+", 1);
 		if (nb < 0)
 		{
-			data->ret += write (1, "-", 1);
+			data->ret += write(1, "-", 1);
 			nb = -nb;
 		}
 		s = s + a;
 		while (s > 0)
 		{
-			data->ret += write (1, "0", 1);
+			data->ret += write(1, "0", 1);
 			s--;
 		}
 		ft_putnbr(nb);
@@ -252,22 +252,22 @@ void	check_width_nb(t_data *data, int nb, int a)
 		if (data->moinsloc == TRUE)
 		{
 			if (data->plusloc == TRUE)
-				data->ret += write (1, "+", 1);
+				data->ret += write(1, "+", 1);
 			if (nb < 0)
 			{
-				data->ret += write (1, "-", 1);
+				data->ret += write(1, "-", 1);
 				nb = -nb;
 			}
 			while (a > 0)
 			{
-				data->ret += write (1, "0", 1);
+				data->ret += write(1, "0", 1);
 				a--;
 			}
 			ft_putnbr(nb);
 			data->ret += ft_nblen(nb);
 			while (s > 0)
 			{
-				data->ret += write (1," ", 1);
+				data->ret += write(1, " ", 1);
 				s--;
 			}
 		}
@@ -275,19 +275,19 @@ void	check_width_nb(t_data *data, int nb, int a)
 		{
 			while (s > 0)
 			{
-				data->ret += write (1," ", 1);
+				data->ret += write(1, " ", 1);
 				s--;
 			}
 			if (data->plusloc == TRUE)
-				data->ret += write (1, "+", 1);
+				data->ret += write(1, "+", 1);
 			if (nb < 0)
 			{
-				data->ret += write (1, "-", 1);
+				data->ret += write(1, "-", 1);
 				nb = -nb;
 			}
 			while (a > 0)
 			{
-				data->ret += write (1, "0", 1);
+				data->ret += write(1, "0", 1);
 				a--;
 			}
 			ft_putnbr(nb);
