@@ -23,7 +23,9 @@ SRC_NAME = ft_printf.c \
 	  convert_x.c\
 	  convert_o.c\
 	  convert_percent.c\
-	  check_flags.c
+	  check_flags.c\
+	  check_width.c\
+	  check_precision_max.c
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
 

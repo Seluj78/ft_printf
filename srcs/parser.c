@@ -1,34 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parser_main.c                                      :+:      :+:    :+:   */
+/*   parser.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/21 10:28:34 by jlasne            #+#    #+#             */
-/*   Updated: 2016/12/02 16:39:20 by estephan         ###   ########.fr       */
+/*   Updated: 2016/12/07 11:19:42 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/includes.h"
-
-void		get_type(t_data *data)
-{
-	int i;
-
-	i = data->index + 1;
-	while (data->format[i] != 's' && data->format[i] != 'S'
-			&& data->format[i] != 'p' && data->format[i] != 'd'
-			&& data->format[i] != 'D' && data->format[i] != 'i'
-			&& data->format[i] != 'o' && data->format[i] != 'O'
-			&& data->format[i] != 'u' && data->format[i] != 'U'
-			&& data->format[i] != 'x' && data->format[i] != 'X'
-			&& data->format[i] != 'c' && data->format[i] != 'C'
-			&& data->format[i] != '%')
-		i++;
-	data->conv = ft_strsub(data->format, data->index, (i - data->index + 1));
-	data->index = i;
-}
 
 static void	parse_type2(t_data *data, int end)
 {
@@ -63,18 +45,6 @@ void		parse_type(t_data *data)
 	}
 	else
 		parse_type2(data, end);
-}
-
-void		reset_var(t_data *data)
-{
-	data->is_l = FALSE;
-	data->is_ll = FALSE;
-	data->is_h = FALSE;
-	data->is_hh = FALSE;
-	data->is_j = FALSE;
-	data->is_z = FALSE;
-	data->has_hashtag = FALSE;
-	data->moinsloc = FALSE;
 }
 
 void		parse_format(t_data *data)
