@@ -6,7 +6,7 @@
 #    By: jlasne <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/03 12:34:13 by jlasne            #+#    #+#              #
-#    Updated: 2016/11/30 14:14:33 by estephan         ###   ########.fr        #
+#    Updated: 2016/12/07 13:43:58 by jlasne           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -129,7 +129,9 @@ SRC = ft_bzero.c\
 	  ft_charwlen.c\
 	  ft_putnwstr.c\
 	  ft_putnwchar.c\
-	  ft_putwchar.c
+	  ft_putwchar.c\
+	  ft_putnstr.c
+
 OBJ = $(SRC:.c=.o)
 
 INC = ./includes
