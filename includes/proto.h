@@ -6,7 +6,7 @@
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/15 19:23:47 by jlasne            #+#    #+#             */
-/*   Updated: 2016/12/07 14:49:08 by estephan         ###   ########.fr       */
+/*   Updated: 2016/12/07 14:49:35 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define PROTO_H
 # include "struct.h"
 
-<<<<<<< HEAD
 int		ft_printf(const char *format, ...);
 void	parse_format(t_data *data);
 void	transfer_to_struct(t_data *data, const char *format);
