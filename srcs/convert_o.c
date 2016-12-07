@@ -6,7 +6,7 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/30 18:10:05 by estephan          #+#    #+#             */
-/*   Updated: 2016/12/07 11:09:11 by jlasne           ###   ########.fr       */
+/*   Updated: 2016/12/07 18:59:26 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,14 @@ void	convert_hho(t_data *data)
 void	convert_o(t_data *data)
 {
 	unsigned int nb;
+	int	a;
+	int	s;
 
 	nb = va_arg(*data->ap, unsigned int);
-	check_precision(data, nb);
-	data->ret += ft_putstr(ft_itoa_base(nb, 8));
+	check_hashtag(data);
+	a = check_precision(data, nb);
+	s = check_width_nb(data, nb);
+	print_o(data, s, a, nb);
 }
 
 void	convert_llo(t_data *data)
