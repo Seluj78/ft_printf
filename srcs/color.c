@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   color.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/12/01 14:30:56 by estephan          #+#    #+#             */
+/*   Updated: 2016/12/07 14:36:41 by jlasne           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/includes.h"
 
 static int		put_color_underline(char *start, int i);
@@ -72,9 +84,9 @@ static int		put_color_bold(char *start, int i)
 
 int				parse_color(const char *str, const char *max, int *len)
 {
-	char*start;
+	char		*start;
 	char		*end;
-	int	i;
+	int			i;
 
 	if ((start = ft_strchr(str, '{')) && start < max
 			&& *(start + 1) == ':' && (end = ft_strchr(str, '}')))
