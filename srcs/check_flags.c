@@ -60,7 +60,7 @@ void			check_plus(t_data *data)
 	}
 }
 
-static int		check_precision2(t_data *data, size_t k, intmax_t nb, int i)
+static int		check_precision2(t_data *data, size_t k, int32_t nb, int i)
 {
 	char	*str;
 	int		s;
@@ -89,23 +89,19 @@ static int		check_precision2(t_data *data, size_t k, intmax_t nb, int i)
 	return (i);
 }
 
-int				check_precision(t_data *data, intmax_t nb)
+int				check_precision(t_data *data, int32_t nb)
 {
 	int		i;
-	int		s;
 	size_t	k;
 
 	i = 0;
 	k = 0;
-	s = -1;
 	while (data->conv[i] != '\0' && k == 0)
 	{
 		if (data->conv[i] == '.')
 		{
 			data->is_prec = TRUE;
 			i++;
-			if (data->conv[i] == '*')
-				s = nb;
 			while (data->conv[i] >= '0' && data->conv[i] <= '9')
 			{
 				i++;

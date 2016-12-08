@@ -128,7 +128,7 @@ void			parse_color(t_data *data)
 	char		*start;
 	char		*end;
 	int			i;
-	char		*max;
+	//char		*max;
 	data->current_color++;
 	/*
 	//start = ft_strchr(data->format, '{');
@@ -138,7 +138,7 @@ void			parse_color(t_data *data)
 	i = end - start;
 	data->index += put_color(start, i);*/
 	//ft_putchar('\n');
-	max = data->format + ft_strlen(data->format);
+//	max = data->format + ft_strlen(data->format);
 	if ((start = ft_strchr(data->format, '{')) && *(start + 1) == ':'
 			&& (end = ft_strchr(data->format, '}')))
 	{

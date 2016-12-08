@@ -60,21 +60,21 @@ char    *check_precision_max(t_data *data, char *str2);
 void	ft_putwstr(wchar_t *str);
 void	check_hashtag(t_data *data);
 void	check_plus(t_data *data);
-int		check_precision(t_data *data, intmax_t nb);
+int		check_precision(t_data *data, int32_t nb);
 char	*ft_strcapitalize(char *str);
 char	*ft_strlower(char *str);
 int		ft_putwchar(int c);
 int		ft_putnwchar(int c, int size);
-int		check_width_nb(t_data *data, intmax_t nb);
+int		check_width_nb(t_data *data, int32_t nb);
 void	get_type(t_data *data);
 void	check_moins(t_data *data);
 void	print_d(t_data *data, int s, int a, int nb);
-void	print_x(t_data *data, int s, int a, intmax_t nb);
-void	print_xx(t_data *data, int s, int a, intmax_t nb);
-void	print_o(t_data *data, int s, int a, intmax_t nb);
+void	print_x(t_data *data, int s, int a, int32_t nb);
+void	print_xx(t_data *data, int s, int a, int32_t nb);
+void	print_o(t_data *data, int s, int a, int32_t nb);
 void	parse_color(t_data *data);
 void	count_color_selectors(t_data *data);
 void	get_selectors_place(t_data *data);
-void    print_u(t_data *data, int s, int a, intmax_t nb);
+void    print_u(t_data *data, int s, int a, int32_t nb);
 
 #endif

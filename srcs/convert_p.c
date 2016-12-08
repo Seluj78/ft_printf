@@ -21,5 +21,5 @@ void	convert_p(t_data *data)
 		str = "(null)";
 	ft_putstr("0x7fff");
 	data->ret += 4;
-	data->ret += ft_putstr(ft_itoa_base((int)str, 16));
+	data->ret += ft_putstr(ft_itoa_base(ft_atoi(str), 16));
 }

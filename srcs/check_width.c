@@ -12,7 +12,7 @@
 
 #include "../includes/includes.h"
 
-int		check_width_nb(t_data *data, intmax_t nb)
+int		check_width_nb(t_data *data, int32_t nb)
 {
 	int		i;
 	int		s;
@@ -66,9 +66,6 @@ int		check_width_nb(t_data *data, intmax_t nb)
 
 void		print_d(t_data *data, int s, int a, int nb)
 {
-	int	i;
-
-	i = 0;
 	if (data->plusloc == TRUE)
 		s--;
 	s = (s - a - ft_nblen(nb));
@@ -155,11 +152,8 @@ void		print_d(t_data *data, int s, int a, int nb)
 	}
 }
 
-void	print_x(t_data *data, int s, int a, intmax_t nb)
+void	print_x(t_data *data, int s, int a, int32_t nb)
 {
-	int i;
-
-	i = 0;
 	if (data->has_hashtag == TRUE)
 		s = (s - 2 - a - (ft_strlen(ft_itoa_base(nb,16))));
 	else
@@ -244,11 +238,8 @@ void	print_x(t_data *data, int s, int a, intmax_t nb)
 	}
 }
 
-void    print_xx(t_data *data, int s, int a, intmax_t nb)
+void    print_xx(t_data *data, int s, int a, int32_t nb)
 {
-	int i;
-
-	i = 0;
 	if (data->has_hashtag == TRUE)
 		s = (s - 2 - a - (ft_strlen(ft_itoa_base(nb,16))));
 	else
@@ -319,11 +310,8 @@ void    print_xx(t_data *data, int s, int a, intmax_t nb)
 	}
 }
 
-void    print_o(t_data *data, int s, int a, intmax_t nb)
+void    print_o(t_data *data, int s, int a, int32_t nb)
 {
-	int i;
-
-	i = 0;
 	if (data->has_hashtag == TRUE)
 		s = (s - 1 - a - (ft_strlen(ft_itoa_base(nb,8))));
 	else
@@ -407,11 +395,8 @@ void    print_o(t_data *data, int s, int a, intmax_t nb)
 		}
 	}
 }
-void    print_u(t_data *data, int s, int a, intmax_t nb)
+void    print_u(t_data *data, int s, int a, int32_t nb)
 {
-	int i;
-
-	i = 0;
 	if (data->has_hashtag == TRUE)
 		s = (s - 1 - a - (ft_strlen(ft_itoa_base(nb,10))));
 	else

@@ -15,10 +15,8 @@
 void	convert_s(t_data *data)
 {
 	char *str;
-	int a;
 	int s;
 
-	a = 0;
 	str = va_arg(*data->ap, char *);
 	str = check_precision_max(data, str);
 	if (!str)
