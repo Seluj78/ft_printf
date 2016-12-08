@@ -2,6 +2,6 @@
 
 int		main(void)
 {
-	ft_printf("{:yellow}Bonjour {:red}Maison");
+	ft_printf("{:blue}EH HE{:reset}{:red}Yolo{:reset}");
 	return (0);
 }
