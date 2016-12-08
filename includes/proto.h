@@ -6,7 +6,7 @@
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/15 19:23:47 by jlasne            #+#    #+#             */
-/*   Updated: 2016/12/07 18:53:41 by estephan         ###   ########.fr       */
+/*   Updated: 2016/12/08 11:05:46 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	convert_lld(t_data *data);
 void	convert_llu(t_data *data);
 void	convert_lu(t_data *data);
 void	convert_percent(t_data *data);
-void    check_precision_max(t_data *data, char *str2);
+void	check_precision_max(t_data *data, char *str2);
 void	ft_putwstr(wchar_t *str);
 void	check_hashtag(t_data *data);
 void	check_plus(t_data *data);
@@ -70,7 +70,7 @@ void	get_type(t_data *data);
 void	check_moins(t_data *data);
 void	print_d(t_data *data, int s, int a, int nb);
 void	print_x(t_data *data, int s, int a, intmax_t nb);
-void    print_xx(t_data *data, int s, int a, intmax_t nb);
-void    print_o(t_data *data, int s, int a, intmax_t nb);
+void	print_xx(t_data *data, int s, int a, intmax_t nb);
+void	print_o(t_data *data, int s, int a, intmax_t nb);
 void	parse_color(t_data *data);
 #endif

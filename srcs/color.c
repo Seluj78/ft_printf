@@ -6,14 +6,14 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/01 14:30:56 by estephan          #+#    #+#             */
-/*   Updated: 2016/12/07 16:25:59 by jlasne           ###   ########.fr       */
+/*   Updated: 2016/12/08 11:20:32 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/includes.h"
 
-static int		put_color_underline(char *start, int i);
-static int		put_color_bold(char *start, int i);
+//static int		put_color_underline(char *start, int i);
+//static int		put_color_bold(char *start, int i);
 
 static int		put_color(char *start, int i)
 {
@@ -22,13 +22,15 @@ static int		put_color(char *start, int i)
 	else if (!ft_strncmp(start, "red", i))
 	{
 		ft_putstr(RED);
-		return (6);
+		ft_putstr("red :");
+		//return (6);
 	}
 	else if (!ft_strncmp(start, "green", i))
 		return (ft_putstr(GREEN));
 	else if (!ft_strncmp(start, "yellow", i))
 	{
 		ft_putstr(YELLOW);
+		ft_putstr("yelllow :");
 		return (9);
 	}
 	else if (!ft_strncmp(start, "blue", i))
@@ -41,10 +43,11 @@ static int		put_color(char *start, int i)
 		return (ft_putstr(WHITE));
 	else if (!ft_strncmp(start, "reset", i))
 		return (ft_putstr(RESET));
-	else
-		return (put_color_underline(start, i));
+	//else
+		//return (put_color_underline(start, i));
+	return (0);
 }
-
+/*
 static int		put_color_underline(char *start, int i)
 {
 	if (!ft_strncmp(start, "ublack", i))
@@ -87,7 +90,7 @@ static int		put_color_bold(char *start, int i)
 		return (ft_putstr(BWHITE));
 	return (0);
 }
-
+*/
 void			parse_color(t_data *data)
 {
 	char		*start;
@@ -103,5 +106,7 @@ void			parse_color(t_data *data)
 		start += 2;
 		i = end - start;
 		data->index += put_color(start, i);
+		ft_putnbr(data->index);
+		ft_putchar('\n');
 	}
 }
