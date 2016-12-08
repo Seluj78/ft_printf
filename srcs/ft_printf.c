@@ -20,10 +20,10 @@ static void		init(t_data *data, const char *format, va_list *ap)
 	data->ret = 0;
 	data->index = 0;
 	reset_var(data);
-	data->current_color = -1;
-	data->nb_color = 0;
-	count_color_selectors(data);
-	data->selectors_place = (int*)malloc((data->nb_color + 1) * sizeof(int));
+//	data->current_color = -1;
+//	data->nb_color = 0;
+//	count_color_selectors(data);
+//	data->selectors_place = (int*)malloc((data->nb_color + 1) * sizeof(int));
 }
 
 void			get_type(t_data *data)
@@ -65,13 +65,11 @@ int				ft_printf(const char *format, ...)
 	init(&data, format, &ap);
 	while (data.format[data.index])
 	{
+		//parse_color(&data);
 		if (data.format[data.index] == '%')
 			parse_format(&data);
 		else
 		{
-			if (data.format[data.index] == '{'
-				&& data.format[data.index + 1] == ':')
-				parse_color(&data);
 			ft_putchar(data.format[data.index]);
 			data.ret++;
 		}

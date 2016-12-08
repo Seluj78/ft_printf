@@ -53,10 +53,10 @@ typedef struct	s_data
 	t_bool		moinsloc;
 	t_bool		plusloc;
 	t_bool		is_prec;
-	int			current_color;
-	int			nb_color;
-	int			color_place;
-	int			*selectors_place;
+//	int			current_color;
+//	int			nb_color;
+//	int			color_place;
+//	int			*selectors_place;
 }				t_data;
 
 /*
