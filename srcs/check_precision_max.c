@@ -6,13 +6,13 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/01 14:30:56 by estephan          #+#    #+#             */
-/*   Updated: 2016/12/07 17:38:09 by estephan         ###   ########.fr       */
+/*   Updated: 2016/12/08 13:32:20 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/includes.h"
 
-static void		check_precision_max2(t_data *data, size_t k, char *str2)
+static char		*check_precision_max2(t_data *data, size_t k, char *str2)
 {
 	int		s;
 	int		i;
@@ -39,9 +39,10 @@ static void		check_precision_max2(t_data *data, size_t k, char *str2)
 	s = ft_atoi(str);
 	while (s < ft_strlen(str2))
 		str2[ft_strlen(str2) - 1] = '\0';
+	return (str2);
 }
 
-void			check_precision_max(t_data *data, char *str2)
+char			*check_precision_max(t_data *data, char *str2)
 {
 	int		i;
 	size_t	k;
@@ -61,7 +62,7 @@ void			check_precision_max(t_data *data, char *str2)
 		}
 		i++;
 	}
-	if (k == 0)
-		return ((void)NULL);
-	check_precision_max2(data, k, str2);
+	if (k != 0)
+	str2 = check_precision_max2(data, k, str2);
+	return (str2);
 }

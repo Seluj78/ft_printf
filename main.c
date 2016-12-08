@@ -2,6 +2,6 @@
 
 int		main(void)
 {
-	ft_printf("{:yellow}Bonjour{:red}Maison");
+	ft_printf("%.2s is a string", "");
 	return (0);
 }

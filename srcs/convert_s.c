@@ -6,7 +6,7 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/30 16:54:12 by estephan          #+#    #+#             */
-/*   Updated: 2016/12/07 18:19:24 by estephan         ###   ########.fr       */
+/*   Updated: 2016/12/08 13:32:59 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	convert_s(t_data *data)
 
 	a = 0;
 	str = va_arg(*data->ap, char *);
-	check_precision_max(data, str);
+	str = check_precision_max(data, str);
 	if (!str)
 		str = "(null)";
 	s = check_width_nb(data, 1);

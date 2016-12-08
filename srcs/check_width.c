@@ -6,7 +6,7 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/01 14:30:56 by estephan          #+#    #+#             */
-/*   Updated: 2016/12/07 19:11:06 by estephan         ###   ########.fr       */
+/*   Updated: 2016/12/08 13:31:53 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int		check_width_nb(t_data *data, intmax_t nb)
 	if (nb < 0)
 		data->plusloc = FALSE;
 	check_moins(data);
-	while (s == 0 && data->conv[i])
+	while (s == 0 && data->conv[i] && data->conv[i] != '.')
 	{
 		if (data->conv[i] >= '0' && data->conv[i] <= '9')
 		{
@@ -43,7 +43,7 @@ int		check_width_nb(t_data *data, intmax_t nb)
 	str = ft_strnew(s);
 	i = 0;
 	s = 0;
-	while (s == 0 && data->conv[i])
+	while (s == 0 && data->conv[i] && data->conv[i] != '.')
 	{
 		if (data->conv[i] >= '1' && data->conv[i] <= '9')
 		{
