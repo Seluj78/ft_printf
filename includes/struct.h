@@ -6,7 +6,7 @@
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/15 19:24:20 by jlasne            #+#    #+#             */
-/*   Updated: 2016/12/07 14:48:00 by estephan         ###   ########.fr       */
+/*   Updated: 2016/12/08 13:52:46 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,10 @@ typedef struct	s_data
 	t_bool		moinsloc;
 	t_bool		plusloc;
 	t_bool		is_prec;
+	int			current_color;
+	int			nb_color;
+	int			color_place;
+	int			*selectors_place;
 }				t_data;
 
 /*

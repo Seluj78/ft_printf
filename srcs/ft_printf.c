@@ -6,7 +6,7 @@
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/15 19:27:58 by jlasne            #+#    #+#             */
-/*   Updated: 2016/12/07 16:24:21 by jlasne           ###   ########.fr       */
+/*   Updated: 2016/12/08 14:28:48 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,10 @@ static void		init(t_data *data, const char *format, va_list *ap)
 	data->ret = 0;
 	data->index = 0;
 	reset_var(data);
+	data->current_color = -1;
+	data->nb_color = 0;
+	count_color_selectors(data);
+	data->selectors_place = (int*)malloc((data->nb_color + 1) * sizeof(int));
 }
 
 void			get_type(t_data *data)
@@ -76,5 +80,6 @@ int				ft_printf(const char *format, ...)
 		data.index++;
 	}
 	va_end(ap);
+	free(data.selectors_place);
 	return (data.ret);
 }

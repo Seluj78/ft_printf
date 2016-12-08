@@ -2,6 +2,6 @@
 
 int		main(void)
 {
-	ft_printf("%.2s is a string", "");
+	ft_printf("{:blue}EH HE{:reset}{:red}Yolo{:reset}");
 	return (0);
 }

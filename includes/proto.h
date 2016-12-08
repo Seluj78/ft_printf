@@ -6,7 +6,7 @@
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/15 19:23:47 by jlasne            #+#    #+#             */
-/*   Updated: 2016/12/08 13:00:24 by estephan         ###   ########.fr       */
+/*   Updated: 2016/12/08 14:30:30 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,10 @@ void	get_type(t_data *data);
 void	check_moins(t_data *data);
 void	print_d(t_data *data, int s, int a, int nb);
 void	print_x(t_data *data, int s, int a, intmax_t nb);
-void    print_xx(t_data *data, int s, int a, intmax_t nb);
-void    print_o(t_data *data, int s, int a, intmax_t nb);
+void	print_xx(t_data *data, int s, int a, intmax_t nb);
+void	print_o(t_data *data, int s, int a, intmax_t nb);
 void	parse_color(t_data *data);
+void	count_color_selectors(t_data *data);
+void	get_selectors_place(t_data *data);
+
 #endif
