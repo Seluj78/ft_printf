@@ -6,7 +6,7 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/01 14:30:56 by estephan          #+#    #+#             */
-/*   Updated: 2016/12/08 14:28:41 by jlasne           ###   ########.fr       */
+/*   Updated: 2016/12/08 14:41:37 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -144,9 +144,7 @@ void			parse_color(t_data *data)
 	{
 		start += 2;
 		i = end - start;
+		data->format[data->index] = '0';
 		data->index += put_color(start, i);
-		data->format[data->selectors_place[data->current_color]] = '0';
-		ft_putstr("\n\n\n Format apres avoir rajoute un 0 :    ");
-		ft_putstr(data->format);
 	}
 }

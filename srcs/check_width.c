@@ -6,7 +6,7 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/01 14:30:56 by estephan          #+#    #+#             */
-/*   Updated: 2016/12/08 13:31:53 by estephan         ###   ########.fr       */
+/*   Updated: 2016/12/08 15:03:26 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,10 @@ void		print_d(t_data *data, int s, int a, int nb)
 			data->ret += write(1, "0", 1);
 			s--;
 		}
-		ft_putnbr(nb);
+		if (a == 0 && nb == 0 && data->is_prec == TRUE)
+			a = 1;
+		else
+			ft_putnbr(nb);
 		data->ret += ft_nblen(nb);
 	}
 	else
@@ -108,7 +111,10 @@ void		print_d(t_data *data, int s, int a, int nb)
 				data->ret += write(1, "0", 1);
 				a--;
 			}
-			ft_putnbr(nb);
+			if (a == 0 && nb == 0 && data->is_prec == TRUE)
+				a = 1;
+			else
+				ft_putnbr(nb);
 			data->ret += ft_nblen(nb);
 			while (s > 0)
 			{
@@ -135,7 +141,10 @@ void		print_d(t_data *data, int s, int a, int nb)
 				data->ret += write(1, "0", 1);
 				a--;
 			}
-			ft_putnbr(nb);
+			if (a == 0 && nb == 0 && data->is_prec == TRUE)
+				a = 1;
+			else
+				ft_putnbr(nb);
 			data->ret += ft_nblen(nb);
 		}
 	}
@@ -312,12 +321,17 @@ void    print_o(t_data *data, int s, int a, intmax_t nb)
 			data->ret += write(1, "0", 1);
 			s--;
 		}
-		if (data->is_ll == TRUE)
-			data->ret += ft_putstr(ft_itoa_base_ll(nb, 8));
-		else if (data->is_l == TRUE)
-			data->ret += ft_putstr(ft_itoa_base_l(nb, 8));
+		if (a == 0 && nb == 0 && data->is_prec == TRUE)
+			a = 1;
 		else
-			data->ret += ft_putstr(ft_itoa_base(nb, 8));
+		{
+			if (data->is_ll == TRUE)
+				data->ret += ft_putstr(ft_itoa_base_ll(nb, 8));
+			else if (data->is_l == TRUE)
+				data->ret += ft_putstr(ft_itoa_base_l(nb, 8));
+			else
+				data->ret += ft_putstr(ft_itoa_base(nb, 8));
+		}
 	}
 	else
 	{
@@ -330,12 +344,17 @@ void    print_o(t_data *data, int s, int a, intmax_t nb)
 			}
 			if (data->has_hashtag == TRUE)
 				data->ret += write(1, "0", 2);
-			if (data->is_ll == TRUE)
-				data->ret += ft_putstr(ft_itoa_base_ll(nb, 8));
-			else if (data->is_l == TRUE)
-				data->ret += ft_putstr(ft_itoa_base_l(nb, 8));
+			if (a == 0 && nb == 0 && data->is_prec == TRUE)
+				a = 1;
 			else
-				data->ret += ft_putstr(ft_itoa_base(nb, 8));
+			{
+				if (data->is_ll == TRUE)
+					data->ret += ft_putstr(ft_itoa_base_ll(nb, 8));
+				else if (data->is_l == TRUE)
+					data->ret += ft_putstr(ft_itoa_base_l(nb, 8));
+				else
+					data->ret += ft_putstr(ft_itoa_base(nb, 8));
+			}
 			while (s > 0)
 			{
 				data->ret += write(1, " ", 1);
@@ -356,12 +375,17 @@ void    print_o(t_data *data, int s, int a, intmax_t nb)
 			}
 			if (data->has_hashtag == TRUE)
 				data->ret += write(1, "0", 2);
-			if (data->is_ll == TRUE)
-				data->ret += ft_putstr(ft_itoa_base_ll(nb, 8));
-			else if (data->is_l == TRUE)
-				data->ret += ft_putstr(ft_itoa_base_l(nb, 8));
+			if (a == 0 && nb == 0 && data->is_prec == TRUE)
+				a = 1;
 			else
-				data->ret += ft_putstr(ft_itoa_base(nb, 8));
+			{
+				if (data->is_ll == TRUE)
+					data->ret += ft_putstr(ft_itoa_base_ll(nb, 8));
+				else if (data->is_l == TRUE)
+					data->ret += ft_putstr(ft_itoa_base_l(nb, 8));
+				else
+					data->ret += ft_putstr(ft_itoa_base(nb, 8));
+			}
 		}
 	}
 }
