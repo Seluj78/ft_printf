@@ -6,7 +6,7 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/30 18:10:05 by estephan          #+#    #+#             */
-/*   Updated: 2016/12/07 18:59:26 by estephan         ###   ########.fr       */
+/*   Updated: 2016/12/09 15:28:37 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ void	convert_hho(t_data *data)
 
 void	convert_o(t_data *data)
 {
-	unsigned int nb;
-	int	a;
-	int	s;
+	unsigned int	nb;
+	int				a;
+	int				s;
 
 	nb = va_arg(*data->ap, unsigned int);
 	check_hashtag(data);

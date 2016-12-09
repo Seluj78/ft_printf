@@ -30,7 +30,8 @@ SRC_NAME = ft_printf.c \
 	  print_d.c\
 	  print_x.c\
 	  print_xx.c\
-	  print_o.c
+	  print_o.c\
+	  print_u.c
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
 

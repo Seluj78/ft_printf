@@ -6,7 +6,7 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/02 15:29:15 by estephan          #+#    #+#             */
-/*   Updated: 2016/12/07 18:40:43 by estephan         ###   ########.fr       */
+/*   Updated: 2016/12/09 15:33:36 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,6 @@ void	convert_percent(t_data *data)
 			data->ret += write(1, " ", 1);
 			s--;
 		}
-		data->ret += write (1, "%", 1);
+		data->ret += write(1, "%", 1);
 	}
 }
