@@ -14,7 +14,13 @@
 
 int		main(void)
 {
-	int i;
-	i = ft_printf("Test456715hjdlaioprt\n");
-	ft_putnbr(i);
+	ft_printf("{:black}This is black !\n");
+	ft_printf("{:red}This is red!\n");
+	ft_printf("{:green}This is green !\n");
+	ft_printf("{:yellow}This is  yellow!\n");
+	ft_printf("{:blue}This is  blue!\n");
+	ft_printf("{:purple}This is  purple!\n");
+	ft_printf("{:cyan}This is  cyan!\n");
+	ft_printf("{:white}This is  white!\n");
+	ft_printf("{:reset}This is normal terminal color ! !\n");
 }

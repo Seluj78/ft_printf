@@ -16,6 +16,7 @@
 # include "../libft/includes/libft.h"
 # include "proto.h"
 # include "struct.h"
+# include "colors.h"
 # include <stdarg.h>
 # include <stdio.h>
 # include <wchar.h>
