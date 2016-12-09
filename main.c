@@ -6,7 +6,7 @@
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/09 14:07:30 by jlasne            #+#    #+#             */
-/*   Updated: 2016/12/09 15:37:44 by jlasne           ###   ########.fr       */
+/*   Updated: 2016/12/09 15:51:29 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 
 int		main(void)
 {
-	ft_printf("{:blue}Test{:reset}   i    {:red}Test2{:reset}     i   \n");
+	int i;
+	i = ft_printf("Test456715hjdlaioprt\n");
+	ft_putnbr(i);
 }

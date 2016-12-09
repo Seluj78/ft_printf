@@ -73,21 +73,18 @@ static int		put_color_bold(char *start, int i)
 
 int		put_color(t_data *data, int i)
 {
-	if (ft_strncmp(&data->format[data->index], "blue", i))
+	if (!ft_strncmp(&data->format[data->index], "{:blue}", i))
 	{
-		ft_putstr("\nBlue :");
 		ft_putstr(BLUE);
 		return (7);
 	}
-	else if (ft_strncmp(&data->format[data->index], "red", i))
+	else if (!ft_strncmp(&data->format[data->index], "{:red}", i))
 	{
-		ft_putstr("\nRed :");
 		ft_putstr(RED);
 		return (6);
 	}
-	else if (ft_strncmp(&data->format[data->index], "reset", i))
+	else if (!ft_strncmp(&data->format[data->index], "{:reset}", i))
 	{
-		ft_putstr("\nReset :");
 		ft_putstr(RESET);
 		return (8);
 	}
@@ -108,10 +105,6 @@ void	parse_color(t_data *data)
 			i++;
 			j++;
 		}
-		//ft_putnbr(i);
-		//ft_putnbr(j);
-		//ft_putnbr(data->index);
 		data->index += put_color(data, i);
-		//data->index += 7;
 	}
 }
