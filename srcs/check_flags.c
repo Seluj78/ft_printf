@@ -6,7 +6,7 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/01 14:30:56 by estephan          #+#    #+#             */
-/*   Updated: 2016/12/07 17:04:21 by estephan         ###   ########.fr       */
+/*   Updated: 2016/12/09 11:51:08 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void			check_plus(t_data *data)
 	}
 }
 
-static int		check_precision2(t_data *data, size_t k, int32_t nb, int i)
+static int		check_precision2(t_data *data, size_t k, long long int nb, int i)
 {
 	char	*str;
 	int		s;
@@ -89,7 +89,7 @@ static int		check_precision2(t_data *data, size_t k, int32_t nb, int i)
 	return (i);
 }
 
-int				check_precision(t_data *data, int32_t nb)
+int				check_precision(t_data *data, long long int nb)
 {
 	int		i;
 	size_t	k;
