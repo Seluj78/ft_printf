@@ -70,17 +70,48 @@ static int		put_color_bold(char *start, int i)
 		return (0);
 }
 */
+
+int		put_color(t_data *data, int i)
+{
+	if (ft_strncmp(&data->format[data->index], "blue", i))
+	{
+		ft_putstr("\nBlue :");
+		ft_putstr(BLUE);
+		return (7);
+	}
+	else if (ft_strncmp(&data->format[data->index], "red", i))
+	{
+		ft_putstr("\nRed :");
+		ft_putstr(RED);
+		return (6);
+	}
+	else if (ft_strncmp(&data->format[data->index], "reset", i))
+	{
+		ft_putstr("\nReset :");
+		ft_putstr(RESET);
+		return (8);
+	}
+	return (0);
+}
+
 void	parse_color(t_data *data)
 {
-	char	*start;
-	char	*end;
-	//int 	i;
-
-	if ((start = ft_strchr(data->format, '{')) && *(start + 1) == ':'
-			&& (end = ft_strchr(data->format, '}')))
+	if (data->format[data->index] == '{' && data->format[data->index + 1] == ':')
 	{
-		
-		//data->format[data->index] = 'Z';
-		data->index+=9;
+		int i;
+		int j;
+
+		j = data->index;
+		i = 0;
+		while (data->format[j] != '}')
+		{
+			i++;
+			j++;
+		}
+		//ft_putnbr(i);
+		//ft_putnbr(j);
+		//ft_putnbr(data->index);
+		data->index += put_color(data, i);
+		//data->index += 7;
 	}
 }
