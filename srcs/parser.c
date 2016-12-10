@@ -66,6 +66,12 @@ void		parse_format(t_data *data)
 	reset_var(data);
 }
 
+void		convert_r(t_data *data)
+{
+	(void)data;
+	ft_putstr("This is a file !");
+}
+
 static void	converter2(t_data *data)
 {
 	if (data->type == 'O')
@@ -80,6 +86,8 @@ static void	converter2(t_data *data)
 		convert_llu(data);
 	else if (data->type == 37)
 		convert_percent(data);
+	else if (data->type == 'r')
+		convert_r(data);
 	else
 		return ;
 }

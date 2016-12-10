@@ -46,4 +46,11 @@
 # define UCYAN "\033[4;36m"
 # define UWHITE "\033[4;37m"
 
+/*
+**inversed : \e[7m
+*/
+
+
+
+
 #endif
