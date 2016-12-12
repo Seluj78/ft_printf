@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   check_spaces.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/07/11 09:15:08 by jlasne            #+#    #+#             */
-/*   Updated: 2016/12/12 11:00:46 by estephan         ###   ########.fr       */
+/*   Created: 2016/12/12 11:06:57 by estephan          #+#    #+#             */
+/*   Updated: 2016/12/12 11:15:37 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/includes.h"
 
-void	ft_putnbr(int n)
+void	check_spaces(t_data *data)
 {
-	long nbr;
+	int		i;
 
-	nbr = n;
-	if (nbr < 0)
+	i = 0;
+	data->has_hashtag = FALSE;
+	while (data->conv[i] != '\0' && data->conv[i - 1] != ' ')
 	{
-		ft_putchar('-');
-		nbr = -nbr;
+		if (data->conv[i] == ' ')
+			data->check_spaces = TRUE;
+		i++;
 	}
-	if (nbr >= 10)
-	{
-		ft_putnbr(nbr / 10);
-		ft_putnbr(nbr % 10);
-	}
-	else
-		ft_putchar(nbr + '0');
 }

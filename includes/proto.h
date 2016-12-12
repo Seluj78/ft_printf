@@ -6,7 +6,7 @@
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/15 19:23:47 by jlasne            #+#    #+#             */
-/*   Updated: 2016/12/09 11:54:49 by estephan         ###   ########.fr       */
+/*   Updated: 2016/12/12 11:08:45 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ void	convert_percent(t_data *data);
 char    *check_precision_max(t_data *data, char *str2);
 void	ft_putwstr(wchar_t *str);
 void	check_hashtag(t_data *data);
+void	check_spaces(t_data *data);
 void	check_plus(t_data *data);
 int		check_precision(t_data *data, long long int nb);
 char	*ft_strcapitalize(char *str);

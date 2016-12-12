@@ -25,6 +25,7 @@ SRC_NAME = ft_printf.c \
 	  convert_percent.c\
 	  check_flags.c\
 	  check_width.c\
+	  check_spaces.c\
 	  check_precision_max.c\
 	  color.c\
 	  print_d.c\
