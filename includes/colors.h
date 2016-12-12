@@ -6,7 +6,7 @@
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/12 11:08:59 by jlasne            #+#    #+#             */
-/*   Updated: 2016/12/12 12:49:37 by jlasne           ###   ########.fr       */
+/*   Updated: 2016/12/12 14:10:58 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,6 @@
 # define RCYAN "\033[7;36m"
 # define RWHITE "\033[7;37m"
 
-
 /*
 ** Light colors
 */
@@ -84,7 +83,6 @@
 # define LPURPLE "\033[0;95m"
 # define LCYAN "\033[0;96m"
 # define LWHITE "\033[0;97m"
-
 
 /*
 ** Couleurs de fond (Background)
