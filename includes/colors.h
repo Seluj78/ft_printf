@@ -6,7 +6,7 @@
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/12 11:08:59 by jlasne            #+#    #+#             */
-/*   Updated: 2016/12/12 11:09:26 by jlasne           ###   ########.fr       */
+/*   Updated: 2016/12/12 12:46:07 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,44 @@
 # define UWHITE "\033[4;37m"
 
 /*
-**inversed : \e[7m
+** inversed/Reverse
 */
+
+# define RBLACK "\033[7;30m"
+# define RRED "\033[7;31m"
+# define RGREEN "\033[7;32m"
+# define RYELLOW "\033[7;33m"
+# define RBLUE "\033[7;34m"
+# define RPURPLE "\033[7;35m"
+# define RCYAN "\033[7;36m"
+# define RWHITE "\033[7;37m"
+
+
+/*
+** Light colors
+*/
+
+# define LBLACK "\033[0;90m"
+# define LRED "\033[0;91m"
+# define LGREEN "\033[0;92m"
+# define LYELLOW "\033[0;93m"
+# define LBLUE "\033[0;94m"
+# define LPURPLE "\033[0;95m"
+# define LCYAN "\033[0;96m"
+# define LWHITE "\033[0;97m"
+
+
+/*
+** Couleurs de fond (Background)
+*/
+
+# define FBLACK "\033[40m"
+# define FRED "\033[41m"
+# define FGREEN "\033[42m"
+# define FYELLOW "\033[43m"
+# define FBLUE "\033[44m"
+# define FPURPLE "\033[45m"
+# define FCYAN "\033[46m"
+# define FWHITE "\033[47m"
 
 #endif
