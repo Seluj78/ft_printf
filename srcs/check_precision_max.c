@@ -6,7 +6,7 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/01 14:30:56 by estephan          #+#    #+#             */
-/*   Updated: 2016/12/08 13:32:20 by estephan         ###   ########.fr       */
+/*   Updated: 2016/12/09 16:03:50 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static char		*check_precision_max2(t_data *data, size_t k, char *str2)
 	s = 0;
 	str = ft_strnew(k);
 	i = 0;
-	while (data->conv[i] != '\0' && s == 0)
+	while (data->conv[i++] != '\0' && s == 0)
 	{
 		if (data->conv[i] == '.')
 		{
@@ -33,7 +33,6 @@ static char		*check_precision_max2(t_data *data, size_t k, char *str2)
 				i++;
 			}
 		}
-		i++;
 	}
 	str[s] = '\0';
 	s = ft_atoi(str);
@@ -49,7 +48,7 @@ char			*check_precision_max(t_data *data, char *str2)
 
 	i = 0;
 	k = 0;
-	while (data->conv[i] != '\0' && k == 0)
+	while (data->conv[i++] != '\0' && k == 0)
 	{
 		if (data->conv[i] == '.')
 		{
@@ -60,9 +59,8 @@ char			*check_precision_max(t_data *data, char *str2)
 				k++;
 			}
 		}
-		i++;
 	}
 	if (k != 0)
-	str2 = check_precision_max2(data, k, str2);
+		str2 = check_precision_max2(data, k, str2);
 	return (str2);
 }

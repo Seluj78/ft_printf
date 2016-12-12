@@ -6,7 +6,7 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/30 17:58:58 by estephan          #+#    #+#             */
-/*   Updated: 2016/12/12 14:04:23 by jlasne           ###   ########.fr       */
+/*   Updated: 2016/12/12 14:06:43 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,5 +76,5 @@ void	convert_ju(t_data *data)
 
 	nb = va_arg(*data->ap, uintmax_t);
 	check_precision(data, nb);
-	data->ret += ft_putstr(ft_itoa_base(nb, 10));
+	data->ret += ft_putstr(ft_itoa_base_uint(nb, 10));
 }
