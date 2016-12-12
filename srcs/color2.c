@@ -6,7 +6,7 @@
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/12 11:40:26 by jlasne            #+#    #+#             */
-/*   Updated: 2016/12/12 12:46:09 by jlasne           ###   ########.fr       */
+/*   Updated: 2016/12/12 12:52:01 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,122 +104,122 @@ int		put_color7(t_data *data, int i)
 	else if (!ft_strncmp(&data->format[data->index], "{:rblack}", i))
 	{
 		ft_putstr(RBLACK);
-		return ();
+		return (9);
 	}
 	else if (!ft_strncmp(&data->format[data->index], "{:rred}", i))
 	{
 		ft_putstr(RRED);
-		return ();
+		return (7);
 	}
 	else if (!ft_strncmp(&data->format[data->index], "{:rgreen}", i))
 	{
 		ft_putstr(RGREEN);
-		return ();
+		return (9);
 	}
 	else if (!ft_strncmp(&data->format[data->index], "{:ryellow}", i))
 	{
 		ft_putstr(RYELLOW);
-		return ();
+		return (10);
 	}
 	else if (!ft_strncmp(&data->format[data->index], "{:rblue}", i))
 	{
 		ft_putstr(RBLUE);
-		return ();
+		return (8);
 	}
 	else if (!ft_strncmp(&data->format[data->index], "{:rpurple}", i))
 	{
 		ft_putstr(RPURPLE);
-		return ();
+		return (10);
 	}
 	else if (!ft_strncmp(&data->format[data->index], "{:rcyan}", i))
 	{
 		ft_putstr(RCYAN);
-		return ();
+		return (8);
 	}
 	else if (!ft_strncmp(&data->format[data->index], "{:rwhite}", i))
 	{
 		ft_putstr(RWHITE);
-		return ();
+		return (9);
 	}
 	else if (!ft_strncmp(&data->format[data->index], "{:lblack}", i))
 	{
 		ft_putstr(LBLACK);
-		return ();
+		return (9);
 	}
 	else if (!ft_strncmp(&data->format[data->index], "{:lred}", i))
 	{
 		ft_putstr(LRED);
-		return ();
+		return (7);
 	}
 	else if (!ft_strncmp(&data->format[data->index], "{:lgreen}", i))
 	{
-		ft_putstr(LGREEB);
-		return ();
+		ft_putstr(LGREEN);
+		return (9);
 	}
 	else if (!ft_strncmp(&data->format[data->index], "{:lyellow}", i))
 	{
-		ft_putstr();
-		return ();
+		ft_putstr(LYELLOW);
+		return (10);
 	}
 	else if (!ft_strncmp(&data->format[data->index], "{:lblue}", i))
 	{
-		ft_putstr();
-		return ();
+		ft_putstr(LBLUE);
+		return (8);
 	}
 	else if (!ft_strncmp(&data->format[data->index], "{:lpurple}", i))
 	{
-		ft_putstr();
-		return ();
+		ft_putstr(LPURPLE);
+		return (10);
 	}
 	else if (!ft_strncmp(&data->format[data->index], "{:lcyan}", i))
 	{
-		ft_putstr();
-		return ();
+		ft_putstr(LCYAN);
+		return (9);
 	}
 	else if (!ft_strncmp(&data->format[data->index], "{:lwhite}", i))
 	{
-		ft_putstr();
-		return ();
+		ft_putstr(LWHITE);
+		return (9);
 	}
 	else if (!ft_strncmp(&data->format[data->index], "{:fblack}", i))
 	{
-		ft_putstr();
-		return ();
+		ft_putstr(FBLACK);
+		return (9);
 	}
 	else if (!ft_strncmp(&data->format[data->index], "{:fred}", i))
 	{
-		ft_putstr();
-		return ();
+		ft_putstr(FRED);
+		return (7);
 	}
 	else if (!ft_strncmp(&data->format[data->index], "{:fgreen}", i))
 	{
-		ft_putstr();
-		return ();
+		ft_putstr(FGREEN);
+		return (9);
 	}
 	else if (!ft_strncmp(&data->format[data->index], "{:fyellow}", i))
 	{
-		ft_putstr();
-		return ();
+		ft_putstr(FYELLOW);
+		return (10);
 	}
 	else if (!ft_strncmp(&data->format[data->index], "{:fblue}", i))
 	{
-		ft_putstr();
-		return ();
+		ft_putstr(FBLUE);
+		return (8);
 	}
 	else if (!ft_strncmp(&data->format[data->index], "{:fpurple}", i))
 	{
-		ft_putstr();
-		return ();
+		ft_putstr(FPURPLE);
+		return (10);
 	}
 	else if (!ft_strncmp(&data->format[data->index], "{:fcyan}", i))
 	{
-		ft_putstr();
-		return ();
+		ft_putstr(FCYAN);
+		return (8);
 	}
 	else if (!ft_strncmp(&data->format[data->index], "{:fwhite}", i))
 	{
-		ft_putstr();
-		return ();
+		ft_putstr(FWHITE);
+		return (9);
 	}
 
 	//TODO : Add inverted colors
