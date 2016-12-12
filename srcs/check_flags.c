@@ -6,35 +6,27 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/01 14:30:56 by estephan          #+#    #+#             */
-/*   Updated: 2016/12/09 11:51:08 by estephan         ###   ########.fr       */
+/*   Updated: 2016/12/12 11:13:25 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/includes.h"
 
-void			check_hashtag(t_data *data)
+void		check_hashtag(t_data *data)
 {
 	int		i;
 
 	i = 0;
 	data->has_hashtag = FALSE;
 	while (data->conv[i] != '\0' && data->conv[i - 1] != '#')
-{
+	{
 		if (data->conv[i] == '#')
-		{
 			data->has_hashtag = TRUE;
-			/*if (data->type == 'o')
-				data->ret += write(1, "0", 1);
-			else if (data->type == 'x')
-				data->ret += write(1, "0x", 2);
-			else if (data->type == 'X')
-				data->ret += write(1, "0X", 2);*/
-		}
 		i++;
 	}
 }
 
-void			check_moins(t_data *data)
+void		check_moins(t_data *data)
 {
 	int i;
 
@@ -47,7 +39,7 @@ void			check_moins(t_data *data)
 	}
 }
 
-void			check_plus(t_data *data)
+void		check_plus(t_data *data)
 {
 	int		i;
 
@@ -60,7 +52,7 @@ void			check_plus(t_data *data)
 	}
 }
 
-static int		check_precision2(t_data *data, size_t k, long long int nb, int i)
+static int	check_precision2(t_data *data, size_t k, long long int nb, int i)
 {
 	char	*str;
 	int		s;
@@ -89,7 +81,7 @@ static int		check_precision2(t_data *data, size_t k, long long int nb, int i)
 	return (i);
 }
 
-int				check_precision(t_data *data, long long int nb)
+int			check_precision(t_data *data, long long int nb)
 {
 	int		i;
 	size_t	k;

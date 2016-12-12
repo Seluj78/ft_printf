@@ -36,12 +36,14 @@ SRC_NAME = ft_printf.c \
 	  convert_percent.c\
 	  check_flags.c\
 	  check_width.c\
+	  check_spaces.c\
 	  check_precision_max.c\
 	  color.c\
 	  print_d.c\
 	  print_x.c\
 	  print_xx.c\
 	  print_o.c\
+	  print_u.c\
 	  convert_r.c
 
 OBJ_NAME = $(SRC_NAME:.c=.o)

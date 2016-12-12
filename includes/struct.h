@@ -6,7 +6,7 @@
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/15 19:24:20 by jlasne            #+#    #+#             */
-/*   Updated: 2016/12/12 10:04:36 by jlasne           ###   ########.fr       */
+/*   Updated: 2016/12/12 11:13:28 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ typedef struct	s_data
 	t_bool		moinsloc;
 	t_bool		plusloc;
 	t_bool		is_prec;
+	t_bool		check_spaces;
 }				t_data;
 
 #endif

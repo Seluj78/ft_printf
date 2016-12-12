@@ -6,7 +6,7 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/30 17:41:32 by estephan          #+#    #+#             */
-/*   Updated: 2016/12/07 18:45:34 by estephan         ###   ########.fr       */
+/*   Updated: 2016/12/09 15:27:19 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	convert_c(t_data *data)
 			data->ret += write(1, " ", 1);
 			s--;
 		}
-		data->ret += write (1, &c, 1);
+		data->ret += write(1, &c, 1);
 	}
 }
 
