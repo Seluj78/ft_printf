@@ -6,7 +6,7 @@
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/09 14:07:30 by jlasne            #+#    #+#             */
-/*   Updated: 2016/12/09 15:51:29 by jlasne           ###   ########.fr       */
+/*   Updated: 2016/12/12 10:13:01 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,6 @@ int		main(void)
 	ft_printf("{:upurple}This is underligned bold purple!\n");
 	ft_printf("{:ucyan}This is underligned bold cyan!\n");
 	ft_printf("{:uwhite}This is underligned bold white!\n\n");
-
+//NORMAL COLOR
 	ft_printf("{:reset}This is normal terminal color !!\n");
 }

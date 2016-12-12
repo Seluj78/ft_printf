@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: jlasne <marvin@42.fr>                      +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2016/12/12 10:13:18 by jlasne            #+#    #+#              #
+#    Updated: 2016/12/12 10:13:22 by jlasne           ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME =	libftprintf.a
 
 NAMEBASE =	libftprintf
@@ -30,7 +42,8 @@ SRC_NAME = ft_printf.c \
 	  print_d.c\
 	  print_x.c\
 	  print_xx.c\
-	  print_o.c
+	  print_o.c\
+	  convert_r.c
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
 

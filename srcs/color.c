@@ -47,7 +47,6 @@ int		put_color(t_data *data, int i)
 		ft_putstr(WHITE);
 		return (8);
 	}
-	
 
 
 

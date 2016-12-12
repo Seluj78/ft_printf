@@ -6,7 +6,7 @@
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/15 19:23:47 by jlasne            #+#    #+#             */
-/*   Updated: 2016/12/09 11:54:49 by estephan         ###   ########.fr       */
+/*   Updated: 2016/12/12 10:05:37 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,5 +76,6 @@ void	parse_color(t_data *data);
 void	count_color_selectors(t_data *data);
 void	get_selectors_place(t_data *data);
 void    print_u(t_data *data, int s, int a, long long int nb);
+void	convert_r(t_data *data);
 
 #endif
