@@ -77,5 +77,6 @@ void	parse_color(t_data *data);
 void	count_color_selectors(t_data *data);
 void	get_selectors_place(t_data *data);
 void    print_u(t_data *data, int s, int a, long long int nb);
+void	convert_r(t_data *data);
 
 #endif

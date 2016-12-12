@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: jlasne <marvin@42.fr>                      +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2016/12/12 10:13:18 by jlasne            #+#    #+#              #
+#    Updated: 2016/12/12 11:00:28 by jlasne           ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME =	libftprintf.a
 
 NAMEBASE =	libftprintf
@@ -9,8 +21,7 @@ FLAGS =	-Wall -Wextra -Werror
 INCFLAG =  -I./includes
 
 SRCDIR = srcs
-OBJDIR = objs
-
+OBJDIR = ./
 SRC_NAME = ft_printf.c \
 	  utils.c\
 	  parser.c\
@@ -32,29 +43,24 @@ SRC_NAME = ft_printf.c \
 	  print_x.c\
 	  print_xx.c\
 	  print_o.c\
-	  print_u.c
+	  print_u.c\
+	  convert_r.c
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
 
 SRC = $(addprefix $(SRCDIR)/,$(SRC_NAME))
 OBJ = $(addprefix $(OBJDIR)/,$(OBJ_NAME))
 
-.SILENT:
+#.SILENT:
 
 all: $(NAME)
-	echo "\033[38;5;44m☑️  ALL    $(NAMEBASE) is done\033[0m\033[K"
 
 $(NAME): $(OBJ) $(LIB)
-	printf "\r\033[38;5;11m⌛  MAKE   $(NAMEBASE) please wait ...\033[0m\033[K"
 	cp $(LIB) $(NAME)
 	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
-	echo -en "\r\033[38;5;22m☑️  MAKE   $(NAMEBASE)\033[0m\033[K"
-	echo "\r\033[38;5;184m👥  GROUP MEMBER(S):\033[0m\033[K"
-	echo "\r\033[38;5;15m`cat auteur | sed s/^/\ \ \ \ /g`\033[0m\033[K"
 
-$(OBJ): $(OBJDIR)/%.o: $(SRCDIR)/%.c
-	mkdir -p $(OBJDIR)
+$(OBJ): %.o: $(SRCDIR)/%.c
 	gcc $(FLAGS) -o $@ -c $< $(INCFLAG)
 
 $(LIB):
@@ -62,17 +68,13 @@ $(LIB):
 	make -C libft/
 
 clean:
-	printf "\r\033[38;5;11m⌛  CLEAN  $(NAMEBASE) please wait ...\033[0m\033[K"
 	rm -f $(OBJ)
-	rm -f $(OBJDIR)/$(OBJ_NAME)
+	rm -f $(OBJ_NAME)
 	make -C libft/ clean
-	printf "\r\033[38;5;11m☑️  CLEAN  $(NAMEBASE) is done\033[0m\033[K"
 
 fclean: clean
-	printf "\r\033[38;5;11m⌛  FCLEAN $(NAMEBASE) please wait ...\033[0m\033[K"
 	rm -f $(NAME)
 	make -C libft/ fclean
-	printf "\r\033[38;5;11m☑️  FCLEAN  $(NAMEBASE) is done\033[0m\033[K"
 
 re: fclean all
 

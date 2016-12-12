@@ -6,7 +6,7 @@
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/21 10:28:34 by jlasne            #+#    #+#             */
-/*   Updated: 2016/12/07 11:19:42 by jlasne           ###   ########.fr       */
+/*   Updated: 2016/12/12 10:11:32 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,8 @@ static void	converter2(t_data *data)
 		convert_llu(data);
 	else if (data->type == 37)
 		convert_percent(data);
+	else if (data->type == 'r')
+		convert_r(data);
 	else
 		return ;
 }
@@ -103,11 +105,3 @@ void		converter(t_data *data)
 	else
 		converter2(data);
 }
-/*
-**TODO : Return value
-** TODO : %p isn't good
-** TODO : static functions
-** TODO : taille min champ
-** TODO : Precision
-** - + ' ' 0
-*/

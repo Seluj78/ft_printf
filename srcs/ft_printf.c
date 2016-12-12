@@ -34,7 +34,7 @@ void			get_type(t_data *data)
 			&& data->format[i] != 'u' && data->format[i] != 'U'
 			&& data->format[i] != 'x' && data->format[i] != 'X'
 			&& data->format[i] != 'c' && data->format[i] != 'C'
-			&& data->format[i] != '%')
+			&& data->format[i] != '%' && data->format[i] != 'r')
 		i++;
 	data->conv = ft_strsub(data->format, data->index, (i - data->index + 1));
 	data->index = i;
@@ -61,6 +61,7 @@ int				ft_printf(const char *format, ...)
 	init(&data, format, &ap);
 	while (data.format[data.index])
 	{
+		parse_color(&data);
 		if (data.format[data.index] == '%')
 			parse_format(&data);
 		else
