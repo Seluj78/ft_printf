@@ -6,7 +6,7 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/30 16:54:12 by estephan          #+#    #+#             */
-/*   Updated: 2016/12/08 13:32:59 by estephan         ###   ########.fr       */
+/*   Updated: 2016/12/09 15:30:45 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	convert_s(t_data *data)
 {
-	char *str;
-	int s;
+	char	*str;
+	int		s;
 
 	str = va_arg(*data->ap, char *);
 	str = check_precision_max(data, str);
@@ -26,27 +26,20 @@ void	convert_s(t_data *data)
 	if (data->moinsloc == TRUE)
 	{
 		data->ret += ft_putstr(str);
-		while (s > 0)
-		{
+		while (s-- > 0)
 			data->ret += write(1, " ", 1);
-			s--;
-		}
 	}
 	else
 	{
-		while (s > 0)
-		{
+		while (s-- > 0)
 			data->ret += write(1, " ", 1);
-			s--;
-		}
 		data->ret += ft_putstr(str);
-
 	}
 }
 
 void	convert_ls(t_data *data)
 {
-	int *str;
+	int		*str;
 
 	str = va_arg(*data->ap, int *);
 	if (!str)

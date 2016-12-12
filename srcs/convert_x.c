@@ -6,7 +6,7 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/30 18:07:21 by estephan          #+#    #+#             */
-/*   Updated: 2016/12/07 18:03:10 by estephan         ###   ########.fr       */
+/*   Updated: 2016/12/09 15:27:47 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,34 +60,21 @@ void	convert_x(t_data *data)
 void	convert_llx(t_data *data)
 {
 	long long int	nb;
-	long int		nb1;
 	int				a;
 	int				s;
 
 	if (data->is_ll == TRUE)
-	{
 		nb = va_arg(*data->ap, long long int);
-		if (nb != 0)
-			check_hashtag(data);
-		a = check_precision(data, nb);
-		s = check_width_nb(data,nb);
-		if (data->type == 'x')
-			print_x(data, s, a, nb);
-		else
-			print_xx(data, s, a, nb);
-	}
 	else
-	{
-		nb1 = va_arg(*data->ap, long int);
-		if (nb1 != 0)
-			check_hashtag(data);
-		a = check_precision(data, nb1);
-		s = check_width_nb(data,nb1);
-		if (data->type == 'x')
-			print_x(data, s, a, nb1);
-		else
-			print_xx(data, s, a, nb1);
-	}
+		nb = va_arg(*data->ap, long int);
+	if (nb != 0)
+		check_hashtag(data);
+	a = check_precision(data, nb);
+	s = check_width_nb(data, nb);
+	if (data->type == 'x')
+		print_x(data, s, a, nb);
+	else
+		print_xx(data, s, a, nb);
 }
 
 void	convert_zx(t_data *data)

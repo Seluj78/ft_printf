@@ -6,7 +6,7 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/30 17:58:58 by estephan          #+#    #+#             */
-/*   Updated: 2016/12/08 16:16:29 by estephan         ###   ########.fr       */
+/*   Updated: 2016/12/09 15:25:01 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ void	convert_u(t_data *data)
 	a = check_precision(data, (intmax_t)nb);
 	s = check_width_nb(data, (intmax_t)nb);
 	print_u(data, s, a, nb);
-	//data->ret += ft_putstr(ft_itoa_base(nb, 10));
 }
 
 void	convert_llu(t_data *data)
