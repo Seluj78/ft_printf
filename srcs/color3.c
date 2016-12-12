@@ -6,16 +6,11 @@
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/12 14:20:26 by jlasne            #+#    #+#             */
-/*   Updated: 2016/12/12 14:22:56 by jlasne           ###   ########.fr       */
+/*   Updated: 2016/12/12 14:29:55 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/includes.h"
-
-int		put_color10(t_data *data, int i);
-int		put_color11(t_data *data, int i);
-int		put_color12(t_data *data, int i);
-int		put_color13(t_data *data, int i);
 
 int		put_color9(t_data *data, int i)
 {
