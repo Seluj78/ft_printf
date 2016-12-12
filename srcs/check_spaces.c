@@ -6,7 +6,7 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/12 11:06:57 by estephan          #+#    #+#             */
-/*   Updated: 2016/12/12 11:15:37 by estephan         ###   ########.fr       */
+/*   Updated: 2016/12/12 13:36:01 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	check_spaces(t_data *data)
 	int		i;
 
 	i = 0;
-	data->has_hashtag = FALSE;
+	data->check_spaces = FALSE;
 	while (data->conv[i] != '\0' && data->conv[i - 1] != ' ')
 	{
 		if (data->conv[i] == ' ')
