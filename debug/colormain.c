@@ -6,11 +6,11 @@
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/09 14:07:30 by jlasne            #+#    #+#             */
-/*   Updated: 2016/12/12 10:13:01 by jlasne           ###   ########.fr       */
+/*   Updated: 2016/12/12 11:21:01 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/includes.h"
+#include "../includes/includes.h"
 
 int		main(void)
 {

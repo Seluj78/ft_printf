@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   color.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/12/12 11:25:24 by jlasne            #+#    #+#             */
+/*   Updated: 2016/12/12 11:26:15 by jlasne           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/includes.h"
 
 int		put_color(t_data *data, int i)
@@ -22,6 +34,7 @@ int		put_color(t_data *data, int i)
 		ft_putstr(GREEN);
 		return (8);
 	}
+	//
 	else if (!ft_strncmp(&data->format[data->index], "{:yellow}", i))
 	{
 		ft_putstr(YELLOW);
@@ -42,6 +55,7 @@ int		put_color(t_data *data, int i)
 		ft_putstr(CYAN);
 		return (7);
 	}
+	//
 	else if (!ft_strncmp(&data->format[data->index], "{:white}", i))
 	{
 		ft_putstr(WHITE);
