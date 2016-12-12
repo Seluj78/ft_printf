@@ -6,7 +6,7 @@
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/12 10:05:56 by jlasne            #+#    #+#             */
-/*   Updated: 2016/12/12 10:06:56 by jlasne           ###   ########.fr       */
+/*   Updated: 2016/12/12 10:32:12 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,23 @@
 
 void		convert_r(t_data *data)
 {
-	(void)data;
-	ft_putstr("This is a file !");
+	char *filename;
+	int fd;
+	char buffer;
+	//ft_putstr("This is a file !");
+	filename = va_arg(*data->ap, char*);
+	fd = open(filename, O_RDONLY);
+	if (fd >= 0)
+	{
+		while(read(fd, &buffer, 1) != 0)
+			ft_putchar(buffer);
+	}
+	else
+	{
+		ft_putstr(filename);
+		ft_putstr(": Nu such file or directory");
+	}
+
+	//Need to add syntax about how many chars/lines i
+	//read, and where i start from
 }

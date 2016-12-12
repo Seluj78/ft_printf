@@ -142,7 +142,7 @@ int		put_color(t_data *data, int i)
 		return (9);
 	}
 
-
+//TODO : Add inverted colors
 	return (0);
 }
 
