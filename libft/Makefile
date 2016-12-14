@@ -6,7 +6,7 @@
 #    By: jlasne <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/03 12:34:13 by jlasne            #+#    #+#              #
-#    Updated: 2016/12/07 13:43:58 by jlasne           ###   ########.fr        #
+#    Updated: 2016/12/12 13:30:16 by estephan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -119,6 +119,7 @@ SRC = ft_bzero.c\
 	  ft_itoa_base.c\
 	  ft_itoa_base_l.c\
 	  ft_itoa_base_ll.c\
+	  ft_itoa_base_uint.c\
 	  ft_nblen.c\
 	  ft_nblen_l.c\
 	  ft_nblen_ll.c\

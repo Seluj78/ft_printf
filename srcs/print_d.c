@@ -6,13 +6,13 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/09 13:17:08 by estephan          #+#    #+#             */
-/*   Updated: 2016/12/09 15:18:30 by estephan         ###   ########.fr       */
+/*   Updated: 2016/12/13 14:52:31 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/includes.h"
 
-static void		print_d1(t_data *data, int s, int a, int nb)
+static void		print_d1(t_data *data, int s, int a, long long int nb)
 {
 	if (data->plusloc == TRUE)
 		data->ret += write(1, "+", 1);
@@ -29,12 +29,12 @@ static void		print_d1(t_data *data, int s, int a, int nb)
 	}
 	if (a != -1)
 	{
-		ft_putnbr(nb);
-		data->ret += ft_nblen(nb);
+		ft_putnbr_l(nb);
+		data->ret += ft_nblen_l(nb);
 	}
 }
 
-static void		print_d2_2(t_data *data, int s, int a, int nb)
+static void		print_d2_2(t_data *data, int s, int a, long long int nb)
 {
 	while (s > 0)
 	{
@@ -55,12 +55,12 @@ static void		print_d2_2(t_data *data, int s, int a, int nb)
 	}
 	if (a != -1)
 	{
-		ft_putnbr(nb);
-		data->ret += ft_nblen(nb);
+		ft_putnbr_l(nb);
+		data->ret += ft_nblen_l(nb);
 	}
 }
 
-static void		print_d2(t_data *data, int s, int a, int nb)
+static void		print_d2(t_data *data, int s, int a, long long int nb)
 {
 	if (data->moinsloc == TRUE)
 	{
@@ -78,8 +78,8 @@ static void		print_d2(t_data *data, int s, int a, int nb)
 		}
 		if (a != -1)
 		{
-			ft_putnbr(nb);
-			data->ret += ft_nblen(nb);
+			ft_putnbr_l(nb);
+			data->ret += ft_nblen_l(nb);
 		}
 		while (s-- > 0)
 			data->ret += write(1, " ", 1);
@@ -92,7 +92,7 @@ void			print_d(t_data *data, int s, int a, int nb)
 {
 	if (data->plusloc == TRUE)
 		s--;
-	s = (s - a - ft_nblen(nb));
+	s = (s - a - ft_nblen_l(nb));
 	if (a == 0 && nb == 0 && data->is_prec == TRUE)
 	{
 		a = -1;

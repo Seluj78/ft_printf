@@ -6,7 +6,7 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/30 17:05:04 by estephan          #+#    #+#             */
-/*   Updated: 2016/12/12 11:16:32 by estephan         ###   ########.fr       */
+/*   Updated: 2016/12/13 14:50:58 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,16 @@
 
 void	convert_d(t_data *data)
 {
-	int nb;
+	long long int nb1;
 	int a;
 	int s;
+	int nb;
 
 	a = 0;
-	nb = va_arg(*data->ap, int);
+	nb1 = va_arg(*data->ap, long long int);
+	while (nb1 > 2147483647)
+		nb1 = (nb1 - 4294967296);
+	nb = nb1;
 	if (nb > 0)
 		check_plus(data);
 	a = check_precision(data, (intmax_t)nb);
@@ -65,7 +69,6 @@ void	convert_lld(t_data *data)
 		nb = va_arg(*data->ap, long long int);
 		if (nb > 0)
 			check_plus(data);
-		check_precision(data, nb);
 		ft_putnbr_ll(nb);
 		data->ret += ft_nblen_ll(nb);
 	}
@@ -76,7 +79,6 @@ void	convert_lld(t_data *data)
 			check_plus(data);
 		if (data->plusloc == TRUE)
 			data->ret += write(1, "+", 1);
-		check_precision(data, nb1);
 		ft_putnbr_l(nb1);
 		data->ret += ft_nblen_l(nb1);
 	}

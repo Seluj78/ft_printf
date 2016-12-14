@@ -6,7 +6,7 @@
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/03 12:36:05 by jlasne            #+#    #+#             */
-/*   Updated: 2016/12/07 13:43:25 by jlasne           ###   ########.fr       */
+/*   Updated: 2016/12/13 14:06:43 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,7 @@ unsigned int	ft_atoi_nbase(const char *str, int base, int len);
 char			*ft_itoa_base(unsigned int n, int base);
 char			*ft_itoa_base_l(unsigned long int n, int base);
 char			*ft_itoa_base_ll(unsigned long long int n, int base);
+char			*ft_itoa_base_uint(uintmax_t n, int base);
 int				ft_nblen(int n);
 int				ft_nblen_l(long n);
 int				ft_nblen_ll(long long n);
