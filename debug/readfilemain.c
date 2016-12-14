@@ -6,7 +6,7 @@
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/12 14:24:56 by jlasne            #+#    #+#             */
-/*   Updated: 2016/12/13 10:43:05 by jlasne           ###   ########.fr       */
+/*   Updated: 2016/12/13 11:12:10 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 int		main(int argc, char **argv)
 {
-	ft_printf("\n%2L-3Lr\n", "test");
-	//ft_printf("%d", 42);
+	ft_printf("\n%10a-20ar\n", "test");
+	return (0);
 }
