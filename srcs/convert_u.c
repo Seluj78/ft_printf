@@ -6,7 +6,7 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/30 17:58:58 by estephan          #+#    #+#             */
-/*   Updated: 2016/12/09 15:25:01 by estephan         ###   ########.fr       */
+/*   Updated: 2016/12/13 16:01:57 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	convert_hhu(t_data *data)
 {
 	unsigned char		c;
-	short unsigned int	nb;
+	unsigned short int	nb;
 
 	if (data->is_hh == TRUE)
 	{
@@ -24,7 +24,7 @@ void	convert_hhu(t_data *data)
 	}
 	else
 	{
-		nb = (short unsigned int)va_arg(*data->ap, unsigned int);
+		nb = (unsigned short int)va_arg(*data->ap, unsigned int);
 		check_precision(data, nb);
 		data->ret += ft_putstr(ft_itoa_base(nb, 10));
 	}
@@ -76,5 +76,5 @@ void	convert_ju(t_data *data)
 
 	nb = va_arg(*data->ap, uintmax_t);
 	check_precision(data, nb);
-	data->ret += ft_putstr(ft_itoa_base(nb, 10));
+	data->ret += ft_putstr(ft_itoa_base_uint(nb, 10));
 }

@@ -6,7 +6,7 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/30 16:28:39 by estephan          #+#    #+#             */
-/*   Updated: 2016/12/01 13:14:22 by estephan         ###   ########.fr       */
+/*   Updated: 2016/12/13 15:58:33 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ void	converter_h(t_data *data)
 			convert_hhu(data);
 		else if (data->type == 'o' && data->is_h == TRUE)
 			convert_hho(data);
+		else if (data->type == 'U' && data->is_h == TRUE)
+			convert_hhu(data);
 	}
 	else
 	{

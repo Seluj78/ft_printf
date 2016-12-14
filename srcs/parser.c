@@ -6,7 +6,7 @@
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/21 10:28:34 by jlasne            #+#    #+#             */
-/*   Updated: 2016/12/13 10:09:58 by jlasne           ###   ########.fr       */
+/*   Updated: 2016/12/14 14:50:40 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,25 +26,28 @@ void		parse_type(t_data *data)
 
 	end = ft_strlen(data->conv) - 1;
 	data->type = data->conv[end];
-	if (data->conv[end - 1] == 'h' || data->conv[end - 1] == 'l')
+	if (data->type != 'O' && data->type != 'C' && data->type != 'S' && data->type !=     'D' && data->type != 'U')
 	{
-		if (data->conv[end - 2] == 'h' || data->conv[end - 2] == 'l')
+		if (data->conv[end - 1] == 'h' || data->conv[end - 1] == 'l')
 		{
-			if (data->conv[end - 2] == 'l')
-				data->is_ll = TRUE;
-			if (data->conv[end - 2] == 'h')
-				data->is_hh = TRUE;
+			if (data->conv[end - 2] == 'h' || data->conv[end - 2] == 'l')
+			{
+				if (data->conv[end - 2] == 'l')
+					data->is_ll = TRUE;
+				if (data->conv[end - 2] == 'h')
+					data->is_hh = TRUE;
+			}
+			else
+			{
+				if (data->conv[end - 1] == 'l')
+					data->is_l = TRUE;
+				if (data->conv[end - 1] == 'h')
+					data->is_h = TRUE;
+			}
 		}
 		else
-		{
-			if (data->conv[end - 1] == 'l')
-				data->is_l = TRUE;
-			if (data->conv[end - 1] == 'h')
-				data->is_h = TRUE;
-		}
+			parse_type2(data, end);
 	}
-	else
-		parse_type2(data, end);
 }
 
 void		parse_format(t_data *data)
