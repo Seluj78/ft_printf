@@ -6,8 +6,7 @@
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/12 10:05:56 by jlasne            #+#    #+#             */
-/*   Updated: 2016/12/15 09:42:16 by jlasne           ###   ########.fr       */
-/*   Updated: 2016/12/13 10:20:28 by jlasne           ###   ########.fr       */
+/*   Updated: 2016/12/15 11:46:11 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,33 +39,29 @@ void	parse_r(t_data *data)
 			data->start_from_char = ft_atoi(ft_strncpy(data->conv, 1, j));
 		else if (data->conv[j + 1] == 'L')
 			data->start_from_line = ft_atoi(ft_strncpy(data->conv, 1, j));
-	}
-	else
-	{
-		data->start_from_char = 0;
-		data->start_from_line = 0;
 	}*/
 
 }
 
 void		convert_r(t_data *data)
 {
-	char	*filename;
-	int		fd;
-	char	buffer;
-
+	char *filename;
+	int fd;
+	char buffer;
+	//ft_putstr("This is a file !");
 	filename = va_arg(*data->ap, char*);
 	fd = open(filename, O_RDONLY);
-	parse_r(data);
 	if (fd >= 0)
 	{
-		while (read(fd, &buffer, 1) != 0)
+		while(read(fd, &buffer, 1) != 0)
 			ft_putchar(buffer);
 	}
 	else
 	{
 		ft_putstr(filename);
-		ft_putstr(": No such file or directory");
+		ft_putstr(": Nu such file or directory");
 	}
-	free(filename);
+
+	//Need to add syntax about how many chars/lines i
+	//read, and where i start from
 }
