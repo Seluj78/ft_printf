@@ -6,7 +6,7 @@
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/12 10:05:56 by jlasne            #+#    #+#             */
-/*   Updated: 2016/12/13 11:20:58 by jlasne           ###   ########.fr       */
+/*   Updated: 2016/12/15 11:44:15 by jlasne           ###   ########.fr       */
 /*   Updated: 2016/12/13 10:20:28 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
@@ -15,6 +15,8 @@
 
 void	parse_r(t_data *data)
 {
+	(void)data;
+	/*
 	int i;
 	int j;
 
@@ -38,7 +40,7 @@ void	parse_r(t_data *data)
 			data->start_from_char = ft_atoi(ft_strncpy(data->conv, 1, j));
 		else if (data->conv[j + 1] == 'L')
 			data->start_from_line = ft_atoi(ft_strncpy(data->conv, 1, j));
-	}
+	}*/
 
 }
 
