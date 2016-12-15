@@ -6,7 +6,7 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/01 14:30:56 by estephan          #+#    #+#             */
-/*   Updated: 2016/12/13 14:47:10 by estephan         ###   ########.fr       */
+/*   Updated: 2016/12/15 09:37:22 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,7 @@ static int	check_precision2(t_data *data, size_t k, long long int nb, int i)
 	i = 0;
 	while (s-- > ft_nblen_l(nb))
 		i++;
+	free(str);
 	return (i);
 }
 

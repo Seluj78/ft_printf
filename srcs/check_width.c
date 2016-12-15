@@ -6,7 +6,7 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/01 14:30:56 by estephan          #+#    #+#             */
-/*   Updated: 2016/12/09 15:54:39 by estephan         ###   ########.fr       */
+/*   Updated: 2016/12/15 09:39:01 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,5 +73,6 @@ int				check_width_nb(t_data *data, long long int nb)
 	i = 0;
 	s = 0;
 	s = part_3(data, s, i, str);
+	free(str);
 	return (s);
 }
