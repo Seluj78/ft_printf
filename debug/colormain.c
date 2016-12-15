@@ -6,7 +6,7 @@
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/09 14:07:30 by jlasne            #+#    #+#             */
-/*   Updated: 2016/12/13 10:16:23 by jlasne           ###   ########.fr       */
+/*   Updated: 2016/12/15 12:35:12 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 int		main(void)
 {
-//NORMAL
 	ft_printf("{:reset}");
 	ft_printf("{:black}This is black !\n");
 	ft_printf("{:red}This is red!\n");
@@ -24,7 +23,6 @@ int		main(void)
 	ft_printf("{:purple}This is purple!\n");
 	ft_printf("{:cyan}This is cyan!\n");
 	ft_printf("{:white}This is white!\n\n");
-//BOLD
 	ft_printf("{:reset}");
 	ft_printf("{:bblack}This is bold black !\n");
 	ft_printf("{:bred}This is bold red!\n");
@@ -34,7 +32,6 @@ int		main(void)
 	ft_printf("{:bpurple}This is bold purple!\n");
 	ft_printf("{:bcyan}This is bold cyan!\n");
 	ft_printf("{:bwhite}This is bold white!\n\n");
-//underligned
 	ft_printf("{:reset}");
 	ft_printf("{:ublack}This is underligned black !\n");
 	ft_printf("{:ured}This is underligned red!\n");
@@ -44,7 +41,6 @@ int		main(void)
 	ft_printf("{:upurple}This is underligned purple!\n");
 	ft_printf("{:ucyan}This is underligned cyan!\n");
 	ft_printf("{:uwhite}This is underligned white!\n\n");
-//UNDERLIGNED BOLD
 	ft_printf("{:bwhite}");
 	ft_printf("{:ublack}This is underligned bold black !\n");
 	ft_printf("{:ured}This is underligned bold red!\n");
@@ -54,7 +50,6 @@ int		main(void)
 	ft_printf("{:upurple}This is underligned bold purple!\n");
 	ft_printf("{:ucyan}This is underligned bold cyan!\n");
 	ft_printf("{:uwhite}This is underligned bold white!\n\n");
-//Reverse colors
 	ft_printf("{:reset}");
 	ft_printf("{:rblack}This is reversed black!\n");
 	ft_printf("{:rred}This is reversed red!\n");
@@ -64,7 +59,6 @@ int		main(void)
 	ft_printf("{:rpurple}This is reversed purple!\n");
 	ft_printf("{:rcyan}This is reversed cyan!\n");
 	ft_printf("{:rwhite}This is reversed white!\n\n");
-//Bold reverse
 	ft_printf("{:reset} {:bwhite}");
 	ft_printf("{:rblack}This is reversed boldblack!\n");
 	ft_printf("{:rred}This is reversed bold red!\n");
@@ -74,7 +68,6 @@ int		main(void)
 	ft_printf("{:rpurple}This is reversed bold purple!\n");
 	ft_printf("{:rcyan}This is reversed bold cyan!\n");
 	ft_printf("{:rwhite}This is reversed bold white!\n\n");
-//Underline reverse
 	ft_printf("{:reset} {:uwhite}");
 	ft_printf("{:rblack}This is reversed underligned black!\n");
 	ft_printf("{:rred}This is reversed underligned red!\n");
@@ -84,7 +77,6 @@ int		main(void)
 	ft_printf("{:rpurple}This is reversed underligned purple!\n");
 	ft_printf("{:rcyan}This is reversed underligned cyan!\n");
 	ft_printf("{:rwhite}This is reversed underligned white!\n\n");
-//Underline bold reverse
 	ft_printf("{:reset} {:uwhite} {:bwhite}");
 	ft_printf("{:rblack}This is reversed underligned bold black!\n");
 	ft_printf("{:rred}This is reversed underligned bold red!\n");
@@ -94,7 +86,6 @@ int		main(void)
 	ft_printf("{:rpurple}This is reversed underligned bold purple!\n");
 	ft_printf("{:rcyan}This is reversed underligned bold cyan!\n");
 	ft_printf("{:rwhite}This is reversed underligned bold white!\n\n");
-//Light colors
 	ft_printf("{:reset}");
 	ft_printf("{:lblack}This is light black!\n");
 	ft_printf("{:lred}This is light red!\n");
@@ -104,7 +95,6 @@ int		main(void)
 	ft_printf("{:lpurple}This is light purple!\n");
 	ft_printf("{:lcyan}This is light cyan!\n");
 	ft_printf("{:lwhite}This is light white!\n\n");
-//Background colors
 	ft_printf("{:reset}");
 	ft_printf("{:fblack}This is a black background!{:reset}\n");
 	ft_printf("{:fred}This is a FRED background!{:reset}\n");
@@ -114,6 +104,6 @@ int		main(void)
 	ft_printf("{:fpurple}This is a purple background!{:reset}\n");
 	ft_printf("{:fcyan}This is a cyan background!{:reset}\n");
 	ft_printf("{:fwhite}This is a white background!{:reset}\n\n");
-//NORMAL COLOR
+	//NORMAL COLOR
 	ft_printf("{:reset}This is normal terminal color !!\n");
 }
