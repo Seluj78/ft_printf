@@ -6,7 +6,7 @@
 #    By: jlasne <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/12 10:13:18 by jlasne            #+#    #+#              #
-#    Updated: 2016/12/15 12:29:34 by jlasne           ###   ########.fr        #
+#    Updated: 2016/12/15 14:42:14 by jlasne           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ NAMEBASE =	libftprintf
 
 LIB = ./libft/libft.a
 
-FLAGS =	-Wall -Wextra -Werror
+FLAGS =	-Wall -Wextra -Werror -g
 
 INCFLAG =  -I./includes
 

@@ -6,7 +6,7 @@
 #    By: jlasne <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/03 12:34:13 by jlasne            #+#    #+#              #
-#    Updated: 2016/12/12 13:30:16 by estephan         ###   ########.fr        #
+#    Updated: 2016/12/15 14:42:29 by jlasne           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,7 +56,7 @@ UWhite=\033[4;37m       # White
 
 NAME = libft.a
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -g
 
 SRC = ft_bzero.c\
 	  ft_memset.c\
