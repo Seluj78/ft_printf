@@ -6,7 +6,7 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/30 18:05:54 by estephan          #+#    #+#             */
-/*   Updated: 2016/12/15 09:41:02 by jlasne           ###   ########.fr       */
+/*   Updated: 2016/12/01 13:46:24 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,4 @@ void	convert_p(t_data *data)
 	ft_putstr("0x7fff");
 	data->ret += 4;
 	data->ret += ft_putstr(ft_itoa_base(ft_atoi(str), 16));
-	//free(str);
 }
