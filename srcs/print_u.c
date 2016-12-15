@@ -6,11 +6,25 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/09 13:33:00 by estephan          #+#    #+#             */
-/*   Updated: 2016/12/09 14:52:32 by estephan         ###   ########.fr       */
+/*   Updated: 2016/12/15 17:13:14 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/includes.h"
+
+static void		str_itoa_free(t_data *data, long long int nb)
+{
+	char	*str;
+
+	if (data->is_ll == TRUE)
+		str = ft_itoa_base_ll(nb, 10);
+	else if (data->is_l == TRUE)
+		str = ft_itoa_base_l(nb, 10);
+	else
+		str = ft_itoa_base(nb, 10);
+	data->ret += ft_putstr(str);
+	free(str);
+}
 
 static void		print_u1(t_data *data, int s, int a, long long int nb)
 {
@@ -23,14 +37,7 @@ static void		print_u1(t_data *data, int s, int a, long long int nb)
 		s--;
 	}
 	if (a != -1)
-	{
-		if (data->is_ll == TRUE)
-			data->ret += ft_putstr(ft_itoa_base_ll(nb, 10));
-		else if (data->is_l == TRUE)
-			data->ret += ft_putstr(ft_itoa_base_l(nb, 10));
-		else
-			data->ret += ft_putstr(ft_itoa_base(nb, 10));
-	}
+		str_itoa_free(data, nb);
 }
 
 static void		print_u2_2(t_data *data, int s, int a, long long int nb)
@@ -48,14 +55,7 @@ static void		print_u2_2(t_data *data, int s, int a, long long int nb)
 	if (data->has_hashtag == TRUE)
 		data->ret += write(1, "0", 2);
 	if (a != -1)
-	{
-		if (data->is_ll == TRUE)
-			data->ret += ft_putstr(ft_itoa_base_ll(nb, 10));
-		else if (data->is_l == TRUE)
-			data->ret += ft_putstr(ft_itoa_base_l(nb, 10));
-		else
-			data->ret += ft_putstr(ft_itoa_base(nb, 10));
-	}
+		str_itoa_free(data, nb);
 }
 
 static void		print_u2(t_data *data, int s, int a, long long int nb)
@@ -70,14 +70,7 @@ static void		print_u2(t_data *data, int s, int a, long long int nb)
 		if (data->has_hashtag == TRUE)
 			data->ret += write(1, "0", 2);
 		if (a != -1)
-		{
-			if (data->is_ll == TRUE)
-				data->ret += ft_putstr(ft_itoa_base_ll(nb, 10));
-			else if (data->is_l == TRUE)
-				data->ret += ft_putstr(ft_itoa_base_l(nb, 10));
-			else
-				data->ret += ft_putstr(ft_itoa_base(nb, 10));
-		}
+			str_itoa_free(data, nb);
 		while (s-- > 0)
 			data->ret += write(1, " ", 1);
 	}
@@ -87,10 +80,14 @@ static void		print_u2(t_data *data, int s, int a, long long int nb)
 
 void			print_u(t_data *data, int s, int a, long long int nb)
 {
+	char	*str;
+
+	str = ft_itoa_base(nb, 10);
 	if (data->has_hashtag == TRUE)
-		s = (s - 1 - a - (ft_strlen(ft_itoa_base(nb, 10))));
+		s = (s - 1 - a - (ft_strlen(str)));
 	else
-		s = (s - a - (ft_strlen(ft_itoa_base(nb, 10))));
+		s = (s - a - (ft_strlen(str)));
+	free(str);
 	if (a == 0 && nb == 0 && data->is_prec == TRUE)
 	{
 		a = -1;

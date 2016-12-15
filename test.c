@@ -8,7 +8,7 @@ int main(void)
 	ft_printf("%d%d%d\n", 42, 43, 44);
 	ft_printf("%ld\n", 2147483647);
 	ft_printf("%lld\n", 9223372036854775807);
-	ft_printf("%x\n", 505);
+/*	ft_printf("%x\n", 505);
 	ft_printf("%X\n", 505);
 	ft_printf("%p\n", &ft_printf);
 	ft_printf("%20.15d\n", 54321);
@@ -31,7 +31,7 @@ int main(void)
 	ft_printf("%s%s\n", "test", "test");
 	ft_printf("%s%s%s\n", "test", "test", "test");
 	ft_printf("%C\n", 15000);
-//	while (1);
+//	while (1);*/
 	return (0);
 }
 
