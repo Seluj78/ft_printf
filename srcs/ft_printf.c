@@ -6,7 +6,7 @@
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/15 19:27:58 by jlasne            #+#    #+#             */
-/*   Updated: 2016/12/09 15:29:29 by estephan         ###   ########.fr       */
+/*   Updated: 2016/12/15 13:37:19 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,10 @@ int				ft_printf(const char *format, ...)
 	{
 		parse_color(&data);
 		if (data.format[data.index] == '%')
+		{
 			parse_format(&data);
+			free(data.conv);
+		}
 		else
 		{
 			ft_putchar(data.format[data.index]);
@@ -74,5 +77,6 @@ int				ft_printf(const char *format, ...)
 		data.index++;
 	}
 	va_end(ap);
+	free(data.format);
 	return (data.ret);
 }
