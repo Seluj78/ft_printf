@@ -6,7 +6,7 @@
 #    By: jlasne <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/12 10:13:18 by jlasne            #+#    #+#              #
-#    Updated: 2016/12/12 11:00:28 by jlasne           ###   ########.fr        #
+#    Updated: 2016/12/15 12:29:34 by jlasne           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,6 +39,8 @@ SRC_NAME = ft_printf.c \
 	  check_spaces.c\
 	  check_precision_max.c\
 	  color.c\
+	  color2.c\
+	  color3.c\
 	  print_d.c\
 	  print_x.c\
 	  print_xx.c\
