@@ -68,5 +68,5 @@ void		convert_r(t_data *data)
 		ft_putstr(filename);
 		ft_putstr(": No such file or directory");
 	}
-	free(filename);
+	//free(filename);
 }

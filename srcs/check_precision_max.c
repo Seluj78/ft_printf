@@ -6,7 +6,7 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/01 14:30:56 by estephan          #+#    #+#             */
-/*   Updated: 2016/12/15 09:38:31 by jlasne           ###   ########.fr       */
+/*   Updated: 2016/12/15 11:15:46 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static char		*check_precision_max2(t_data *data, size_t k, char *str2)
 	}
 	str[s] = '\0';
 	s = ft_atoi(str);
-	free(str);
+	//free(str);
 	while (s < ft_strlen(str2))
 		str2[ft_strlen(str2) - 1] = '\0';
 	return (str2);

@@ -78,7 +78,7 @@ int				ft_printf(const char *format, ...)
 		data.index++;
 	}
 	va_end(ap);
-	free(data.conv);
-	free(data.format);
+	//free(data.conv);
+	//free(data.format);
 	return (data.ret);
 }

@@ -73,6 +73,6 @@ int				check_width_nb(t_data *data, long long int nb)
 	i = 0;
 	s = 0;
 	s = part_3(data, s, i, str);
-	free(str);
+	//free(str);
 	return (s);
 }
