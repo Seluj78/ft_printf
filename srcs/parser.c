@@ -6,7 +6,7 @@
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/21 10:28:34 by jlasne            #+#    #+#             */
-/*   Updated: 2016/12/15 12:44:46 by jlasne           ###   ########.fr       */
+/*   Updated: 2016/12/15 12:53:22 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,7 @@ void		parse_type(t_data *data)
 					data->is_hh = TRUE;
 			}
 			else
-			{
-				if (data->conv[end - 1] == 'l')
-					data->is_l = TRUE;
-				if (data->conv[end - 1] == 'h')
-					data->is_h = TRUE;
-			}
+				parse_utils(data, end);
 		}
 		else
 			parse_type2(data, end);

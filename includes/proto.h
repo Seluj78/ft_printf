@@ -6,7 +6,7 @@
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/15 19:23:47 by jlasne            #+#    #+#             */
-/*   Updated: 2016/12/15 12:42:41 by jlasne           ###   ########.fr       */
+/*   Updated: 2016/12/15 12:53:19 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,5 +91,6 @@ int		put_color10(t_data *data, int i);
 int		put_color11(t_data *data, int i);
 int		put_color12(t_data *data, int i);
 int		put_color13(t_data *data, int i);
+void	parse_utils(t_data *data, int end);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/18 13:03:27 by jlasne            #+#    #+#             */
-/*   Updated: 2016/11/30 17:28:00 by estephan         ###   ########.fr       */
+/*   Updated: 2016/12/15 12:54:10 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,4 +73,12 @@ void	ft_putwstr(wchar_t *str)
 		write(1, &str[i], 1);
 		i++;
 	}
+}
+
+void	parse_utils(t_data *data, int end)
+{
+	if (data->conv[end - 1] == 'l')
+		data->is_l = TRUE;
+	if (data->conv[end - 1] == 'h')
+		data->is_h = TRUE;
 }
