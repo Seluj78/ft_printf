@@ -6,7 +6,7 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/30 17:05:04 by estephan          #+#    #+#             */
-/*   Updated: 2016/12/13 14:50:58 by estephan         ###   ########.fr       */
+/*   Updated: 2016/12/15 12:43:27 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	convert_d(t_data *data)
 {
-	long long int nb1;
-	int a;
-	int s;
-	int nb;
+	long long int	nb1;
+	int				a;
+	int				s;
+	int				nb;
 
 	a = 0;
 	nb1 = va_arg(*data->ap, long long int);

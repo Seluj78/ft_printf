@@ -6,7 +6,7 @@
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/12 11:08:59 by jlasne            #+#    #+#             */
-/*   Updated: 2016/12/15 12:31:04 by jlasne           ###   ########.fr       */
+/*   Updated: 2016/12/15 12:42:29 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 # define COLORS_H
 
 /*
- * ** COLORS
- * */
+** COLORS
+*/
 
 # define RESET "\033[0m"
 
 /*
- * ** Regular Colors
- * */
+** Regular Colors
+*/
 
 # define BLACK "\033[0;30m"
 # define RED "\033[0;31m"
@@ -33,8 +33,8 @@
 # define WHITE "\033[0;37m"
 
 /*
- * ** Blold
- * */
+** Blold
+*/
 
 # define BBLACK "\033[1;30m"
 # define BRED "\033[1;31m"
@@ -46,8 +46,8 @@
 # define BWHITE "\033[1;37m"
 
 /*
- * ** Underline
- * */
+** Underline
+*/
 
 # define UBLACK "\033[4;30m"
 # define URED "\033[4;31m"
@@ -59,8 +59,8 @@
 # define UWHITE "\033[4;37m"
 
 /*
- * ** inversed/Reverse
- * */
+** inversed/Reverse
+*/
 
 # define RBLACK "\033[7;30m"
 # define RRED "\033[7;31m"
@@ -72,8 +72,8 @@
 # define RWHITE "\033[7;37m"
 
 /*
- * ** Light colors
- * */
+** Light colors
+*/
 
 # define LBLACK "\033[0;90m"
 # define LRED "\033[0;91m"
@@ -85,8 +85,8 @@
 # define LWHITE "\033[0;97m"
 
 /*
- * ** Couleurs de fond (Background)
- * */
+** Couleurs de fond (Background)
+*/
 
 # define FBLACK "\033[40m"
 # define FRED "\033[41m"
