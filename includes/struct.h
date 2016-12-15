@@ -6,7 +6,7 @@
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/15 19:24:20 by jlasne            #+#    #+#             */
-/*   Updated: 2016/12/12 11:13:28 by estephan         ###   ########.fr       */
+/*   Updated: 2016/12/15 09:35:34 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,10 @@ typedef struct	s_data
 	t_bool		plusloc;
 	t_bool		is_prec;
 	t_bool		check_spaces;
+	int			start_from_line;
+	int			start_from_char;
+	int			end_at_line;
+	int			end_at_char;
 }				t_data;
 
 #endif

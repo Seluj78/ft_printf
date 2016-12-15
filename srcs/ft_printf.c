@@ -6,7 +6,7 @@
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/15 19:27:58 by jlasne            #+#    #+#             */
-/*   Updated: 2016/12/09 15:29:29 by estephan         ###   ########.fr       */
+/*   Updated: 2016/12/15 09:35:31 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,10 @@ void			reset_var(t_data *data)
 	data->is_z = FALSE;
 	data->has_hashtag = FALSE;
 	data->moinsloc = FALSE;
+	data->start_from_line = 0;
+	data->start_from_char = 0;
+	data->end_at_line = 0;
+	data->end_at_char = 0;
 }
 
 int				ft_printf(const char *format, ...)
@@ -74,5 +78,7 @@ int				ft_printf(const char *format, ...)
 		data.index++;
 	}
 	va_end(ap);
+	//free(data.conv);
+	//free(data.format);
 	return (data.ret);
 }
