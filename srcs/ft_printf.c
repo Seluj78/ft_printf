@@ -6,7 +6,7 @@
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/15 19:27:58 by jlasne            #+#    #+#             */
-/*   Updated: 2016/12/15 17:04:24 by jlasne           ###   ########.fr       */
+/*   Updated: 2016/12/16 13:17:25 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,16 @@ void			get_type(t_data *data)
 			&& data->format[i] != 'u' && data->format[i] != 'U'
 			&& data->format[i] != 'x' && data->format[i] != 'X'
 			&& data->format[i] != 'c' && data->format[i] != 'C'
-			&& data->format[i] != '%' && data->format[i] != 'r')
+			&& data->format[i] != '%' && data->format[i] != 'r'
+			&& data->format[i] != '\0')
 		i++;
-	data->conv = ft_strsub(data->format, data->index, (i - data->index + 1));
-	data->index = i;
+	if (data->format[i] == '\0')
+		data->conv = ft_strsub(data->format, data->index, 1);
+	else
+	{
+		data->conv = ft_strsub(data->format, data->index, (i - data->index + 1));
+		data->index = i;
+	}
 }
 
 void			reset_var(t_data *data)

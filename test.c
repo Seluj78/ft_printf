@@ -3,7 +3,7 @@
 #include <limits.h>
 int main(void)
 {
-	ft_printf("%D", LONG_MIN);
+	ft_printf("%s %s %s", "A", "B", "c");
 	return (0);
 }
 
