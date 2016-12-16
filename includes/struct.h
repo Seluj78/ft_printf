@@ -6,7 +6,7 @@
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/15 19:24:20 by jlasne            #+#    #+#             */
-/*   Updated: 2016/12/12 11:13:28 by estephan         ###   ########.fr       */
+/*   Updated: 2016/12/16 11:38:14 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ typedef char		t_bool;
 
 # define TRUE 1
 # define FALSE 0
+# define LONG_MAX 2147483647
+# define LONG_MIN -2147483647
 
 /*
 **Structs :
