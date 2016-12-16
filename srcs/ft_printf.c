@@ -6,7 +6,7 @@
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/15 19:27:58 by jlasne            #+#    #+#             */
-/*   Updated: 2016/12/15 14:47:32 by jlasne           ###   ########.fr       */
+/*   Updated: 2016/12/15 17:04:24 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 static void		init(t_data *data, const char *format, va_list *ap)
 {
+	reset_var(data);
 	data->ap = ap;
 	data->l_format = ft_strlen(format);
 	transfer_to_struct(data, format);
 	data->ret = 0;
 	data->index = 0;
-	reset_var(data);
 }
 
 void			get_type(t_data *data)
