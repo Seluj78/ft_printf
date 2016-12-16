@@ -6,7 +6,7 @@
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/15 19:27:58 by jlasne            #+#    #+#             */
-/*   Updated: 2016/12/16 13:17:25 by estephan         ###   ########.fr       */
+/*   Updated: 2016/12/16 13:27:54 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,8 @@ void			get_type(t_data *data)
 		data->conv = ft_strsub(data->format, data->index, 1);
 	else
 	{
-		data->conv = ft_strsub(data->format, data->index, (i - data->index + 1));
+		data->conv = ft_strsub(data->format, data->index,
+				(i - data->index + 1));
 		data->index = i;
 	}
 }

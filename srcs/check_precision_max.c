@@ -6,7 +6,7 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/01 14:30:56 by estephan          #+#    #+#             */
-/*   Updated: 2016/12/15 13:28:59 by jlasne           ###   ########.fr       */
+/*   Updated: 2016/12/16 13:33:57 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,7 @@ static char		*check_precision_max2(t_data *data, size_t k, char *str2)
 		{
 			i++;
 			while (data->conv[i] >= '0' && data->conv[i] <= '9')
-			{
-				str[s] = data->conv[i];
-				s++;
-				i++;
-			}
+				str[s++] = data->conv[i++];
 		}
 	}
 	str[s] = '\0';

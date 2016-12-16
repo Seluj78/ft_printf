@@ -6,7 +6,7 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/30 17:05:04 by estephan          #+#    #+#             */
-/*   Updated: 2016/12/16 12:45:37 by jlasne           ###   ########.fr       */
+/*   Updated: 2016/12/16 13:27:09 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,6 @@ void	convert_lld(t_data *data)
 	else
 	{
 		nb1 = va_arg(*data->ap, long int);
-		//FIX LONG MIN (08, 40, 43)
 		if (nb1 > 0)
 			check_plus(data);
 		if (data->plusloc == TRUE)
@@ -84,6 +83,10 @@ void	convert_lld(t_data *data)
 		data->ret += ft_nblen_l(nb1);
 	}
 }
+
+/*
+**FIX LONG MIN (08, 40, 43, 90, 92)
+*/
 
 void	convert_zd(t_data *data)
 {

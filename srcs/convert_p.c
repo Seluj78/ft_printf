@@ -6,7 +6,7 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/30 18:05:54 by estephan          #+#    #+#             */
-/*   Updated: 2016/12/16 10:49:29 by estephan         ###   ########.fr       */
+/*   Updated: 2016/12/16 13:27:23 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	convert_p(t_data *data)
 {
 	long long	n;
-	char		*str;	
+	char		*str;
 
 	n = (long long)va_arg(*data->ap, void *);
 	if (n == 0)
