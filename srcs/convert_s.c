@@ -6,7 +6,7 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/30 16:54:12 by estephan          #+#    #+#             */
-/*   Updated: 2016/12/09 15:30:45 by estephan         ###   ########.fr       */
+/*   Updated: 2016/12/16 11:26:12 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	convert_ls(t_data *data)
 
 	str = va_arg(*data->ap, int *);
 	if (!str)
-		str = L"(NULL)";
+		str = L"(null)";
 	data->nb_len = ft_strwlen(str);
-	ft_putnwstr(str, data->nb_len);
+	data->ret += ft_putnwstr(str, data->nb_len);
 }

@@ -6,7 +6,7 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/01 14:30:56 by estephan          #+#    #+#             */
-/*   Updated: 2016/12/12 11:13:25 by estephan         ###   ########.fr       */
+/*   Updated: 2016/12/16 13:33:49 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,18 +65,16 @@ static int	check_precision2(t_data *data, size_t k, long long int nb, int i)
 		{
 			i++;
 			while (data->conv[i] >= '0' && data->conv[i] <= '9')
-			{
-				str[s++] = data->conv[i];
-				i++;
-			}
+				str[s++] = data->conv[i++];
 		}
 	}
 	str[s] = '\0';
 	s = ft_atoi(str);
+	free(str);
 	if (nb < 0)
 		s++;
 	i = 0;
-	while (s-- > ft_nblen(nb))
+	while (s-- > ft_nblen_l(nb))
 		i++;
 	return (i);
 }

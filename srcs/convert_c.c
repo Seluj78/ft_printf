@@ -6,7 +6,7 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/30 17:41:32 by estephan          #+#    #+#             */
-/*   Updated: 2016/12/09 15:27:19 by estephan         ###   ########.fr       */
+/*   Updated: 2016/12/16 11:26:45 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,5 @@ void	convert_lc(t_data *data)
 
 	c = va_arg(*data->ap, unsigned int);
 	data->nb_len = ft_charwlen(c);
-	ft_putwchar(c);
+	data->ret += ft_putwchar(c);
 }

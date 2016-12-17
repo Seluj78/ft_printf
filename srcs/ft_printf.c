@@ -6,7 +6,7 @@
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/15 19:27:58 by jlasne            #+#    #+#             */
-/*   Updated: 2016/12/09 15:29:29 by estephan         ###   ########.fr       */
+/*   Updated: 2016/12/16 13:27:54 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 static void		init(t_data *data, const char *format, va_list *ap)
 {
+	reset_var(data);
 	data->ap = ap;
 	data->l_format = ft_strlen(format);
 	transfer_to_struct(data, format);
 	data->ret = 0;
 	data->index = 0;
-	reset_var(data);
 }
 
 void			get_type(t_data *data)
@@ -34,10 +34,17 @@ void			get_type(t_data *data)
 			&& data->format[i] != 'u' && data->format[i] != 'U'
 			&& data->format[i] != 'x' && data->format[i] != 'X'
 			&& data->format[i] != 'c' && data->format[i] != 'C'
-			&& data->format[i] != '%' && data->format[i] != 'r')
+			&& data->format[i] != '%' && data->format[i] != 'r'
+			&& data->format[i] != '\0')
 		i++;
-	data->conv = ft_strsub(data->format, data->index, (i - data->index + 1));
-	data->index = i;
+	if (data->format[i] == '\0')
+		data->conv = ft_strsub(data->format, data->index, 1);
+	else
+	{
+		data->conv = ft_strsub(data->format, data->index,
+				(i - data->index + 1));
+		data->index = i;
+	}
 }
 
 void			reset_var(t_data *data)
@@ -63,7 +70,10 @@ int				ft_printf(const char *format, ...)
 	{
 		parse_color(&data);
 		if (data.format[data.index] == '%')
+		{
 			parse_format(&data);
+			free(data.conv);
+		}
 		else
 		{
 			ft_putchar(data.format[data.index]);
@@ -74,5 +84,6 @@ int				ft_printf(const char *format, ...)
 		data.index++;
 	}
 	va_end(ap);
+	free(data.format);
 	return (data.ret);
 }

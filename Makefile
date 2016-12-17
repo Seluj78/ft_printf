@@ -6,32 +6,9 @@
 #    By: jlasne <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/12 10:13:18 by jlasne            #+#    #+#              #
-#    Updated: 2016/12/13 14:52:47 by jlasne           ###   ########.fr        #
+#    Updated: 2016/12/17 14:24:06 by jlasne           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-FILES = ft_printf.c \
-		   utils.c\
-		   parser.c\
-		   convert_jzlh.c\
-		   convert_d.c\
-		   convert_s.c\
-		   convert_c.c\
-		   convert_u.c\
-		   convert_p.c\
-		   convert_x.c\
-		   convert_o.c\
-		   convert_percent.c\
-		   check_flags.c\
-		   check_width.c\
-		   check_spaces.c\
-		   check_precision_max.c\
-		   color.c\
-		   print_d.c\
-		   print_x.c\
-		   print_xx.c\
-		   print_o.c\
-		   print_u.c\
-		   convert_r.c
 
 SRC = $(addprefix srcs/, $(FILES))
 
@@ -43,7 +20,31 @@ NAME = ft_printf.a
 
 FLAGS = -Wextra -Werror -Wall
 
-RM = rm -f
+FILES = ft_printf.c \
+		utils.c\
+		parser.c\
+		convert_jzlh.c\
+		convert_d.c\
+		convert_s.c\
+		convert_c.c\
+		convert_u.c\
+		convert_p.c\
+		convert_x.c\
+		convert_o.c\
+		convert_percent.c\
+		check_flags.c\
+		check_width.c\
+		check_spaces.c\
+		check_precision_max.c\
+		color.c\
+		color2.c\
+		color3.c\
+		print_d.c\
+		print_x.c\
+		print_xx.c\
+		print_o.c\
+		print_u.c\
+		convert_r.c
 
 all: $(NAME)
 
