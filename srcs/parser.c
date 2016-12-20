@@ -6,7 +6,7 @@
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/21 10:28:34 by jlasne            #+#    #+#             */
-/*   Updated: 2016/12/16 12:50:09 by estephan         ###   ########.fr       */
+/*   Updated: 2016/12/19 12:12:56 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void		parse_type(t_data *data)
 	if (end != 0)
 		data->type = data->conv[end];
 	if (data->type != 'O' && data->type != 'C' && data->type != 'S'
-			&& data->type != 'D' && data->type != 'U')
+			&& data->type != 'D' && data->type != 'U' && data->type != 'p')
 	{
 		if (data->conv[end - 1] == 'h' || data->conv[end - 1] == 'l')
 		{

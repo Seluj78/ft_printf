@@ -6,7 +6,7 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/30 18:07:21 by estephan          #+#    #+#             */
-/*   Updated: 2016/12/09 15:27:47 by estephan         ###   ########.fr       */
+/*   Updated: 2016/12/19 11:13:19 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 void	convert_hhx(t_data *data)
 {
-	signed char	nb;
-	short int	nb1;
+	unsigned char	nb;
+	unsigned short	nb1;
 
 	if (data->is_hh == TRUE)
 	{
-		nb = (signed char)va_arg(*data->ap, int);
+		nb = (unsigned char)va_arg(*data->ap, int);
 		if (nb != 0)
 			check_hashtag(data);
 		if (data->type == 'x')
@@ -29,7 +29,7 @@ void	convert_hhx(t_data *data)
 	}
 	else
 	{
-		nb1 = va_arg(*data->ap, int);
+		nb1 = (unsigned short)va_arg(*data->ap, int);
 		if (nb1 != 0)
 			check_hashtag(data);
 		check_precision(data, nb1);

@@ -6,7 +6,7 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/30 17:05:04 by estephan          #+#    #+#             */
-/*   Updated: 2016/12/16 13:27:09 by jlasne           ###   ########.fr       */
+/*   Updated: 2016/12/19 18:18:29 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,19 +74,15 @@ void	convert_lld(t_data *data)
 	}
 	else
 	{
-		nb1 = va_arg(*data->ap, long int);
+		nb1 = (long int)va_arg(*data->ap, long long int);
 		if (nb1 > 0)
 			check_plus(data);
 		if (data->plusloc == TRUE)
 			data->ret += write(1, "+", 1);
-		ft_putnbr_l(nb1);
-		data->ret += ft_nblen_l(nb1);
+		ft_putnbr_ll(nb1);
+		data->ret += ft_nblen_ll(nb1);
 	}
 }
-
-/*
-**FIX LONG MIN (08, 40, 43, 90, 92)
-*/
 
 void	convert_zd(t_data *data)
 {
@@ -95,19 +91,17 @@ void	convert_zd(t_data *data)
 	nb = va_arg(*data->ap, ssize_t);
 	if (nb > 0)
 		check_plus(data);
-	check_precision(data, nb);
 	ft_putnbr_ll(nb);
 	data->ret += ft_nblen_ll(nb);
 }
 
 void	convert_jd(t_data *data)
 {
-	intmax_t nb;
+	long long nb;
 
-	nb = va_arg(*data->ap, intmax_t);
+	nb = (long long)va_arg(*data->ap, long long int);
 	if (nb > 0)
 		check_plus(data);
-	check_precision(data, nb);
 	ft_putnbr_ll(nb);
 	data->ret += ft_nblen_ll(nb);
 }

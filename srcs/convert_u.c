@@ -6,7 +6,7 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/30 17:58:58 by estephan          #+#    #+#             */
-/*   Updated: 2016/12/15 18:18:06 by estephan         ###   ########.fr       */
+/*   Updated: 2016/12/19 18:22:08 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ void	convert_hhu(t_data *data)
 	else
 	{
 		nb = (unsigned short int)va_arg(*data->ap, unsigned int);
-		check_precision(data, nb);
 		str = ft_itoa_base(nb, 10);
 		data->ret += ft_putstr(str);
 	}
@@ -55,14 +54,12 @@ void	convert_llu(t_data *data)
 	if (data->is_ll == TRUE)
 	{
 		nb = va_arg(*data->ap, unsigned long long int);
-		check_precision(data, nb);
 		str = ft_itoa_base_ll(nb, 10);
 		data->ret += ft_putstr(str);
 	}
 	else
 	{
 		nb1 = va_arg(*data->ap, unsigned long int);
-		check_precision(data, nb1);
 		str = ft_itoa_base_l(nb1, 10);
 		data->ret += ft_putstr(str);
 	}
@@ -71,12 +68,11 @@ void	convert_llu(t_data *data)
 
 void	convert_zu(t_data *data)
 {
-	size_t	nb;
-	char	*str;
+	unsigned long long	nb;
+	char				*str;
 
-	nb = va_arg(*data->ap, unsigned int);
-	check_precision(data, nb);
-	str = ft_itoa_base(nb, 10);
+	nb = (unsigned long long)va_arg(*data->ap, int);
+	str = ft_itoa_base_ll(nb, 10);
 	data->ret += ft_putstr(str);
 	free(str);
 }
@@ -87,7 +83,6 @@ void	convert_ju(t_data *data)
 	char		*str;
 
 	nb = va_arg(*data->ap, uintmax_t);
-	check_precision(data, nb);
 	str = ft_itoa_base_uint(nb, 10);
 	data->ret += ft_putstr(str);
 	free(str);

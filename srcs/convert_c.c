@@ -6,7 +6,7 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/30 17:41:32 by estephan          #+#    #+#             */
-/*   Updated: 2016/12/16 11:26:45 by jlasne           ###   ########.fr       */
+/*   Updated: 2016/12/19 18:51:42 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,26 @@
 
 void	convert_c(t_data *data)
 {
-	int c;
-	int s;
+	int		c;
+	int		s;
+	char	x;
 
+	x = ' ';
 	c = va_arg(*data->ap, int);
 	s = check_width_nb(data, 1);
 	s = (s - 1);
+	if (data->c == '0')
+		x = '0';
 	if (data->moinsloc == TRUE)
 	{
 		data->ret += write(1, &c, 1);
-		while (s > 0)
-		{
-			data->ret += write(1, " ", 1);
-			s--;
-		}
+		while (s-- > 0)
+			data->ret += write(1, &x, 1);
 	}
 	else
 	{
-		while (s > 0)
-		{
-			data->ret += write(1, " ", 1);
-			s--;
-		}
+		while (s-- > 0)
+			data->ret += write(1, &x, 1);
 		data->ret += write(1, &c, 1);
 	}
 }
