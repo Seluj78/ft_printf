@@ -6,7 +6,7 @@
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/12 14:20:26 by jlasne            #+#    #+#             */
-/*   Updated: 2016/12/15 12:29:18 by jlasne           ###   ########.fr       */
+/*   Updated: 2017/01/03 11:14:57 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int		put_color10(t_data *data, int i)
 	else if (!ft_strncmp(&data->format[data->index], "{:lcyan}", i))
 	{
 		ft_putstr(LCYAN);
-		return (9);
+		return (8);
 	}
 	else
 		return (put_color11(data, i));

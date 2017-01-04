@@ -6,7 +6,7 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/30 17:05:04 by estephan          #+#    #+#             */
-/*   Updated: 2016/12/19 18:18:29 by estephan         ###   ########.fr       */
+/*   Updated: 2017/01/04 14:30:09 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	convert_d(t_data *data)
 	a = check_precision(data, (intmax_t)nb);
 	s = check_width_nb(data, (intmax_t)nb);
 	check_spaces(data);
-	if (nb > 0 && data->plusloc == FALSE && data->check_spaces == TRUE)
+	if (nb > -1 && data->plusloc == FALSE && data->check_spaces == TRUE)
 	{
 		data->ret += write(1, " ", 1);
 		s--;

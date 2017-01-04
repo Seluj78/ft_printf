@@ -6,7 +6,7 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/01 14:30:56 by estephan          #+#    #+#             */
-/*   Updated: 2016/12/16 13:33:49 by jlasne           ###   ########.fr       */
+/*   Updated: 2017/01/04 14:37:21 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ void		check_moins(t_data *data)
 	int i;
 
 	i = 0;
+	data->moinsloc = FALSE;
 	while (data->conv[i] != '\0')
 	{
 		if (data->conv[i] == '-')
@@ -44,6 +45,7 @@ void		check_plus(t_data *data)
 	int		i;
 
 	i = 0;
+	data->plusloc = FALSE;
 	while (data->conv[i] != '\0' && data->conv[i - 1] != '+')
 	{
 		if (data->conv[i] == '+')

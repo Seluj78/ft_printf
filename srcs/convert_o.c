@@ -6,7 +6,7 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/30 18:10:05 by estephan          #+#    #+#             */
-/*   Updated: 2016/12/19 18:12:35 by estephan         ###   ########.fr       */
+/*   Updated: 2017/01/03 19:26:17 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,16 @@ void	convert_o(t_data *data)
 	unsigned int	nb;
 	int				a;
 	int				s;
+	unsigned int	nbh;
+	char			*str;
 
 	nb = va_arg(*data->ap, unsigned int);
 	check_hashtag(data);
-	a = check_precision(data, nb);
-	s = check_width_nb(data, nb);
+	str = ft_itoa_base(nb, 8);
+	nbh = ft_atoi(str);
+	a = check_precision(data, nbh);
+	s = check_width_nb(data, nbh);
+	free(str);
 	print_o(data, s, a, nb);
 }
 
