@@ -51,6 +51,7 @@ FILES = ft_printf.c\
 all: $(NAME)
 
 $(NAME): $(OBJS)
+	@if [ -d "./obj" ]; then echo; else mkdir obj; fi
 	@echo "\033[35mCreating ft_printf.a file\033[0m"
 	@ar rc $(NAME) $(OBJS)
 	@echo "\033[35mOptimizing ft_printf.a file\033[0m"
