@@ -38,3 +38,9 @@ $> ./a.out
 Here's a string I AM A STRING and here's an integer 42
 $>
 ```
+
+### Contributing
+
+I'm far from being a C expert and suspect there are many ways to improve – if you have ideas on how to make ft_printf easier to maintain (and faster), don't hesitate to fork and send pull requests!
+
+You can also take a look through the open issues and help where you can.
