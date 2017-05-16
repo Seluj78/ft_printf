@@ -13,13 +13,22 @@ Just like the real one, well almost, it's missing a few features that'll be adde
 
 You need my libft to be able to use the ft_printf function.
 
+This is the layout recommended for this lib to work because it'll look for the file libft.h located in `../../libft/includes/` (Relative path)
+
+```text
+ft_printf
+    FILES
+libft
+    FILES
+```
+
 I recommend checking out the README.md from [my libft](https://github.com/Seluj78/libft "My libft") for more information
 
 ### Usage:
 
 Just like a normal printf in C, here's the type code you would want to write (Using my libft as a dependency else it wont work):
 
-```c
+```objectivec
 #include "libft.h"
 
 int main(int argc, char **argv)
@@ -32,7 +41,7 @@ int main(int argc, char **argv)
 ```
 
 And here's the output one would get (Works with gcc and clang):
-```bash
+```commandline
 $> gcc main.c libft.a
 $> ./a.out
 Here's a string I AM A STRING and here's an integer 42

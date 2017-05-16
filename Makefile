@@ -10,43 +10,45 @@
 #                                                                              #
 # **************************************************************************** #
 
-SRC = $(addprefix srcs/, $(FILES))
-
-OBJS = $(FILES:.c=.o)
-
 CC = gcc
 
 NAME = ft_printf.a
 
 FLAGS = -Wextra -Werror -Wall
 
-INC = ./includes
+INC_PATHS = ./includes/checks ./includes/color ./includes/convert ./includes/core ./includes/print
+INC = $(addprefix -I,$(INC_PATHS))
 
-FILES = ft_printf.c\
-		utils.c\
-		parser.c\
-		convert_jzlh.c\
-		convert_d.c\
-		convert_s.c\
-		convert_c.c\
-		convert_u.c\
-		convert_p.c\
-		convert_x.c\
-		convert_o.c\
-		convert_percent.c\
-		check_flags.c\
-		check_width.c\
-		check_spaces.c\
-		check_precision_max.c\
-		color.c\
-		color2.c\
-		color3.c\
-		print_d.c\
-		print_x.c\
-		print_xx.c\
-		print_o.c\
-		print_u.c\
-		convert_r.c
+FILES = srcs/core/ft_printf.c\
+		srcs/core/utils.c\
+		srcs/core/parser.c\
+		srcs/convert/convert_jzlh.c\
+		srcs/convert/convert_d.c\
+		srcs/convert/convert_s.c\
+		srcs/convert/convert_c.c\
+		srcs/convert/convert_u.c\
+		srcs/convert/convert_p.c\
+		srcs/convert/convert_x.c\
+		srcs/convert/convert_o.c\
+		srcs/convert/convert_percent.c\
+		srcs/convert/convert_r.c\
+		srcs/checks/check_flags.c\
+		srcs/checks/check_width.c\
+		srcs/checks/check_spaces.c\
+		srcs/checks/check_precision_max.c\
+		srcs/color/color.c\
+		srcs/color/color2.c\
+		srcs/color/color3.c\
+		srcs/print/print_d.c\
+		srcs/print/print_x.c\
+		srcs/print/print_xx.c\
+		srcs/print/print_o.c\
+		srcs/print/print_u.c\
+
+
+SRC = $(addprefix srcs/, $(FILES))
+
+OBJS = $(FILES:.c=.o)
 
 all: $(NAME)
 
@@ -61,7 +63,7 @@ $(NAME): $(OBJS)
 	@echo "\033[35mFt_printf compilation complete\033[0m" "\033[32m [ok] \033[32m"
 
 %.o:srcs/%.c
-	@$(CC) -c $(FLAGS) -I $(INC) $< -o $@
+	@$(CC) -c $(SRC) $(FLAGS) $(INC) $< -o $@
 
 clean:
 	@$(RM) obj/*.o
