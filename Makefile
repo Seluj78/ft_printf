@@ -6,7 +6,7 @@
 #    By: jlasne <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/06 10:15:15 by jlasne            #+#    #+#              #
-#    Updated: 2017/05/15 16:01:34 by jlasne           ###   ########.fr        #
+#*   Updated: 2017/05/16 15:57:42 by mgautier         ###   ########.fr       *#
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,7 +54,6 @@ OBJS := $(addprefix obj/,$(FILES:.c=.o))
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	@if [ -d "./obj" ]; then echo "\033[35mDirectory\033[34m obj\033[35m already exists\033[0m"; else mkdir obj; fi
 	@echo "\033[35mCreating ft_printf.a file\033[0m"
 	@ar rc $(NAME) $(OBJS)
 	@echo "\033[35mOptimizing ft_printf.a file\033[0m"
@@ -67,7 +66,15 @@ $(NAME): $(OBJS)
 # By using obj/ you make sure that your .o match your .c file, with juste the
 # directory name changing
 obj/%.o: srcs/%.c
-	$(CC) -c $(FLAGS) $(INC) $< -o $@
+	@$(CC) -c $(FLAGS) $(INC) $< -o $@
+
+install:
+	@if [ -d "./obj" ]; then echo "\033[35mDirectory\033[34m obj\033[35m already exists\033[0m"; else mkdir obj; fi
+	@if [ -d "./obj/checks" ]; then echo "\033[35mDirectory\033[34m obj/checks\033[35m already exists\033[0m"; else mkdir obj/checks; fi
+	@if [ -d "./obj/color" ]; then echo "\033[35mDirectory\033[34m obj/color\033[35m already exists\033[0m"; else mkdir obj/color; fi
+	@if [ -d "./obj/convert" ]; then echo "\033[35mDirectory\033[34m obj/convert\033[35m already exists\033[0m"; else mkdir obj/convert; fi
+	@if [ -d "./obj/core" ]; then echo "\033[35mDirectory\033[34m obj/core\033[35m already exists\033[0m"; else mkdir obj/core; fi
+	@if [ -d "./obj/print" ]; then echo "\033[35mDirectory\033[34m obj/print\033[35m already exists\033[0m"; else mkdir obj/print; fi
 
 clean:
 	@$(RM) obj/*/*.o

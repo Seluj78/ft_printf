@@ -11,6 +11,8 @@ Just like the real one, well almost, it's missing a few features that'll be adde
 
 ### Installation:
 
+`make install` then `make` to compile into ft_printf.a (libft needed, see below)
+
 You need my libft to be able to use the ft_printf function.
 
 This is the layout recommended for this lib to work because it'll look for the file libft.h located in `../../libft/includes/` (Relative path)

@@ -1,4 +1,4 @@
-script: make clean && make fclean && make && make re
+script: make install && make && make clean && make fclean && make && make re
 language: c
 os: osx
 compiler: clang
