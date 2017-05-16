@@ -16,8 +16,11 @@
 # include <stdio.h>
 # include <wchar.h>
 # include <inttypes.h>
+# ifndef UNIT_TEST
+# include "../unit-test/libft.h"
+# else
 # include "../../../libft/includes/libft.h"
-
+# endif
 /*
 ** Typedefs :
 */
