@@ -36,3 +36,6 @@
 *.swp
 workspace.xml
 .idea/workspace.xml
+cmake-build-debug/
+.idea/
+obj/
