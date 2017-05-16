@@ -51,13 +51,14 @@ FILES = ft_printf.c\
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	@if [ -d "./obj" ]; then echo; else mkdir obj; fi
+	@if [ -d "./obj" ]; then echo "\033[35mDirectory\033[34m obj\033[35m already exists\033[0m"; else mkdir obj; fi
 	@echo "\033[35mCreating ft_printf.a file\033[0m"
 	@ar rc $(NAME) $(OBJS)
 	@echo "\033[35mOptimizing ft_printf.a file\033[0m"
 	@ranlib $(NAME)
-	@echo "\033[35mFt_printf compilation complete\033[0m" "\033[32m [ok] \033[32m"
+	@echo "\033[35mMoving object files into\033[34m obj\033[35m folder"
 	@mv *.o obj/
+	@echo "\033[35mFt_printf compilation complete\033[0m" "\033[32m [ok] \033[32m"
 
 %.o:srcs/%.c
 	@$(CC) -c $(FLAGS) -I $(INC) $< -o $@
