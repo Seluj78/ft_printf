@@ -14,6 +14,10 @@
 # define PROTO_H
 # include "struct.h"
 
+/*
+** Here are all the prototypes of the functions used in the project
+*/
+
 int		ft_printf(const char *format, ...);
 void	parse_format(t_data *data);
 void	transfer_to_struct(t_data *data, const char *format);

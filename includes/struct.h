@@ -22,7 +22,7 @@
 typedef char		t_bool;
 
 /*
-**Defines relative to typedefs
+** Defines relative to typedefs
 */
 
 # define TRUE 1
@@ -31,7 +31,7 @@ typedef char		t_bool;
 # define LONG_MIN -2147483647
 
 /*
-**Structs :
+** Structs :
 */
 
 typedef struct	s_data

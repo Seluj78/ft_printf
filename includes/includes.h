@@ -13,6 +13,10 @@
 #ifndef INCLUDES_H
 # define INCLUDES_H
 
+/*
+** This file contains all the includes necessary for the project
+*/
+
 # include "libft.h"
 # include "proto.h"
 # include "struct.h"
