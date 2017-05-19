@@ -45,9 +45,7 @@ FILES = core/ft_printf.c\
 		print/print_o.c\
 		print/print_u.c\
 
-# Since you add srcs here no nedd to put in in FILES.
 SRC := $(addprefix srcs/,$(FILES))
-
 
 OBJS := $(addprefix obj/,$(FILES:.c=.o))
 
@@ -61,10 +59,6 @@ $(NAME): $(OBJS)
 	@echo "\033[31mMoving object files into\033[34m obj\033[35m folder"
 	@echo "\033[36mFt_printf compilation complete\033[0m" "\033[32m [ok] \033[32m"
 
-# Here no need to put $(SRC), since there is all your files in it, and you only
-# need one source file, the dependency, which is in $<
-# By using obj/ you make sure that your .o match your .c file, with juste the
-# directory name changing
 obj/%.o: srcs/%.c
 	@$(CC) -c $(FLAGS) $(INC) $< -o $@
 
@@ -79,11 +73,11 @@ install:
 clean:
 	@echo "\033[31mRemoving object files from\033[34m obj\033[35m folders"
 	@echo "\033[31m----------DO NOT LEAVE THIS MAKEFILE AS IS (Contains wildcards)----------\033[0m"
-	@$(RM) obj/*/*.o
+	@rm -rf obj/*/*.o
 
 fclean: clean
 	@echo "\033[31mRemoving .a files\033[0m"
-	@$(RM) $(NAME) $(LIBFT)
+	@rm -rf $(NAME)
 
 re: fclean all
 
