@@ -54,12 +54,12 @@ OBJS := $(addprefix obj/,$(FILES:.c=.o))
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	@echo "\033[35mCreating ft_printf.a file\033[0m"
+	@echo "\033[32mCreating ft_printf.a file\033[0m"
 	@ar rc $(NAME) $(OBJS)
 	@echo "\033[35mOptimizing ft_printf.a file\033[0m"
 	@ranlib $(NAME)
-	@echo "\033[35mMoving object files into\033[34m obj\033[35m folder"
-	@echo "\033[35mFt_printf compilation complete\033[0m" "\033[32m [ok] \033[32m"
+	@echo "\033[31mMoving object files into\033[34m obj\033[35m folder"
+	@echo "\033[36mFt_printf compilation complete\033[0m" "\033[32m [ok] \033[32m"
 
 # Here no need to put $(SRC), since there is all your files in it, and you only
 # need one source file, the dependency, which is in $<
@@ -77,9 +77,12 @@ install:
 	@if [ -d "./obj/print" ]; then echo "\033[35mDirectory\033[34m obj/print\033[35m already exists\033[0m"; else mkdir obj/print; fi
 
 clean:
+	@echo "\033[31mRemoving object files from\033[34m obj\033[35m folders"
+	@echo "\033[31m----------DO NOT LEAVE THIS MAKEFILE AS IS (Contains wildcards)----------\033[0m"
 	@$(RM) obj/*/*.o
 
 fclean: clean
+	@echo "\033[31mRemoving .a files\033[0m"
 	@$(RM) $(NAME) $(LIBFT)
 
 re: fclean all
