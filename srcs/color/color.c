@@ -26,7 +26,7 @@ int		put_color(t_data *data, int i)
 	}
 	else if (!ft_strncmp(&data->format[data->index], "{:red}", i))
 	{
-		ft_putstr(RED);
+		ft_putstr(REDPRINTF);
 		return (6);
 	}
 	else if (!ft_strncmp(&data->format[data->index], "{:green}", i))

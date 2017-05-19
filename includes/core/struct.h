@@ -6,7 +6,7 @@
 /*   By: jlasne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/15 19:24:20 by jlasne            #+#    #+#             */
-/*   Updated: 2016/12/16 11:38:14 by jlasne           ###   ########.fr       */
+/*   Updated: 2017/05/19 11:28:03 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <wchar.h>
 # include <inttypes.h>
 # ifndef UNIT_TEST
-# include "../unit-test/libft.h"
+# include "../unit-testing/libft.h"
 # else
 # include "../../../libft/includes/libft.h"
 # endif

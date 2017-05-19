@@ -1,7 +1,7 @@
 #ifndef UTILS_H
 # define UTILS_H
 
-# include <core/struct.h>
+# include "../core/struct.h"
 
 void	parse_utils(t_data *data, int end);
 void	ft_putwstr(wchar_t *str);
